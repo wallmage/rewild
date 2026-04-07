@@ -19,6 +19,8 @@ Gleicher KI-Text, gleiches Modell, Blindvergleich. 10 Kriterien pro Ausgabe, 3 T
 
 **Warum der Unterschied?** Beide Tools entfernen KI-Muster gleich gut. Der Unterschied liegt danach. Ein typisches Tool hört beim Entfernen auf – sauberer, aber seelenloser Text bleibt übrig. Rewild hat 16 zusätzliche Muster (gestützt auf 8 akademische Quellen), die dem Modell beibringen, wie menschliches Schreiben tatsächlich *klingt*: Rhythmuswechsel, konkrete Details, Selbstkorrektur, sinnliche Sprache und überraschende Wortwahl.
 
+**Chinesisch-Benchmark:** Der Abstand ist noch größer — **30/30 (100%)** vs. **20/30 (67%)**. Ein generisches Tool hat null chinesisch-spezifische Muster und erkennt daher keine fehlenden Modalpartikeln (语气词), keine Idiom-Häufungen oder Übersetzungs-Stil.
+
 ## Skills
 
 | Skill | Muster | Besonderheit |

@@ -19,6 +19,8 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 
 **Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal and leaves clean but soulless text. Rewild's 16 additional patterns — backed by 8 academic sources — teach the model what human writing actually *sounds* like: rhythm variation, concrete specifics, self-correction, sensory language, and surprising word choices.
 
+**Chinese benchmark:** The gap is even wider — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has zero Chinese-specific patterns, so it can't detect missing modal particles (语气词), idiom stacking, or translation-ese — the strongest Chinese AI tells.
+
 > **Input:** In the rapidly evolving landscape of artificial intelligence, our company stands as a testament to innovation. Additionally, our groundbreaking platform provides a seamless, intuitive, and powerful experience — ensuring that users can accomplish their goals efficiently.
 >
 > **Typical tool:** We built a platform that helps people get things done faster. Users seem to like it -- early feedback suggests it saves real time on daily tasks. Whether that holds up as we scale is an honest question.

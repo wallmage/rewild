@@ -648,6 +648,73 @@
             </div>
         </section>
 
+        <section class="benchmark">
+            <h2>Benchmark: Rewild 中文 vs. a typical AI-humanizer skill</h2>
+
+            <p class="benchmark-intro">
+                Same method, now in Chinese: <strong>3 AI-generated texts</strong> (business, technical, emotional) loaded with Chinese-specific AI tells — formulaic openings (随着…的不断发展), four-character idiom stacking (砥砺前行/赋能增效), rigid 首先…其次…最后 skeletons, fake statistics, and zero modal particles. Each output graded against <strong>10 Chinese-specific assertions</strong>.
+            </p>
+
+            <div class="score-bar">
+                <div class="score-card winner">
+                    <div class="score-label">Rewild-ZH</div>
+                    <div class="score-value">100%</div>
+                    <div class="score-detail">30 / 30 assertions passed</div>
+                </div>
+                <div class="score-card baseline">
+                    <div class="score-label">Typical tool</div>
+                    <div class="score-value">67%</div>
+                    <div class="score-detail">20 / 30 assertions passed</div>
+                </div>
+            </div>
+
+            <table class="assertion-table">
+                <thead>
+                    <tr>
+                        <th>Assertion</th>
+                        <th>Rewild-ZH</th>
+                        <th>Typical</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="3" class="cat">Pattern removal (both tools should pass)</td></tr>
+                    <tr><td>No AI filler / translation-ese (翻译腔)</td><td class="pass">6/6</td><td class="pass">6/6</td></tr>
+                    <tr><td>No formulaic structure (随着… / 首先…其次…最后)</td><td class="pass">6/6</td><td class="pass">6/6</td></tr>
+                    <tr><td>No four-character idiom stacking / fake statistics</td><td class="pass">6/6</td><td class="fail">5/6</td></tr>
+                    <tr><td colspan="3" class="cat">Soul injection (where Rewild pulls ahead)</td></tr>
+                    <tr><td>Sentence length variety + concrete details</td><td class="pass">6/6</td><td class="fail">0/6</td></tr>
+                    <tr><td>Modal particles (语气词) + opinion / emotion</td><td class="pass">6/6</td><td class="fail">3/6</td></tr>
+                    <tr><td><strong>Total</strong></td><td class="pass"><strong>30/30</strong></td><td><strong>20/30</strong></td></tr>
+                </tbody>
+            </table>
+
+            <p class="benchmark-note">The typical tool kept a fabricated "87%" statistic, produced zero modal particles (嘛/吧/说实话) in 2 of 3 tests, and added zero concrete details in all 3 tests. It strips AI slop but injects nothing human.</p>
+
+            <div class="comparison-header">Side-by-side: the business text (中文)</div>
+
+            <div class="comparison-input">
+                <div class="label">Input (AI slop)</div>
+                随着人工智能技术的不断发展，我司始终秉持创新驱动、砥砺前行的理念，致力于为广大用户提供无缝、直观、高效的智能化解决方案。据统计显示，超过 87% 的用户对我们的产品表示满意。不忘初心、开拓创新、赋能增效，我们将继续深耕细作，推动高质量发展。未来将会更加美好。
+            </div>
+
+            <div class="comparison-label other-label">Typical humanizer output</div>
+            <div class="comparison-box other-box">
+                我们做了一个智能平台，帮用户少做重复的事。上线后收到的反馈还不错——内部调研里大概 87% 的用户说体验比之前好。接下来会继续根据实际使用情况做调整。
+            </div>
+
+            <div class="comparison-label rewild-label">Rewild output</div>
+            <div class="comparison-box rewild-box">
+                我们做了个 AI 平台，上线半年了。说实话，核心功能就三个：自动化流程、数据看板、智能推荐。用起来没那么玄乎，但确实省事——之前要手动跑的报表，现在点一下就出来。用户反馈嘛，我们内部做过一轮调研，大部分人觉得还行，主要夸的是上手快。但也有人吐槽配置太复杂，这块还在改。接下来的重点是把推荐算法的准确率再提一提。说"重新定义行业标准"就算了——先把自己的产品做扎实再说。
+            </div>
+
+            <div class="takeaway">
+                <h3>Why the wider gap?</h3>
+                <p>
+                    The typical tool is a translated English humanizer with <strong>zero Chinese-specific patterns</strong>. It doesn't know that missing modal particles (嘛/吧/啊) are the #1 Chinese AI fingerprint, that four-character idiom stacking screams AI, or that Chinese is a paratactic language that doesn't need explicit connectors. Rewild-ZH has 22 additional patterns (10 Chinese-specific) built from Chinese-language research — 虎嗅 rhetorical analysis, AIGCleaner detection weights, and PaperBert AI vocabulary studies.
+                </p>
+            </div>
+        </section>
+
         <section class="usage">
             <h2>How to use</h2>
             <div class="usage-steps">
