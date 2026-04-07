@@ -322,6 +322,12 @@ Fix: break coordinated chains into separate sentences. Use subordination for cau
 
 Problem: AI maintains the same tone from introduction through conclusion. Humans naturally vary — more engaging openings, denser middles, looser or more reflective conclusions.
 
+Before:
+> **Introduction:** Climate change poses significant challenges to modern agriculture. **Body:** Rising temperatures affect crop yields in multiple ways. Studies show decreased productivity. **Conclusion:** Climate change poses significant challenges to modern agriculture that must be addressed.
+
+After:
+> You want to know what keeps farmers up at night? It's not the price of diesel. **[dense middle with data, studies, specific farms]** I drove home past those same fields. They looked fine. That's the thing about slow disasters — they look fine right up until they don't.
+
 Fix: let your intro be a hook, your middle be substantive, and your ending be honest rather than tidy. Don't wrap up with a bow.
 
 ---
