@@ -1,5 +1,7 @@
 # Rewild
 
+[English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
+
 KI-Schreibmuster aus Text entfernen. Damit es klingt, als hätte ein Mensch geschrieben — weil du es warst.
 
 **3 Sprachen, 50+ Erkennungsmuster.**
@@ -27,7 +29,7 @@ Gleicher KI-Text, gleiches Modell, Blindvergleich. 10 Kriterien pro Ausgabe, 3 T
 |-------|--------|--------------|
 | [English](rewild-en/SKILL.md) | 40 | Vollständiges Musterset basierend auf Wikipedia + 2025-2026 Forschung |
 | [中文](rewild-zh/SKILL.md) | 46 | 10 chinesisch-spezifische Muster |
-| [Deutsch](rewild-ge/SKILL.md) | 37 | 13 deutsch-spezifische Muster: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
+| [Deutsch](rewild-de/SKILL.md) | 37 | 13 deutsch-spezifische Muster: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
 
 ## So funktioniert's
 
@@ -45,7 +47,7 @@ Gleicher KI-Text, gleiches Modell, Blindvergleich. 10 Kriterien pro Ausgabe, 3 T
 
 ## Deutsch-spezifische Muster
 
-Rewild-GE erkennt 13 Muster, die nur im Deutschen auftreten:
+Rewild-DE erkennt 13 Muster, die nur im Deutschen auftreten:
 
 - **Modalpartikeln fehlen** — doch/halt/mal/eben/ja sind die Seele der deutschen Sprache; KI nutzt sie kaum
 - **Geviertstrich statt Halbgeviertstrich** — Englischer em dash (—) statt korrektem deutschen en dash (–)
@@ -71,8 +73,6 @@ Rewild-GE erkennt 13 Muster, die nur im Deutschen auftreten:
 - De Gruyter 2025 — Linguistische Komplexitätsanalyse
 
 ---
-
-**[English](README.md)** | **[中文说明](README-zh.md)**
 
 ## Autor
 

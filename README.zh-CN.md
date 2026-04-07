@@ -1,5 +1,7 @@
 # Rewild
 
+[English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
+
 去除 AI 写作痕迹。让文字听起来像人写的——因为确实是你写的。
 
 **3 种语言，50+ 种检测模式。**
@@ -33,7 +35,7 @@
 |------|--------|------|
 | [English](rewild-en/SKILL.md) | 40 | 基于维基百科 + 2025-2026 学术研究的完整模式集 |
 | [中文](rewild-zh/SKILL.md) | 46 | 10 种中文特有模式：语气词缺失、四字成语堆砌、翻译腔、欧化句式、公式化开头 |
-| [Deutsch](rewild-ge/SKILL.md) | 37 | 13 种德语特有模式：Modalpartikeln、Komposita、Geviertstrich |
+| [Deutsch](rewild-de/SKILL.md) | 37 | 13 种德语特有模式：Modalpartikeln、Komposita、Geviertstrich |
 
 ## 如何使用
 
@@ -74,8 +76,6 @@ Rewild-ZH 检测 10 种中文独有的 AI 痕迹：
 - Tercon & Dobrovoljc (2025)——44 项研究综合
 
 ---
-
-**[English](README.md)** | **[Deutsche Anleitung](README-ge.md)**
 
 ## 作者
 

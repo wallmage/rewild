@@ -1,5 +1,7 @@
 # Rewild
 
+[English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
+
 Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.
 
 **50+ detection patterns across 3 languages.**
@@ -33,7 +35,7 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 |-------|----------|---------------|
 | [English](rewild-en/SKILL.md) | 40 | Full pattern set based on Wikipedia + 2025-2026 academic research |
 | [中文](rewild-zh/SKILL.md) | 46 | 10 Chinese-specific: 语气词缺失, 四字成语堆砌, 翻译腔, 公式化开头 |
-| [Deutsch](rewild-ge/SKILL.md) | 37 | 13 German-specific: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
+| [Deutsch](rewild-de/SKILL.md) | 37 | 13 German-specific: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
 
 ## How to use
 
@@ -59,8 +61,6 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 - AIGCleaner — Chinese detection weights
 
 ---
-
-**[中文说明](README-zh.md)** | **[Deutsche Anleitung](README-ge.md)**
 
 ## Author
 
