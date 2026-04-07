@@ -4,7 +4,7 @@
 
 Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.
 
-**50+ detection patterns across 3 languages.**
+**3 languages. Lean skills. Detail catalogs on demand.**
 
 ## Benchmark: Rewild vs. a typical humanizer
 
@@ -19,7 +19,7 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 | Adds specific details | 6/6 | 4/6 |
 | Shows opinion/emotion | 6/6 | 5/6 |
 
-**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal and leaves clean but soulless text. Rewild's 16 additional patterns — backed by 8 academic sources — teach the model what human writing actually *sounds* like: rhythm variation, concrete specifics, self-correction, sensory language, and surprising word choices.
+**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal and leaves clean but soulless text. Rewild is designed to clean AI patterns without inventing new facts, anecdotes, or fake specificity.
 
 **Chinese benchmark:** The gap is even wider — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has zero Chinese-specific patterns, so it can't detect missing modal particles (语气词), idiom stacking, or translation-ese — the strongest Chinese AI tells.
 
@@ -27,29 +27,39 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 >
 > **Typical tool:** We built a platform that helps people get things done faster. Users seem to like it -- early feedback suggests it saves real time on daily tasks. Whether that holds up as we scale is an honest question.
 >
-> **Rewild:** We ship a product that saves people time. The platform is fast to learn and gets out of your way -- which, after years of bloated enterprise tools, feels almost radical. Is it going to reshape the entire industry? I have no idea. But two Fortune 500 companies switched to us last quarter, and their ops teams cut reporting time by 30%.
+> **Rewild:** We ship a product that saves people time. That's a fair claim. Calling it groundbreaking and industry-changing is the part that feels inflated.
 
 ## Skills
 
 | Skill | Patterns | What's unique |
 |-------|----------|---------------|
-| [English](rewild-en/SKILL.md) | 40 | Full pattern set based on Wikipedia + 2025-2026 academic research |
-| [中文](rewild-zh/SKILL.md) | 46 | 10 Chinese-specific: 语气词缺失, 四字成语堆砌, 翻译腔, 公式化开头 |
-| [Deutsch](rewild-de/SKILL.md) | 37 | 13 German-specific: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
+| [English](rewild-en/SKILL.md) | 40 | Lean `SKILL.md` + detailed [pattern catalog](rewild-en/references/patterns.md) |
+| [中文](rewild-zh/SKILL.md) | 40 | Chinese-specific signals like 语气词缺失, 翻译腔, 四字套语, 公式化开头 |
+| [Deutsch](rewild-de/SKILL.md) | 41 | German-specific signals like Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
 
 ## How to use
 
 1. Copy the `SKILL.md` for your language
 2. Add it as a skill in Claude Code / Cowork, or paste as a system prompt in any LLM
-3. Say "rewild this" and paste your text
+3. Keep the matching `references/patterns.md` beside it so the model can load details on demand
+4. Say "rewild this" and paste your text
+
+## Design
+
+Each language ships in two layers:
+
+- `SKILL.md`: operating manual — trigger scope, core rules, soul guidance, genre calibration, worked example, scoring rubric
+- `references/patterns.md`: diagnostic catalog — language-specific AI tells, word lists, before/after examples, academic citations
+
+The skill stays fast to load. The pattern catalog loads on demand when the model needs diagnostic detail.
 
 ## Before / After
 
 **AI-generated:**
-> The new software update serves as a testament to the company's commitment to innovation. Moreover, it provides a seamless, intuitive, and powerful user experience — ensuring that users can accomplish their goals efficiently.
+> The new software update serves as a testament to the company's commitment to innovation. Moreover, it introduces batch processing, keyboard shortcuts, and offline mode, providing a seamless, intuitive, and powerful user experience — ensuring that users can accomplish their goals efficiently.
 
 **Rewilded:**
-> The software update adds batch processing, keyboard shortcuts, and offline mode. Early feedback from beta testers has been positive, with most reporting faster task completion.
+> The update adds batch processing, keyboard shortcuts, and offline mode — the three features that matter. Not a revolution. Just a good update that does what people actually asked for.
 
 ## Sources
 
@@ -59,6 +69,13 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 - De Gruyter 2025 — German linguistic complexity analysis
 - Huxiu quantitative analysis — Chinese rhetorical device frequencies
 - AIGCleaner — Chinese detection weights
+
+## Shipping Notes
+
+- Tight trigger: only fires for explicit "this sounds like AI" requests
+- Anti-fabrication: no invented metrics, anecdotes, or first-person experiences
+- Genre-aware: formal writing stays formal
+- Source-grounded soul: adds voice by pulling forward real details, not by inventing new ones
 
 ---
 
