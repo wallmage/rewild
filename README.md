@@ -4,14 +4,11 @@ Remove AI writing patterns from text. Make it sound like a human wrote it — be
 
 **50+ detection patterns across 3 languages.**
 
-## Skills
-
-| Skill | Language | Patterns | What's unique |
-|-------|----------|----------|---------------|
-| [rewild-en](rewild-en/SKILL.md) | English | 40 | Full pattern set based on Wikipedia + 2025-2026 academic research |
-| [rewild-zh](rewild-zh/SKILL.md) | Chinese | 46 | 10 Chinese-specific: missing modal particles, idiom stacking, translation-ese, formulaic openers |
-| [rewild-ge](rewild-ge/SKILL.md) | German | 37 | 13 German-specific: Modalpartikeln, Komposita, Geviertstrich, Nebensatz word order, Konjunktiv |
-| [system-prompt-compressor](system-prompt-compressor/SKILL.md) | Any | 4-pass | 50-65% token reduction for any LLM system prompt |
+| Skill | Patterns | What's unique |
+|-------|----------|---------------|
+| [English](rewild-en/SKILL.md) | 40 | Full pattern set based on Wikipedia + 2025-2026 academic research |
+| [中文](rewild-zh/SKILL.md) | 46 | 10 Chinese-specific: 语气词缺失, 四字成语堆砌, 翻译腔, 公式化开头 |
+| [Deutsch](rewild-ge/SKILL.md) | 37 | 13 German-specific: Modalpartikeln, Komposita, Geviertstrich, Nebensatz, Konjunktiv |
 
 ## How to use
 
@@ -35,6 +32,10 @@ Remove AI writing patterns from text. Make it sound like a human wrote it — be
 - De Gruyter 2025 — German linguistic complexity analysis
 - Huxiu quantitative analysis — Chinese rhetorical device frequencies
 - AIGCleaner — Chinese detection weights
+
+---
+
+**[中文说明](README-zh.md)** | **[Deutsche Anleitung](README-ge.md)**
 
 ## Author
 
