@@ -323,10 +323,10 @@ Fix: break coordinated chains into separate sentences. Use subordination for cau
 Problem: AI maintains the same tone from introduction through conclusion. Humans naturally vary — more engaging openings, denser middles, looser or more reflective conclusions.
 
 Before:
-> **Introduction:** Climate change poses significant challenges to modern agriculture. **Body:** Rising temperatures affect crop yields in multiple ways. Studies show decreased productivity. **Conclusion:** Climate change poses significant challenges to modern agriculture that must be addressed.
+> Climate change poses significant challenges to modern agriculture. Rising temperatures affect crop yields in multiple ways. Studies show decreased productivity across regions. Climate change remains a significant challenge that must be addressed through coordinated efforts.
 
 After:
-> You want to know what keeps farmers up at night? It's not the price of diesel. **[dense middle with data, studies, specific farms]** I drove home past those same fields. They looked fine. That's the thing about slow disasters — they look fine right up until they don't.
+> You want to know what keeps farmers up at night? It's not the price of diesel. In Iowa last summer, corn yields dropped 12% — the third bad year in five. USDA data confirms the trend but doesn't capture what it feels like to watch a field you planted in April turn brown by June. I drove home past those same fields. They looked fine from the road. That's the thing about slow disasters.
 
 Fix: let your intro be a hook, your middle be substantive, and your ending be honest rather than tidy. Don't wrap up with a bow.
 
@@ -633,7 +633,7 @@ Before (AI-sounding):
 > The new software update serves as a testament to the company's commitment to innovation. Moreover, it provides a seamless, intuitive, and powerful user experience — ensuring that users can accomplish their goals efficiently. It's not just an update, it's a revolution in how we think about productivity. Industry experts believe this will have a lasting impact on the entire sector, highlighting the company's pivotal role in the evolving technological landscape.
 
 After (humanized):
-> The software update adds batch processing, keyboard shortcuts, and offline mode. Early feedback from beta testers has been positive, with most reporting faster task completion.
+> The update adds batch processing, keyboard shortcuts, and offline mode — the three things people actually asked for. I've been using the beta for a week and, honestly, the keyboard shortcuts alone are worth it. Batch processing still feels a little rough around the edges (I crashed it twice running 500+ items), but the bones are solid. Not a revolution. Just a genuinely good update.
 
 Changes made:
 - Removed "serves as a testament" (inflated symbolism, pattern 1)
