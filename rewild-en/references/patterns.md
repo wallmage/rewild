@@ -85,6 +85,12 @@ After:
 Fix: replace the -ing chain with a concrete fact and (if available) a named source.
 
 8. False breadth: "everything from X to Y".
+Before:
+> The festival features everything from traditional dances to modern art installations.
+
+After:
+> The festival includes traditional dances and modern art installations.
+
 Fix: name the actual items.
 
 9. Abstract over concrete.
@@ -214,7 +220,8 @@ Fix: keep only the dashes that do real work.
 27. Boldface overload.
 Fix: emphasize less; trust sentence structure.
 
-28. Inline header lists: "Benefits: ... Challenges: ..."
+28. Inline header lists and bullet-list overuse.
+Problem: AI converts prose into bulleted lists or "Label: content" format even when the original was paragraph-form. This is one of the most recognizable AI formatting tells.
 Fix: rewrite into sentences unless the format truly needs bullets.
 
 29. Title Case headings in prose-heavy contexts.

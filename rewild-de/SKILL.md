@@ -114,6 +114,8 @@ Liefere:
 1. den umgeschriebenen Text
 2. optional eine kurze Notiz zu den wichtigsten entfernten KI-Mustern
 
+Der umgeschriebene Text ist typischerweise kürzer als das Original, weil KI-Texte aufgebläht sind. Nicht auffüllen, um die Originallänge zu erreichen.
+
 Nur bewerten, wenn der Nutzer ausdrücklich eine Bewertung verlangt.
 
 ## Qualitätsbewertung (nur auf Anfrage)

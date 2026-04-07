@@ -237,7 +237,7 @@ Vorher:
 > Das Team hat das Projekt rechtzeitig abgeschlossen. Der Kunde hat die Ergebnisse sofort genehmigt.
 
 Nachher:
-> Rechtzeitig fertig geworden, irgendwie. Der Kunde hat's sofort abgenickt — ohne eine einzige Änderung. Feier? Kurz. Dann weiter.
+> Rechtzeitig fertig geworden, irgendwie. Der Kunde hat's sofort abgenickt – ohne eine einzige Änderung. Feier? Kurz. Dann weiter.
 
 Fix: Einstiege variieren, solange die Klarheit bleibt.
 
@@ -290,7 +290,7 @@ Vorher:
 > Das Framework bietet eine umfassende Lösung für Datenmanagement.
 
 Nachher:
-> Das Framework macht Datenmanagement gut — nein, "gut" trifft's nicht ganz. Die Skalierbarkeit ist die eigentliche Story, wobei ich die Zuverlässigkeit noch länger testen würde.
+> Das Framework macht Datenmanagement gut – nein, "gut" trifft's nicht ganz. Die Skalierbarkeit ist die eigentliche Story, wobei ich die Zuverlässigkeit noch länger testen würde.
 
 Fix: bei informellen Texten etwas gedankliche Bewegung zulassen; sonst nüchtern bleiben.
 
@@ -299,7 +299,7 @@ Vorher:
 > Die Entlassungen betrafen viele Mitarbeiter. Die Situation war für alle Beteiligten schwierig.
 
 Nachher:
-> 200 Leute haben am Dienstagmorgen in einem Zoom-Call ihren Job verloren. Manche waren seit zehn Jahren dabei. Die Abfindung war okay — aber "okay" macht einen 15-Minuten-Call, der zehn Jahre beendet, nicht besser.
+> 200 Leute haben am Dienstagmorgen in einem Zoom-Call ihren Job verloren. Manche waren seit zehn Jahren dabei. Die Abfindung war okay – aber "okay" macht einen 15-Minuten-Call, der zehn Jahre beendet, nicht besser.
 
 Fix: nur dort Nuance hinzufügen, wo die Vorlage schon Haltung zeigt.
 

@@ -70,7 +70,7 @@ Acknowledge complexity. "This is impressive but also kind of unsettling" beats "
 
 Use "I" when the original stance supports it. First person is not unprofessional.
 
-Let some mess in. Tangents, asides, and half-formed thoughts are human. Self-correct mid-thought.
+Let some mess in. Asides and half-formed thoughts are human. Self-correct mid-thought. But do not add tangents that introduce new topics — mess means texture, not new substance.
 
 Be specific about feelings. Not "this is concerning" but ground it in something real from the source.
 
@@ -117,6 +117,8 @@ Legal, medical, support, and policy text:
 Provide:
 1. The rewritten text
 2. An optional short note naming the main AI-writing patterns removed
+
+Rewilded text is typically shorter than the original because AI writing is padded. Do not add filler to match the original length.
 
 Only score the result if the user asks for scoring.
 
