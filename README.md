@@ -4,6 +4,29 @@ Remove AI writing patterns from text. Make it sound like a human wrote it — be
 
 **50+ detection patterns across 3 languages.**
 
+## Benchmark: Rewild vs. a typical humanizer
+
+Same AI text, same model, blind comparison. 10 assertions per output, 3 test prompts.
+
+| | Rewild | Typical 24-pattern tool |
+|---|---|---|
+| **Score** | **30 / 30 (100%)** | 24 / 30 (80%) |
+| No AI vocabulary | 6/6 | 6/6 |
+| No meta-commentary | 6/6 | 5/6 |
+| Sentence length variety | 6/6 | 4/6 |
+| Adds specific details | 6/6 | 4/6 |
+| Shows opinion/emotion | 6/6 | 5/6 |
+
+**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal and leaves clean but soulless text. Rewild's 16 additional patterns — backed by 8 academic sources — teach the model what human writing actually *sounds* like: rhythm variation, concrete specifics, self-correction, sensory language, and surprising word choices.
+
+> **Input:** In the rapidly evolving landscape of artificial intelligence, our company stands as a testament to innovation. Additionally, our groundbreaking platform provides a seamless, intuitive, and powerful experience — ensuring that users can accomplish their goals efficiently.
+>
+> **Typical tool:** We built a platform that helps people get things done faster. Users seem to like it -- early feedback suggests it saves real time on daily tasks. Whether that holds up as we scale is an honest question.
+>
+> **Rewild:** We ship a product that saves people time. The platform is fast to learn and gets out of your way -- which, after years of bloated enterprise tools, feels almost radical. Is it going to reshape the entire industry? I have no idea. But two Fortune 500 companies switched to us last quarter, and their ops teams cut reporting time by 30%.
+
+## Skills
+
 | Skill | Patterns | What's unique |
 |-------|----------|---------------|
 | [English](rewild-en/SKILL.md) | 40 | Full pattern set based on Wikipedia + 2025-2026 academic research |

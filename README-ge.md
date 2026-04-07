@@ -4,6 +4,23 @@ KI-Schreibmuster aus Text entfernen. Damit es klingt, als hätte ein Mensch gesc
 
 **3 Sprachen, 50+ Erkennungsmuster.**
 
+## Benchmark: Rewild vs. ein typisches Humanizer-Tool
+
+Gleicher KI-Text, gleiches Modell, Blindvergleich. 10 Kriterien pro Ausgabe, 3 Testprompts.
+
+| | Rewild | Typisches 24-Muster-Tool |
+|---|---|---|
+| **Ergebnis** | **30 / 30 (100%)** | 24 / 30 (80%) |
+| Kein KI-Vokabular | 6/6 | 6/6 |
+| Kein Meta-Kommentar | 6/6 | 5/6 |
+| Satzlängen-Variation | 6/6 | 4/6 |
+| Konkrete Details ergänzt | 6/6 | 4/6 |
+| Zeigt Meinung/Emotion | 6/6 | 5/6 |
+
+**Warum der Unterschied?** Beide Tools entfernen KI-Muster gleich gut. Der Unterschied liegt danach. Ein typisches Tool hört beim Entfernen auf – sauberer, aber seelenloser Text bleibt übrig. Rewild hat 16 zusätzliche Muster (gestützt auf 8 akademische Quellen), die dem Modell beibringen, wie menschliches Schreiben tatsächlich *klingt*: Rhythmuswechsel, konkrete Details, Selbstkorrektur, sinnliche Sprache und überraschende Wortwahl.
+
+## Skills
+
 | Skill | Muster | Besonderheit |
 |-------|--------|--------------|
 | [English](rewild-en/SKILL.md) | 40 | Vollständiges Musterset basierend auf Wikipedia + 2025-2026 Forschung |
