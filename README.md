@@ -1,5 +1,17 @@
 # Rewild
 
+[![GitHub stars](https://img.shields.io/github/stars/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild/watchers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild)
+[![Top language](https://img.shields.io/github/languages/top/wallmage/rewild?style=flat-square)](https://github.com/wallmage/rewild)
+[![Focus](https://img.shields.io/badge/focus-human%20writing-111827?style=flat-square)](https://github.com/wallmage/rewild)
+[![Removes](https://img.shields.io/badge/removes-AI%20writing%20patterns-0f766e?style=flat-square)](https://github.com/wallmage/rewild)
+[![Keeps](https://img.shields.io/badge/keeps-your%20voice-4f46e5?style=flat-square)](https://github.com/wallmage/rewild)
+[![Languages](https://img.shields.io/badge/languages-English%20%7C%20%E4%B8%AD%E6%96%87%20%7C%20Deutsch-b45309?style=flat-square)](https://github.com/wallmage/rewild)
+[![Benchmark](https://img.shields.io/badge/benchmark-30%2F30-2563eb?style=flat-square)](https://github.com/wallmage/rewild)
+
 [English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
 
 Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.
@@ -19,7 +31,7 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 | Adds specific details | 6/6 | 4/6 |
 | Shows opinion/emotion | 6/6 | 5/6 |
 
-**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal — clean text, no soul. Rewild goes further: it cleans AI patterns without inventing new facts or fake specificity.
+**Why the gap?** Both tools strip AI slop equally well. A typical humanizer stops at removal — clean text, no soul. Rewild cleans AI patterns without inventing new facts or faking specificity.
 
 **Chinese benchmark:** The gap is wider here — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has no Chinese-specific patterns, so it misses modal particle absence (语气词), idiom stacking, and translation-ese. Those are the strongest Chinese AI tells.
 
@@ -51,7 +63,7 @@ Each language ships in two layers:
 - `SKILL.md`: operating manual — trigger scope, core rules, soul guidance, genre calibration, worked example, scoring rubric
 - `references/patterns.md`: diagnostic catalog — language-specific AI tells, word lists, before/after examples, academic citations
 
-The skill loads fast. The pattern catalog loads on demand when the model needs diagnostic detail.
+The skill loads fast. The catalog loads on demand.
 
 ## Before / After
 
