@@ -14,9 +14,9 @@
 
 [English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
 
-Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.
+AI text has a voice. You've heard it: the inflated significance, the adjective triplets, the tidy summaries that say nothing. Most "humanizer" tools just scrub that away and leave you with clean, flat text. Rewild strips the AI patterns and puts *your* voice back — opinions, rhythm, rough edges and all. It won't invent facts or bolt on a fake personality.
 
-**3 languages. Lean skills, detail catalogs on demand.**
+**30/30 benchmark. 40 language-specific patterns. Three languages.**
 
 ## Benchmark: Rewild vs. a typical humanizer
 
@@ -31,15 +31,27 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 | Adds specific details | 6/6 | 4/6 |
 | Shows opinion/emotion | 6/6 | 5/6 |
 
-**Why the gap?** Both tools strip AI slop equally well. A typical humanizer stops at removal — clean text, no soul. Rewild cleans AI patterns without inventing new facts or faking specificity.
+The first three rows are basically tied — any decent tool can strip AI slop. The gap is in the last two: adding real detail and showing a point of view. A typical humanizer stops at removal. Clean text, no soul. Rewild scores 30/30 because "not sounding like AI" is the floor, not the goal. It pulls real details out of your source and lets the text actually say something.
 
-**Chinese benchmark:** The gap is wider here — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has no Chinese-specific patterns, so it misses modal particle absence (语气词), idiom stacking, and translation-ese. Those are the strongest Chinese AI tells.
+**Chinese benchmark:** The gap is even wider — **30/30 (100%)** vs. **20/30 (67%)**. Generic tools have zero Chinese-specific patterns. They miss modal particle absence (语气词), idiom stacking (四字套语), and translation-ese (翻译腔) — the three strongest Chinese AI tells.
 
 > **Input:** In the rapidly evolving landscape of artificial intelligence, our company stands as a testament to innovation. Additionally, our groundbreaking platform provides a seamless, intuitive, and powerful experience — ensuring that users can accomplish their goals efficiently.
 >
 > **Typical tool:** We built a platform that helps people get things done faster. Users seem to like it -- early feedback suggests it saves real time on daily tasks. Whether that holds up as we scale is an honest question.
 >
 > **Rewild:** We ship a product that saves people time. That's a fair claim. Calling it groundbreaking and industry-changing is the part that feels inflated.
+
+The typical tool rewrites the hype into different hype. Rewild calls the hype what it is.
+
+## Why Rewild works
+
+Most humanizers run 20-something generic rules: remove "Additionally," vary sentence length, done. That gets you past the obvious stuff. Rewild does more, and the extra work falls into three buckets:
+
+**40 language-specific patterns, not 20 generic ones.** Each language has its own AI tells. English AI overuses "testament," "landscape," and em-dashes. Chinese AI drops modal particles and stacks four-character idioms. German AI avoids Modalpartikeln and breaks apart compound words. Each language gets its own pattern catalog, sourced from academic research and real detection data.
+
+**Two-layer architecture.** A lean `SKILL.md` (the operating manual) loads fast and sets the rules. A deep `references/patterns.md` (the diagnostic catalog) loads on demand when the model needs specifics — word lists, before/after examples, academic citations. You get precision without burning your whole context window on startup.
+
+**Anti-fabrication as a core rule.** Most tools "humanize" by inventing anecdotes, fake metrics, or first-person experiences. Rewild won't. Every detail in the output has to already exist in your source text. Voice comes from rhythm and opinion, not from making things up.
 
 ## Skills
 
@@ -58,12 +70,13 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 
 ## Design
 
-Each language ships in two layers:
+Each language ships as two files. The split is deliberate.
 
-- `SKILL.md`: operating manual — trigger scope, core rules, soul guidance, genre calibration, worked example, scoring rubric
-- `references/patterns.md`: diagnostic catalog — language-specific AI tells, word lists, before/after examples, academic citations
+`SKILL.md` is the operating manual — when to fire, what to preserve, genre calibration, what voice sounds like. Quick-reference checklist, worked example, scoring rubric. Loads into context every time.
 
-The skill loads fast. The catalog loads on demand.
+`references/patterns.md` is the diagnostic catalog. Full inventory of language-specific AI tells: word lists, before/after examples, severity rankings, academic citations. The model pulls in sections on demand instead of loading everything upfront.
+
+Fast startup, deep diagnostics when you need them, no wasted context.
 
 ## Before / After
 
