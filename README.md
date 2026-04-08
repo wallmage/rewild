@@ -4,7 +4,7 @@
 
 Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.
 
-**3 languages. Lean skills. Detail catalogs on demand.**
+**3 languages. Lean skills, detail catalogs on demand.**
 
 ## Benchmark: Rewild vs. a typical humanizer
 
@@ -19,9 +19,9 @@ Same AI text, same model, blind comparison. 10 assertions per output, 3 test pro
 | Adds specific details | 6/6 | 4/6 |
 | Shows opinion/emotion | 6/6 | 5/6 |
 
-**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal and leaves clean but soulless text. Rewild is designed to clean AI patterns without inventing new facts, anecdotes, or fake specificity.
+**Why the gap?** Both tools strip AI slop equally well. The difference is what happens next. A typical humanizer stops at removal — clean text, no soul. Rewild goes further: it cleans AI patterns without inventing new facts or fake specificity.
 
-**Chinese benchmark:** The gap is even wider — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has zero Chinese-specific patterns, so it can't detect missing modal particles (语气词), idiom stacking, or translation-ese — the strongest Chinese AI tells.
+**Chinese benchmark:** The gap is wider here — **30/30 (100%)** vs. **20/30 (67%)**. A generic tool has no Chinese-specific patterns, so it misses modal particle absence (语气词), idiom stacking, and translation-ese. Those are the strongest Chinese AI tells.
 
 > **Input:** In the rapidly evolving landscape of artificial intelligence, our company stands as a testament to innovation. Additionally, our groundbreaking platform provides a seamless, intuitive, and powerful experience — ensuring that users can accomplish their goals efficiently.
 >
@@ -51,7 +51,7 @@ Each language ships in two layers:
 - `SKILL.md`: operating manual — trigger scope, core rules, soul guidance, genre calibration, worked example, scoring rubric
 - `references/patterns.md`: diagnostic catalog — language-specific AI tells, word lists, before/after examples, academic citations
 
-The skill stays fast to load. The pattern catalog loads on demand when the model needs diagnostic detail.
+The skill loads fast. The pattern catalog loads on demand when the model needs diagnostic detail.
 
 ## Before / After
 
@@ -72,10 +72,10 @@ The skill stays fast to load. The pattern catalog loads on demand when the model
 
 ## Shipping Notes
 
-- Tight trigger: only fires for explicit "this sounds like AI" requests
-- Anti-fabrication: no invented metrics, anecdotes, or first-person experiences
+- Tight trigger: only fires when you explicitly say "this sounds like AI"
+- Anti-fabrication: no invented metrics, anecdotes, or experiences
 - Genre-aware: formal writing stays formal
-- Source-grounded soul: adds voice by pulling forward real details, not by inventing new ones
+- Source-grounded: adds voice by pulling forward real details, not inventing new ones
 
 ---
 

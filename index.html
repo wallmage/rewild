@@ -485,7 +485,7 @@
     <div class="container">
         <section class="hero">
             <h1><span>Rewild</span></h1>
-            <p>Remove AI writing patterns from text. Make it sound like a human wrote it — because you did.</p>
+            <p>Remove AI writing patterns from text. Make it sound like you wrote it.</p>
             <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-number">50+</div>
@@ -507,7 +507,7 @@
             <div class="skill-grid">
                 <a href="https://github.com/wallmage/rewild/blob/main/rewild-en/SKILL.md" class="skill-card">
                     <h3>Rewild <span class="lang-tag">EN</span></h3>
-                    <p>Remove AI writing patterns from English text. 40 patterns across content, language, structure, format, and cognition.</p>
+                    <p>Remove AI writing patterns from English text. 40 patterns covering what you say, how you structure it, and how it sounds.</p>
                     <div class="skill-meta">
                         <span>40 patterns</span>
                         <span>Based on 2025-2026 research</span>
@@ -515,7 +515,7 @@
                 </a>
                 <a href="https://github.com/wallmage/rewild/blob/main/rewild-zh/SKILL.md" class="skill-card">
                     <h3>Rewild <span class="lang-tag">ZH</span></h3>
-                    <p>Chinese-specific patterns plus all universal ones. Detects missing modal particles, idiom stacking, translation-ese, and more.</p>
+                    <p>Chinese-specific patterns plus all universal ones. Catches missing 语气词, idiom stacking, and 翻译腔.</p>
                     <div class="skill-meta">
                         <span>46 patterns</span>
                         <span>10 Chinese-specific</span>
@@ -523,7 +523,7 @@
                 </a>
                 <a href="https://github.com/wallmage/rewild/blob/main/rewild-de/SKILL.md" class="skill-card">
                     <h3>Rewild <span class="lang-tag">DE</span></h3>
-                    <p>German-specific patterns: Modalpartikeln, Komposita, Halbgeviertstrich, Nebensatz word order, Konjunktiv overuse, and more.</p>
+                    <p>German-specific patterns: missing Modalpartikeln, Nebensatz word order, Konjunktiv overuse, and Komposita that no German would actually write.</p>
                     <div class="skill-meta">
                         <span>37 patterns</span>
                         <span>13 German-specific</span>
@@ -531,7 +531,7 @@
                 </a>
                 <a href="https://github.com/wallmage/lossless-prompt-compressor" class="skill-card">
                     <h3>Lossless Prompt Compressor</h3>
-                    <p>4-pass compression for system prompts. 50-65% token reduction. Works with any LLM. <em>Separate project.</em></p>
+                    <p>Compress system prompts by 50-65% in 4 passes without losing meaning. Works with any LLM. <em>Separate project.</em></p>
                     <div class="skill-meta">
                         <span>4 passes</span>
                         <span>50-65% reduction</span>
@@ -580,7 +580,7 @@
             <h2>Benchmark: Rewild vs. a typical AI-humanizer skill</h2>
 
             <p class="benchmark-intro">
-                We ran a <strong>blind head-to-head test</strong>: the same 3 AI-generated texts (business, technical, emotional) processed by Rewild and by a popular 24-pattern humanizer skill. Each output was graded against <strong>10 objective assertions</strong> — 5 for pattern removal, 5 for what gets added back.
+                <strong>Blind head-to-head test.</strong> 3 AI-generated texts (business, technical, emotional), processed by Rewild and a popular 24-pattern humanizer. Each output graded against <strong>10 assertions</strong>: 5 for pattern removal, 5 for what gets added back.
             </p>
 
             <div class="score-bar">
@@ -643,7 +643,7 @@
             <div class="takeaway">
                 <h3>Why the gap?</h3>
                 <p>
-                    Both tools strip AI slop equally well — the 24 surface-level patterns (inflated significance, AI vocabulary, filler phrases) are a solved problem. The difference is what happens next. A typical humanizer stops at removal and leaves behind clean but soulless text. Rewild's 16 additional patterns — backed by 8 academic sources from 2023-2026 — teach the model what human writing actually <em>sounds</em> like: sentence rhythm variation, concrete specifics over abstractions, self-correction, sensory language, surprising word choices, and domain-appropriate voice.
+                    Both tools strip AI slop equally well. The 24 surface-level patterns (inflated significance, AI vocabulary, filler phrases) are a solved problem. The difference is what happens next. A typical humanizer stops at removal and leaves behind clean but flat text. Rewild's 16 additional patterns add back what makes writing sound human: varied sentence rhythm, concrete specifics, self-correction, and voice that fits the domain.
                 </p>
             </div>
         </section>
@@ -652,7 +652,7 @@
             <h2>Benchmark: Rewild 中文 vs. a typical AI-humanizer skill</h2>
 
             <p class="benchmark-intro">
-                Same method, now in Chinese: <strong>3 AI-generated texts</strong> (business, technical, emotional) loaded with Chinese-specific AI tells — formulaic openings (随着…的不断发展), four-character idiom stacking (砥砺前行/赋能增效), rigid 首先…其次…最后 skeletons, fake statistics, and zero modal particles. Each output graded against <strong>10 Chinese-specific assertions</strong>.
+                Same method, now in Chinese. <strong>3 AI-generated texts</strong> (business, technical, emotional) loaded with Chinese AI tells: formulaic 随着… openings, four-character idiom stacking, rigid 首先…其次…最后 skeletons, and zero modal particles. Each output graded against <strong>10 Chinese-specific assertions</strong>.
             </p>
 
             <div class="score-bar">
@@ -710,7 +710,7 @@
             <div class="takeaway">
                 <h3>Why the wider gap?</h3>
                 <p>
-                    The typical tool is a translated English humanizer with <strong>zero Chinese-specific patterns</strong>. It doesn't know that missing modal particles (嘛/吧/啊) are the #1 Chinese AI fingerprint, that four-character idiom stacking screams AI, or that Chinese is a paratactic language that doesn't need explicit connectors. Rewild-ZH has 22 additional patterns (10 Chinese-specific) built from Chinese-language research — 虎嗅 rhetorical analysis, AIGCleaner detection weights, and PaperBert AI vocabulary studies.
+                    The typical tool is a translated English humanizer with <strong>zero Chinese-specific patterns</strong>. It doesn't know that missing modal particles (嘛/吧/啊) are the #1 Chinese AI fingerprint, that four-character idiom stacking screams AI, or that Chinese doesn't need explicit connectors the way English does. Rewild-ZH has 10 Chinese-specific patterns built from Chinese-language research on how native writers actually sound.
                 </p>
             </div>
         </section>
@@ -739,7 +739,7 @@
 
     <footer>
         <div class="container">
-            <p>Built by <a href="https://github.com/wallmage">Wallny</a>. Based on <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia's Signs of AI Writing</a> + 2025-2026 academic research.</p>
+            <p>Built by <a href="https://github.com/wallmage">Wallny</a>. Based on <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Wikipedia's Signs of AI Writing</a> and recent AI-detection research.</p>
         </div>
     </footer>
 </body>
