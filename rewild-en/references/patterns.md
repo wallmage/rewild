@@ -4,6 +4,8 @@ Read this after `SKILL.md`. Use it as a diagnostic menu, not a checklist you mus
 
 Note: before/after pairs below are teaching examples that illustrate each pattern. The "after" versions show what good human writing looks like for that pattern, not a literal rewild of the "before" text. When rewilding real text, only use details already present in the source.
 
+One more caution: each "after" demonstrates one pattern in isolation. Stacking every move into a single rewrite produces its own formula — see pattern 42.
+
 ## Highest-Priority Patterns
 
 1. Inflated significance.
@@ -37,20 +39,31 @@ Before:
 After:
 > The Haolai River supports several endemic fish species, according to a 2019 survey by the Chinese Academy of Sciences.
 
-Fix: name the source or cut the attribution.
+Fix: name the source or cut the attribution. If cutting leaves a hole, replace the puffery with an honest, modest first-party claim the source supports ("We won't claim it's perfect, but it's noticeably smoother than the last version") rather than deleting and leaving nothing.
 
-4. Empty future/legacy framing.
-Words to watch: sets the stage, marks a shift, future looks bright, exciting times lie ahead, journey toward excellence
+4. Empty future framing and formulaic closers.
+Words to watch: sets the stage, marks a shift, future looks bright, exciting times lie ahead, journey toward excellence, In conclusion, In summary, To sum up, Ultimately, Looking ahead, only time will tell, it remains to be seen, the biggest lesson I learned, this experience taught me
 
 Before:
-> The future looks bright for the company. Exciting times lie ahead as they continue their journey toward excellence.
+> In conclusion, the future looks bright for the company. Exciting times lie ahead as they continue their journey toward excellence.
 
 After:
 > The company plans to open two more locations next year.
 
-Fix: keep the present-tense point; remove the prophecy.
+Fix: keep the present-tense point; remove the prophecy. End on the strongest concrete fact, not on a summary of what the reader just read.
 
-5. Outline skeletons.
+5. Formulaic openers.
+Words to watch: In today's fast-paced world, In today's digital age, In the ever-evolving landscape of, In an era where, In recent years (as a reflex), Since the dawn of, Throughout history, Have you ever wondered, Imagine a world where, Picture this:
+
+Before:
+> In today's rapidly evolving digital landscape, effective communication has never been more important for businesses of all sizes.
+
+After:
+> Our client updates were scattered across three inboxes, and deadlines kept slipping.
+
+Fix: delete the opener and start with the first sentence that could only belong to this text. If the opening line would fit any article on the topic, it isn't yours.
+
+6. Outline skeletons.
 Words to watch: Despite its... faces several challenges..., Despite these challenges, Challenges and Legacy, Future Outlook
 
 Before:
@@ -63,7 +76,7 @@ Fix: replace stock framing with the actual issue.
 
 ## Content Patterns
 
-6. Media-notability padding: lists of outlets, followers, or "widely covered" language.
+7. Media-notability padding: lists of outlets, followers, or "widely covered" language.
 
 Before:
 > Her views have been cited in The New York Times, BBC, Financial Times, and The Hindu. She maintains an active social media presence with over 500,000 followers.
@@ -73,7 +86,7 @@ After:
 
 Fix: keep the one citation that matters.
 
-7. Superficial -ing analyses.
+8. Superficial -ing analyses.
 Words to watch: highlighting/underscoring/emphasizing..., ensuring..., reflecting/symbolizing..., contributing to..., showcasing...
 
 Before:
@@ -84,7 +97,7 @@ After:
 
 Fix: replace the -ing chain with a concrete fact and (if available) a named source.
 
-8. False breadth: "everything from X to Y".
+9. False breadth: "everything from X to Y".
 Before:
 > The festival features everything from traditional dances to modern art installations.
 
@@ -93,7 +106,7 @@ After:
 
 Fix: name the actual items.
 
-9. Abstract over concrete.
+10. Abstract over concrete.
 Before:
 > The company's innovative approach to customer engagement through digital transformation has led to significant improvements in satisfaction metrics.
 
@@ -102,7 +115,7 @@ After:
 
 Fix: prefer the event, action, or object over the theme.
 
-10. Missing proper nouns.
+11. Missing proper nouns.
 Before:
 > A leading technology company recently announced a new product at a major industry conference.
 
@@ -113,8 +126,8 @@ Fix: pull forward real names already in the source.
 
 ## Language Patterns
 
-11. AI vocabulary.
-Words to watch: Additionally, align with, crucial, delve, emphasizing, enduring, enhance, fostering, garner, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract noun), pivotal, showcase, tapestry (abstract noun), testament, underscore (verb), valuable, vibrant
+12. AI vocabulary.
+Words to watch: Additionally, align with, comprehensive, crucial, cutting-edge, delve, elevate, embark, emphasizing, enduring, enhance, fostering, game-changing, garner, highlight (verb), holistic, interplay, intricate/intricacies, it's important to note, it's worth noting, journey (figurative), key (adjective), landscape (abstract noun), leverage (verb), myriad, navigate (figurative), pivotal, realm, robust, showcase, streamline, tapestry (abstract noun), testament, underscore (verb), unlock (figurative), valuable, vibrant
 
 Before:
 > Additionally, a distinctive feature of Somali cuisine is the incorporation of camel meat. An enduring testament to Italian colonial influence is the widespread adoption of pasta in the local culinary landscape.
@@ -124,7 +137,7 @@ After:
 
 Fix: cut or replace with ordinary connective tissue.
 
-12. Copula avoidance: "serves as", "stands as", "represents" where "is" would do.
+13. Copula avoidance: "serves as", "stands as", "represents" where "is" would do.
 Before:
 > Gallery 825 serves as LAAA's exhibition space for contemporary art. The gallery features four separate spaces and boasts over 3,000 square feet.
 
@@ -133,10 +146,10 @@ After:
 
 Fix: use the direct verb.
 
-13. Negative parallelism: "it's not just X, it's Y" / "Not only... but also..."
+14. Negative parallelism: "it's not just X, it's Y" / "Not only... but also..."
 Fix: state Y directly.
 
-14. Adjective triplets.
+15. Adjective triplets.
 Before:
 > The platform offers a seamless, intuitive, and powerful experience.
 
@@ -145,10 +158,10 @@ After:
 
 Fix: keep one strong adjective or name the feature.
 
-15. Synonym cycling: building / structure / edifice.
+16. Synonym cycling: building / structure / edifice.
 Fix: repeat the normal noun when repetition is clearer.
 
-16. Nominalization: "the implementation of improvements".
+17. Nominalization: "the implementation of improvements".
 Words to watch: implementation, utilization, establishment, examination, facilitation, optimization, collaboration, transformation
 
 Before:
@@ -159,17 +172,25 @@ After:
 
 Fix: turn nouns back into verbs.
 
-17. Hedge stacking: "in some ways", "to a certain extent", "arguably", "potentially".
+18. Hedge stacking: "in some ways", "to a certain extent", "arguably", "potentially".
 Fix: keep only the uncertainty the source truly needs.
 
-18. Function-word imbalance.
+19. Function-word imbalance.
 Problem: AI underuses "but," "although," "because," "I," "would," "might" — and overuses "can," "and," "by," "with," "for." The result: text with less argumentative texture, less personal voice, and less uncertainty.
 Fix: simplify syntax instead of sanding every edge.
 
-19. Missing idiom or colloquial variation in informal prose.
-Fix: add only if the original register supports it.
+20. Missing idiom, contractions, or colloquial variation in informal prose.
+Problem: AI defaults to full forms — "do not," "it is," "cannot" — even in casual registers where every native writer contracts. A blog post with zero contractions reads as either machine or lawyer.
 
-20. Sensing verb deficit.
+Before:
+> We do not think this is the right approach. It is going to cause problems that we cannot easily fix.
+
+After:
+> We don't think this is the right approach. It's going to cause problems we can't easily fix.
+
+Fix: contract where you would contract when speaking to the intended reader. Keep full forms for genuine emphasis ("do not deploy this") and in formal genres. Add idiom only if the original register supports it.
+
+21. Sensing verb deficit.
 Problem: AI rarely uses verbs of perception — read, look, hear, feel, smell, taste. Human writing naturally references sensory experience.
 
 Before:
@@ -182,7 +203,7 @@ Fix: use a real concrete detail from the source, not an invented one.
 
 ## Structural Patterns
 
-21. Sentence-length uniformity.
+22. Sentence-length uniformity.
 Problem: AI sentences cluster around medium length with very low variance. Human text mixes very short sentences (3-5 words) with genuinely long ones. Measurably the most consistent statistical AI tell.
 
 Before:
@@ -193,7 +214,7 @@ After:
 
 Fix: measure your sentence lengths. If they're all 12-20 words, something's wrong. Mix in sentences under 5 words and over 30.
 
-22. Rigid Subject-Verb-Object word order.
+23. Rigid Subject-Verb-Object word order.
 Before:
 > The team completed the project ahead of schedule. The client approved the results immediately. The developers celebrated the milestone.
 
@@ -202,35 +223,36 @@ After:
 
 Fix: vary openings where clarity allows.
 
-23. Coordination chains: "and... and... and..."
+24. Coordination chains: "and... and... and..."
 Fix: cut one clause, subordinate one, or split the sentence.
 
-24. Cross-paragraph sameness.
-Problem: AI maintains the same tone from introduction through conclusion. Humans naturally vary — more engaging openings, denser middles, looser or more reflective conclusions.
-Fix: give different paragraphs different jobs.
+25. Cross-paragraph sameness.
+Problem: AI maintains the same tone from introduction through conclusion, and its paragraphs cluster at three to five sentences each. Human paragraphs range from one line to ten, and humans naturally vary — more engaging openings, denser middles, looser or more reflective conclusions.
+Fix: give different paragraphs different jobs, and different sizes.
 
-25. Paragraphs that end with a neat summary line every time.
+26. Paragraphs that end with a neat summary line every time.
 Fix: let some paragraphs end on an image, fact, or unresolved edge.
 
 ## Format Patterns
 
-26. Em-dash overuse.
-Fix: keep only the dashes that do real work.
+27. Em-dash overuse and colon reveals.
+Problem: dashes as a default rhythm crutch, and the colon-reveal construction — a noun phrase, a colon, then a dramatic payoff ("The best part: it learns." / "The detail that makes it work: a separate agent grades it.").
+Fix: keep only the dashes that do real work; don't nuke every dash — deleting all of them is overcorrection, and human writers use them too. Rewrite colon reveals as plain sentences; colons are for lists, labels, and quotes, not staged drama.
 
-27. Boldface overload.
+28. Boldface overload.
 Fix: emphasize less; trust sentence structure.
 
-28. Inline header lists and bullet-list overuse.
+29. Inline header lists and bullet-list overuse.
 Problem: AI converts prose into bulleted lists or "Label: content" format even when the original was paragraph-form. This is one of the most recognizable AI formatting tells.
 Fix: rewrite into sentences unless the format truly needs bullets.
 
-29. Title Case headings in prose-heavy contexts.
+30. Title Case headings in prose-heavy contexts.
 Fix: follow the surrounding style rather than defaulting to AI-ish formatting.
 
-30. Emoji decorations in otherwise serious prose.
+31. Emoji decorations in otherwise serious prose.
 Fix: remove unless the medium expects them.
 
-31. Punctuation poverty.
+32. Punctuation poverty.
 Problem: AI uses a narrow range of punctuation — mostly commas and periods. It underuses question marks, semicolons, colons, and parentheses (for asides).
 
 Before:
@@ -241,21 +263,21 @@ After:
 
 Fix: use the punctuation the genre naturally wants, but do not ornament.
 
-32. Curly quotation marks.
-Problem: ChatGPT uses curly quotes instead of straight quotes.
-Fix: replace curly quotes with straight quotes globally.
+33. Quotation-mark inconsistency.
+Problem: AI output mixes curly (“ ”) and straight (") quotes, or uses curly quotes in plain-text contexts — code comments, markdown, config files — where straight quotes are the norm.
+Fix: match the destination's convention and keep it consistent throughout. Curly quotes are correct typography in published prose; don't "fix" them there. Do fix mid-document switching.
 
 ## Assistant-Artifact Patterns
 
-33. Collaborative helper register: "let me break this down", "here's how I would approach it".
+34. Collaborative helper register: "let me break this down", "here's how I would approach it".
 Words to watch: I hope this helps, Of course!, Certainly!, You're absolutely right!, Would you like..., let me know, here is a...
 Fix: remove unless the user explicitly wants that format.
 
-34. Knowledge-cutoff disclaimers or model framing.
+35. Knowledge-cutoff disclaimers or model framing.
 Words to watch: as of [date], Up to my last training update, While specific details are limited...
 Fix: cut unless directly relevant.
 
-35. Sycophantic reassurance.
+36. Sycophantic reassurance.
 Before:
 > Great question! You're absolutely right that this is a complex topic. That's an excellent point.
 
@@ -264,14 +286,14 @@ After:
 
 Fix: replace with direct, useful language.
 
-36. "Let me break this down" family.
-Words to watch: Let me break this down, Here's the thing, Let me walk you through, So here's what happened, What struck me most was, I find it fascinating that, The short answer is, The real question is
+37. "Let me break this down" family.
+Words to watch: Let me break this down, Here's the thing, Let me walk you through, So here's what happened, What struck me most was, I find it fascinating that, The short answer is, The real question is, What most people get wrong, Here's what nobody tells you, The part everyone misses, What if I told you
 
 Fix: start closer to the point. No human writer narrates their writing process inside the writing itself.
 
 ## Cognitive Patterns
 
-37. No self-repair anywhere in informal, reflective prose.
+38. No self-repair anywhere in informal, reflective prose.
 Problem: Human writing contains traces of the thinking process — self-corrections, false starts, backtracking. AI text emerges "pre-polished."
 
 Before:
@@ -280,9 +302,9 @@ Before:
 After:
 > The framework handles data management well — actually, "well" undersells it. The scalability is the real story here, though reliability still has some rough edges I'd want to test more before committing.
 
-Fix: allow a small correction or hesitation only if the original voice allows it.
+Fix: allow a small correction or hesitation only if the original voice allows it. At most one per text — staged self-repair in every paragraph is its own tell (see pattern 42).
 
-38. Flat emotional arc.
+39. Flat emotional arc.
 Problem: AI text skews toward neutral sentiment even on emotional topics. It dampens the range — avoids strong negative emotions and genuine enthusiasm.
 
 Before:
@@ -293,7 +315,7 @@ After:
 
 Fix: let the text feel something, but stay source-grounded.
 
-39. Predictable word choice.
+40. Predictable word choice.
 Problem: AI picks the statistically most likely next word. Every time. Human text surprises — unusual metaphors, unexpected associations.
 
 Before:
@@ -304,8 +326,26 @@ After:
 
 Fix: choose the accurate word, not the default "writerly" one.
 
-40. Every sentence equally polished.
+41. Every sentence equally polished.
 Fix: permit some asymmetry; human prose is rarely uniformly buffed.
+
+42. Overcorrected humanizer voice.
+Problem: fixing AI tells with the same few moves every time creates a new, equally recognizable formula — staccato fragments ("Not a revolution. Just an update."), staged self-corrections ("Actually, wait — that's not quite right"), a rhetorical question per section, "Let's be honest" bluntness. Readers and detectors now recognize "humanized AI" as its own genre.
+
+Signs: a fragment in every paragraph; more than one self-correction per text; every rewrite you produce converging on the same punchy rhythm regardless of source.
+
+Fix: most texts need two or three interventions, not twelve. Vary which moves you use from text to text. Reread the result: if it has a uniform "punchy" voice the source never had, pull back toward the source's own register.
+
+## Calibration: How Much Is Enough
+
+Over-rewriting is the most common failure mode. Most real texts need a handful of edits, not a makeover.
+
+Example — this input is already mostly fine:
+> The migration took three weekends instead of one. Most of the delay came from the auth service, which nobody had touched since 2019. We eventually found the problem in a config file that overrode the staging environment.
+
+A full punch-up would be wrong here. The defensible edits are small: maybe cut "eventually," maybe join two sentences. If you cannot name the specific pattern a sentence violates, leave the sentence alone.
+
+Rule of thumb: for a text that already reads naturally, touch fewer than 20% of the sentences.
 
 ## Domain Reminders
 

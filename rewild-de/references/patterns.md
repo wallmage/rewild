@@ -4,6 +4,8 @@ Erst `SKILL.md` lesen. Diese Datei ist die Nachschlagehilfe für Diagnosen und U
 
 Hinweis: Die Vorher/Nachher-Paare unten sind Lehrbeispiele, die jedes Muster illustrieren. Das "Nachher" zeigt gutes menschliches Deutsch für dieses Muster, nicht eine wortwörtliche Umschreibung des "Vorher"-Textes. Beim echten Umschreiben nur Details verwenden, die bereits im Ausgangstext stehen.
 
+Außerdem: Jedes "Nachher" zeigt ein Muster isoliert. Nicht alle Mittel in eine einzige Umschreibung stapeln – das erzeugt eine eigene Schablone (siehe Muster 42).
+
 ## Höchste Priorität: deutschspezifische Muster
 
 D1. Fehlende Modalpartikeln (stärkstes deutsches KI-Merkmal).
@@ -13,9 +15,9 @@ Vorher:
 > Das ist richtig. Dieser Ansatz funktioniert. Wir sollten weitermachen.
 
 Nachher:
-> Das stimmt ja eigentlich. Der Ansatz funktioniert halt. Wir sollten mal weitermachen, oder?
+> Stimmt schon – der Ansatz funktioniert ja. Dann sollten wir da auch dranbleiben.
 
-Fix: in informellem Text natürlich einsetzen. Nicht in jeden Satz, aber da wo der Tonfall es braucht. In formellen Texten nicht erzwingen.
+Fix: in informellem Text natürlich einsetzen. Nicht in jeden Satz, aber da wo der Tonfall es braucht. Zwei, drei Partikeln pro Absatz reichen – ein Text, in dem jeder Satz halt, doch oder eben enthält, ist genauso auffällig wie einer ganz ohne. In formellen Texten nicht erzwingen.
 
 D2. Geviertstrich statt Halbgeviertstrich.
 Problem: Englisch nutzt den Geviertstrich (—), Deutsch den Halbgeviertstrich (–) mit Leerzeichen beidseitig. KI setzt Geviertstriche in deutschen Text.
@@ -29,26 +31,26 @@ Nachher:
 Fix: jeden — durch – mit Leerzeichen ersetzen.
 
 D3. Falsche Anführungszeichen.
-Problem: Deutsche Anführungszeichen öffnen unten (,,) und schließen oben (""). KI setzt englische ("...").
+Problem: Deutsche Anführungszeichen öffnen unten („) und schließen oben (“). Verlage nutzen auch »…«, die Schweiz «…». KI setzt englische ("…" oder “…”) oder wechselt mitten im Text die Konvention.
 
 Vorher:
 > Er sagte: "Das stimmt."
 
 Nachher:
-> Er sagte: ,,Das stimmt."
+> Er sagte: „Das stimmt.“
 
-Fix: alle englischen durch deutsche ersetzen.
+Fix: englische Anführungszeichen durch „…“ ersetzen (bzw. »…« oder «…», wenn der Text diese Konvention nutzt). Eine Konvention wählen und durchhalten.
 
-D4. Nebensatz-Wortstellung (Verb am Ende).
-Problem: Im deutschen Nebensatz steht das konjugierte Verb am Ende. KI stellt es manchmal zu früh. Breiter: KI vermeidet komplexe Nebensätze ganz.
+D4. Hauptsatz-Ketten statt Nebensätzen.
+Problem: Natürliches Deutsch lebt von Hypotaxe – Nebensätze mit Verb am Ende, Einschübe, Relativsätze. KI-Deutsch reiht stattdessen kurze Hauptsätze aneinander, weil es syntaktisch einfache Strukturen bevorzugt (De Gruyter 2025). Gelegentlich steht in Nebensätzen das Verb zu früh.
 
 Vorher:
-> Ich bin müde, weil ich habe schlecht geschlafen.
+> Wir haben das Projekt verschoben. Der Kunde hatte neue Anforderungen. Das Budget war noch nicht freigegeben.
 
 Nachher:
-> Ich bin müde, weil ich schlecht geschlafen habe.
+> Wir haben das Projekt verschoben, weil der Kunde neue Anforderungen hatte und das Budget noch nicht freigegeben war.
 
-Fix: Nebensatz-Wortstellung prüfen. Auch bewusst komplexere Strukturen einbauen.
+Fix: Hauptsatz-Ketten gelegentlich unterordnen. Nebensatz-Wortstellung prüfen (konjugiertes Verb ans Ende).
 
 D5. Zerlegte Komposita.
 Problem: Deutsch ist berühmt für beliebig lange Zusammensetzungen. KI zerlegt sie mit unnötigem Bindestrich oder umschreibt sie analytisch.
@@ -72,8 +74,9 @@ Nachher:
 
 Fix: mindestens die Hälfte streichen.
 
-D7. Formelhafte Eröffnungen.
-Todesphrasen: In der heutigen Zeit ist es wichtiger denn je..., In einer Welt, in der..., Im digitalen Zeitalter..., Immer mehr Menschen fragen sich..., Seit jeher...
+D7. Formelhafte Eröffnungen und Schlüsse.
+Todesphrasen (Anfang): In der heutigen Zeit ist es wichtiger denn je..., In einer Welt, in der..., Im digitalen Zeitalter..., Immer mehr Menschen fragen sich..., Seit jeher...
+Todesphrasen (Schluss): Zusammenfassend lässt sich sagen, Abschließend bleibt festzuhalten, Insgesamt zeigt sich, Fazit: ..., Es bleibt spannend, Die Zukunft wird zeigen, ob...
 
 Vorher:
 > In der heutigen Zeit ist es wichtiger denn je, sich mit künstlicher Intelligenz auseinanderzusetzen.
@@ -81,18 +84,18 @@ Vorher:
 Nachher:
 > Letzten Monat hat mein Chef ChatGPT unsere Quartalszahlen zusammenfassen lassen. Das Ergebnis las sich wie eine Laudatio auf eine Firma, die es gar nicht gibt.
 
-Fix: mit einer Anekdote, Szene, Frage oder konkretem Beispiel anfangen. Nie mit "In der heutigen Zeit."
+Fix: mit einer Anekdote, Szene, Frage oder konkretem Beispiel anfangen. Nie mit "In der heutigen Zeit." Am Schluss auf der stärksten konkreten Aussage enden, nicht auf einer Bilanzfloskel.
 
-D8. Kasus-Hyperkorrektheit.
-Problem: KI übertreibt den Genitiv in Kontexten, wo natürliches Deutsch Dativ nutzen würde.
+D8. Kasusfehler und Register-Genitiv.
+Problem: KI dekliniert schwache Maskulina falsch (des Kunde statt des Kunden). Und in betont mündlichen Texten wirkt ihr strikter Genitiv nach wegen/trotz steifer, als ein Mensch dort schreiben würde.
 
 Vorher:
-> Wegen des schlechten Wetters und des Kunde's Beschwerde wurde die Lieferung verschoben.
+> Die Beschwerde des Kunde wurde an das zuständige Team weitergeleitet.
 
 Nachher:
-> Wegen dem schlechten Wetter und der Beschwerde des Kunden wurde die Lieferung verschoben.
+> Die Beschwerde des Kunden wurde an das zuständige Team weitergeleitet.
 
-Fix: Genitiv bei Präpositionen in informellem Text durch Dativ ersetzen (wegen dem, trotz dem). Schwache Maskulina korrekt deklinieren.
+Fix: schwache Maskulina korrekt deklinieren (des Kunden, dem Experten, den Kollegen). Im geschriebenen Standard bleibt der Genitiv nach wegen/trotz korrekt – Dativ ("wegen dem Wetter") nur, wenn der Text bewusst gesprochene Sprache abbildet.
 
 D9. Passiv-Ketten und Nominalstil.
 Problem: KI übernutzt Passiv-Konstruktionen und Nominalisierungen. Drei Passiv-Sätze hintereinander sind ein starkes KI-Signal.
@@ -111,16 +114,16 @@ Nachher:
 
 Fix: Passiv durch Aktiv ersetzen. Nominalisierungen zurück in Verben.
 
-D10. Konjunktiv-Übernutzung (würde-Form).
-Problem: KI übernutzt "könnte", "würde", "sollte" als Absicherung. Gleichzeitig nutzt sie den synthetischen Konjunktiv II (käme, gäbe, wäre) zu wenig.
+D10. Hedging-Konjunktiv statt klarer Aussagen.
+Problem: KI stapelt "könnte", "würde", "möglicherweise", "potenziell" als Absicherung – oft mehrfach im selben Satz. Den synthetischen Konjunktiv II (wäre, käme, ließe sich), der natürliches Schriftdeutsch prägt, nutzt sie dagegen zu selten.
 
 Vorher:
-> Man könnte argumentieren, dass diese Lösung würde helfen könnte.
+> Diese Maßnahme könnte möglicherweise dazu beitragen, die Effizienz potenziell zu steigern.
 
 Nachher:
-> Diese Lösung hilft. Punkt. Ob sie auch langfristig trägt, ist eine andere Frage.
+> Diese Maßnahme dürfte die Effizienz steigern. Sicher wissen wir es nach dem ersten Quartal.
 
-Fix: "könnte/würde/sollte" durch klare Aussagen ersetzen.
+Fix: pro Aussage höchstens eine Absicherung. Wo Konjunktiv gebraucht wird, auch mal die synthetische Form (ließe sich, wäre) statt der würde-Umschreibung.
 
 D11. Wörtliche Übersetzungen aus dem Englischen.
 Vorher:
@@ -134,14 +137,14 @@ Nachher:
 Fix: wörtliche Übersetzungen durch natürliche deutsche Wendungen ersetzen.
 
 D12. Fehlende regionale Färbung.
-Problem: KI schreibt ausschließlich Hochdeutsch ohne jede regionale Färbung. Kein Österreichisch, kein Schweizerdeutsch, keine bayerischen oder norddeutschen Ausdrücke.
-Fix: wenn der Kontext es erlaubt, regionale Ausdrücke einstreuen. Nicht übertreiben — ein einzelnes "gell?" oder "na ja" reicht schon.
+Problem: KI schreibt ausschließlich neutrales Hochdeutsch ohne jede regionale Färbung. Kein Österreichisch, kein Schweizerhochdeutsch, keine bayerischen oder norddeutschen Ausdrücke.
+Fix: nur einstreuen, wenn die Vorlage schon regionale Färbung oder eine klar mündliche Stimme hat – dann reicht ein einzelnes "na ja" oder "gell?". Einem neutralen Text keine Region verpassen; das erfindet eine Person, die es nicht gibt.
 
 D13. Orthographische Inkonsistenz.
 Problem: KI hält innerhalb eines Textes keine einheitliche Schreibweise ein. "Onlineshops" und "Online-Shop" in aufeinanderfolgenden Sätzen.
 Fix: eine Schreibweise wählen und durchhalten.
 
-## Allgemeine Inhaltsmuster (14-41 gelten sprachübergreifend)
+## Allgemeine Inhaltsmuster (14-42 gelten sprachübergreifend)
 
 14. Überhöhte Bedeutungssprache.
 Wörter: dient als, ist ein Beweis/Zeugnis für, eine entscheidende/zentrale Rolle, unterstreicht die Bedeutung, spiegelt breitere Trends wider
@@ -166,7 +169,7 @@ Nachher:
 Fix: überprüfbare Aussage statt Superlativ.
 
 16. Vage Zuschreibungen.
-Fix: Quelle benennen oder streichen.
+Fix: Quelle benennen oder streichen. Hinterlässt das Streichen ein Loch, die Anpreisung durch eine ehrliche, zurückhaltende Selbstaussage ersetzen ("Perfekt ist es nicht, aber spürbar flüssiger als die letzte Version"), statt nichts dastehen zu lassen.
 
 17. Notabilitäts-Politur.
 Fix: Follower-Zahlen und Medienlisten nur behalten, wenn sie wirklich relevant sind.
@@ -180,7 +183,7 @@ Fix: echte Probleme benennen.
 ## Sprachmuster
 
 20. KI-Vokabular.
-Hochfrequente KI-Wörter: innovativ, umfassend, ganzheitlich, präzise, bahnbrechend, effizient, nahtlos, eintauchen, auf ein neues Level heben, ermöglichen, nicht nur... sondern auch..., eine Vielzahl an, eine breite Palette an, darüber hinaus, zentral, facettenreich, Landschaft, unterstreichen
+Hochfrequente KI-Wörter: innovativ, umfassend, ganzheitlich, präzise, bahnbrechend, effizient, nahtlos, eintauchen, auf ein neues Level heben, ermöglichen, nicht nur... sondern auch..., eine Vielzahl an, eine breite Palette an, darüber hinaus, zentral, facettenreich, Landschaft, unterstreichen, spannend, essenziell, maßgeblich, entscheidend, vielfältig, Meilenstein, eine Schlüsselrolle spielen
 
 Vorher:
 > Darüber hinaus bietet die innovative Plattform eine nahtlose, intuitive und umfassende Nutzererfahrung.
@@ -232,14 +235,16 @@ Nachher:
 
 Fix: Rhythmus öffnen.
 
-28. Immer gleicher Satzanfang.
+28. Immer gleicher Satzanfang (eintöniges Vorfeld).
+Problem: Deutsch ist eine V2-Sprache – vor dem finiten Verb kann fast jedes Satzglied stehen: Zeitangabe, Objekt, Adverbial. Menschen nutzen das ständig ("Den Bericht habe ich gestern gelesen"). KI besetzt das Vorfeld fast immer mit dem Subjekt.
+
 Vorher:
 > Das Team hat das Projekt rechtzeitig abgeschlossen. Der Kunde hat die Ergebnisse sofort genehmigt.
 
 Nachher:
 > Rechtzeitig fertig geworden, irgendwie. Der Kunde hat's sofort abgenickt – ohne eine einzige Änderung. Feier? Kurz. Dann weiter.
 
-Fix: Einstiege variieren, solange die Klarheit bleibt.
+Fix: Einstiege variieren, solange die Klarheit bleibt. Auch mal Objekt oder Zeitangabe nach vorn stellen.
 
 29. Zu viele und-Ketten.
 Fix: kürzen, teilen oder unterordnen.
@@ -263,8 +268,9 @@ Fix: Kommas vor Nebensätzen und Infinitivgruppen prüfen.
 
 ## Format- und Assistenzmuster
 
-33. Fettdruck-Übernutzung.
-Fix: weniger hervorheben.
+33. Fettdruck-Übernutzung und Doppelpunkt-Drama.
+Problem: gestreuter Fettdruck als Betonungskrücke, und die Enthüllungs-Konstruktion "Nominalphrase: dramatische Pointe" ("Das Beste daran: es lernt von selbst.").
+Fix: weniger hervorheben. Doppelpunkt-Enthüllungen als schlichte Sätze schreiben – Doppelpunkte gehören zu Listen, Etiketten und Zitaten, nicht zur Inszenierung.
 
 34. Inline-Header-Listen.
 Fix: in normale Sätze überführen, wenn das Format es nicht braucht.
@@ -275,7 +281,8 @@ Fix: in formellen Kontexten meistens entfernen.
 36. Helfer-Sprache.
 Signal: "lassen Sie uns eintauchen", "hier ist eine Aufschlüsselung"
 Todesphrasen: Lassen Sie uns eintauchen, Es ist wichtig zu beachten, Es lässt sich nicht leugnen, Tauchen wir ein
-Fix: näher am Inhalt starten.
+Auch Pseudo-Einsicht-Auftakte: Was die meisten übersehen, Das sagt dir niemand, Was die meisten falsch machen, Die eigentliche Frage ist
+Fix: näher am Inhalt starten. Pseudo-Einsicht-Auftakte streichen und die Behauptung allein stehen lassen.
 
 37. Modell- oder Cutoff-Selbstkommentar.
 Fix: löschen, wenn er nicht gebraucht wird.
@@ -311,6 +318,24 @@ Nachher:
 > Das Projekt ist raus. Gerade so. Wir haben Pizza bestellt und zwei Stunden aufs Monitoring-Dashboard gestarrt, in der Erwartung, dass irgendwas crasht. Nichts ist gecrasht. Das war die Feier.
 
 Fix: das treffende Wort wählen, nicht das "schriftstellerischste".
+
+42. Überkorrigierte "Menschlichkeit".
+Problem: Wer jeden KI-Text mit denselben drei Tricks humanisiert, erzeugt eine neue, genauso erkennbare Schablone – Stakkato-Fragmente ("Kein Durchbruch. Nur ein Update."), inszenierte Selbstkorrekturen ("Moment – so stimmt das nicht"), pflichtschuldige rhetorische Fragen, "Seien wir ehrlich" in jedem zweiten Absatz, Modalpartikeln in jedem Satz.
+
+Anzeichen: ein Fragment in jedem Absatz; mehr als eine Selbstkorrektur pro Text; zehn verschiedene Umschreibungen, die alle im selben schnoddrigen Rhythmus enden.
+
+Fix: pro Text zwei bis drei Eingriffe wählen und die Mittel von Text zu Text wechseln. Das Ergebnis gegenlesen: Hat es jetzt eine gleichförmig "lockere" Stimme, die die Vorlage nie hatte, zurück Richtung Originalregister drehen.
+
+## Kalibrierung: Wie viel ist genug
+
+Zu viel umzuschreiben ist der häufigste Fehler. Die meisten echten Texte brauchen eine Handvoll Eingriffe, keine Generalüberholung.
+
+Beispiel – diese Vorlage ist schon weitgehend in Ordnung:
+> Die Migration hat drei Wochenenden gedauert statt einem. Die meiste Zeit ging für den Auth-Service drauf, den seit 2019 niemand angefasst hatte. Am Ende lag das Problem in einer Config-Datei, die die Staging-Umgebung überschrieb.
+
+Eine Komplettkur wäre hier falsch. Vertretbar sind nur Kleinigkeiten: vielleicht zwei Sätze verbinden, vielleicht ein Wort straffen. Wenn du nicht benennen kannst, welches Muster ein Satz verletzt, lass den Satz stehen.
+
+Faustregel: Bei einem Text, der schon natürlich klingt, unter 20 Prozent der Sätze anfassen.
 
 ## Domain-Hinweise
 

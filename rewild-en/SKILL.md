@@ -36,7 +36,7 @@ Run this before delivering any rewritten text:
 
 - Three consecutive sentences roughly the same length? Break one up
 - Paragraph ends with a tidy one-liner? Vary the exit
-- Dash before a reveal? Delete it
+- Dash or colon before a dramatic reveal ("The best part: it learns")? Make it a plain sentence
 - Explaining a metaphor? Trust the reader
 - "Additionally" / "Furthermore" / "Moreover"? Cut or replace with "and" / "but" / nothing
 - Rule of three? Make it two or four
@@ -46,6 +46,11 @@ Run this before delivering any rewritten text:
 - No questions asked? Add a rhetorical one if the genre supports it
 - Zero sensory language? Add one concrete detail from the source
 - No self-correction or uncertainty? Show a mind at work
+- Formulaic opener or closer ("In today's...", "In conclusion")? Cut it
+- Final line is a "deep" kicker, polished aphorism, or lessons-learned wrap-up? Delete it — do not rewrite it into a better metaphor. End on the clearest concrete sentence already in the draft
+- Informal register but zero contractions? Contract where you would when speaking
+- Every paragraph roughly the same size? Split or merge one
+- Same humanizing move used three times (fragments, self-corrections, rhetorical questions)? Vary or revert one
 
 ## Personality and Soul
 
@@ -78,17 +83,34 @@ Name things. Pull forward real names, places, and details already in the source 
 
 Think out loud. "Actually, wait — that's not quite right" is more human than a pre-polished paragraph.
 
+Vary your moves. If every text you rewild ends up with the same punchy fragments and staged self-corrections, you have replaced one formula with another. Voice is variance: pick two or three interventions per text and rotate which ones.
+
 CRITICAL CONSTRAINT: every detail you add must already exist in the source text or be obviously inferable from it. Do not invent meetings, anecdotes, statistics, company names, cities, or first-person experiences.
 
 ## Workflow
 
 1. Confirm the problem is actually AI tone rather than grammar, structure, or domain accuracy.
 2. Mark non-rewrite zones: quotes, citations, links, code, terms of art, precise numbers, and compliance-sensitive language.
-3. Determine the genre and risk level.
-4. Scan at least patterns 1-5 in [references/patterns.md](references/patterns.md). For stubborn AI tells, go deeper into the relevant category.
-5. Rewrite only the lines that need it.
+3. Identify the reader and the job of the text (inform, persuade, apologize, sell). Cut what serves neither. Note 3-5 voice signals worth preserving — vocabulary, cadence, bluntness, humor, uncertainty — and keep them through every edit.
+4. Determine the genre and risk level.
+5. Triage each paragraph:
+   - Clean or nearly clean: leave it alone, or make one small fix.
+   - A few tells: edit in place. Scan at least patterns 1-6 in [references/patterns.md](references/patterns.md); for stubborn tells, go deeper into the relevant category.
+   - Dense slop (three or more tells): re-say it instead of editing it. Note the facts worth keeping, look away from the original, and write the paragraph fresh in the same register and genre as the original — business stays business, formal stays formal — the way a skilled human author of that genre would write it, not the way you would say it out loud. Then reconcile everything against the source — situations and feelings count as facts too: anything the source does not support gets cut, not just names and numbers. Editing dense slop sentence by sentence preserves its skeleton; re-saying discards it.
 6. Run the quick-reference checklist.
-7. Do a final pass for rhythm, specificity, and factual discipline.
+7. Second pass: get the rewrite reviewed with fresh eyes. Follow "Second Pass: Review With Fresh Eyes" below.
+8. Run the bundled checker on your final text — this step is mandatory, not optional. Save the rewrite to a file and run:
+   `python3 scripts/naturalness-check.py FILE --lang en`
+   Fix what it flags and rerun until the report is clean or every remaining warning has a stated reason. On text you triaged as already natural, do not edit just to silence a statistic — a justified warning beats an unjustified edit.
+9. Read it aloud in your head. Any sentence you would not say to a colleague in that register, rewrite plainly.
+
+## Second Pass: Review With Fresh Eyes
+
+Never deliver the first draft of a rewrite. Someone with no memory of the original must look at it — you are the worst-placed reviewer of your own output, because you know what it used to say.
+
+Use a subagent to do that blind review. Send it only the rewritten text and the Quick-Reference Checklist above — not the original, not the user's request, not your drafting notes. It reports which checklist items the text trips; it does not rewrite.
+
+Apply the findings yourself, with the catalog open: fix real flags, skip nitpicks that would push the text into pattern 42 territory. Then check the final text against the original once more for invented details or drift.
 
 ## Genre Calibration
 
@@ -147,12 +169,12 @@ After (rewritten):
 
 Changes made:
 - Removed "serves as a testament" (inflated symbolism, pattern 1)
-- Removed "Moreover" (AI vocabulary, pattern 11)
-- Removed "seamless, intuitive, and powerful" (adjective triplet + promotional, patterns 14, 2)
-- Removed em-dash-ensuring construction (superficial -ing, pattern 7)
-- Removed "It's not just...it's..." (negative parallelism, pattern 13)
+- Removed "Moreover" (AI vocabulary, pattern 12)
+- Removed "seamless, intuitive, and powerful" (adjective triplet + promotional, patterns 15, 2)
+- Removed em-dash-ensuring construction (superficial -ing, pattern 8)
+- Removed "It's not just...it's..." (negative parallelism, pattern 14)
 - Removed "Industry experts believe" (vague attribution, pattern 3)
-- Pulled forward the three concrete features already in the source (fixes pattern 9)
+- Pulled forward the three concrete features already in the source (fixes pattern 10)
 
 ## Reference Files
 

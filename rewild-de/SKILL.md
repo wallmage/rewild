@@ -38,13 +38,19 @@ Vor der Abgabe jeden Text prüfen:
 - Geviertstrich (—) statt Halbgeviertstrich (–)? Sofort korrigieren
 - Metapher wird erklärt? Dem Leser vertrauen
 - "Darüber hinaus" / "Zusammenfassend lässt sich sagen"? Streichen
+- Letzte Zeile ein Sinnspruch, eine Pointe oder ein "Was ich daraus gelernt habe"-Fazit? Löschen – nicht in eine bessere Metapher umschreiben. Auf dem konkretesten Satz enden, der schon im Text steht
+- Doppelpunkt-Drama ("Das Beste daran: es lernt")? Als schlichten Satz schreiben
 - Dreiergruppe? Zwei oder vier daraus machen
 - Kein "Ich" im ganzen Text? Einfügen wo die Vorlage es trägt
 - Keine Eigennamen? Aus der Vorlage vorhandene Namen nach vorn holen
 - Keine Modalpartikeln (doch, halt, mal, eben, ja)? In informellen Texten mindestens eine einfügen
-- Kein zusammengesetztes Substantiv? Komposita nutzen
+- Zerlegte Komposita ("Online Shop", "Taschen-Rechner")? Zusammenschreiben
+- Englische Anführungszeichen ("...")? Durch „...“ ersetzen
 - Nur Passiv-Sätze? Aktivsätze einmischen
+- Jeder Hauptsatz beginnt mit dem Subjekt? Vorfeld variieren (Zeitangabe, Objekt, Adverbial nach vorn)
 - Jeder Absatz mit Konnektor? Hälfte streichen
+- Alle Absätze gleich lang? Einen teilen oder zwei zusammenlegen
+- Dreimal derselbe Menschlichkeits-Trick (Fragment, Selbstkorrektur, rhetorische Frage)? Einen zurücknehmen
 
 ## Persönlichkeit und Seele
 
@@ -74,17 +80,35 @@ Nenn Dinge beim Namen. Vorhandene Namen, Orte und Details aus der Vorlage nach v
 
 Lass Unordnung zu. Abschweifungen und halbfertige Gedanken sind menschlich.
 
+Aber wechsle die Mittel. Wer jeden Text mit denselben drei Tricks humanisiert – Fragment, Selbstkorrektur, rhetorische Frage – baut nur eine neue Schablone. Pro Text zwei, drei Eingriffe, und von Text zu Text variieren.
+
 ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im Ausgangstext stehen oder daraus klar ableitbar sein. Keine erfundenen Treffen, Anekdoten, Statistiken, Firmennamen, Städtenamen oder Ich-Erlebnisse.
 
 ## Ablauf
 
 1. Erst prüfen, ob das Problem wirklich KI-Ton ist und nicht eher Struktur, Grammatik oder Sachlichkeit.
 2. Nicht umschreibbare Zonen markieren: Zitate, Links, Code, Fachsprache, präzise Zahlen, Compliance- und Rechtsformeln.
-3. Genre und Risikoniveau bestimmen.
-4. Mindestens D1-D7 in [references/patterns.md](references/patterns.md) prüfen. Die übrigen Muster bei konkreten Symptomen nachschlagen.
-5. Nur die wirklich auffälligen Stellen umschreiben.
+3. Leser und Zweck des Textes bestimmen (informieren, überzeugen, entschuldigen, verkaufen). Was keinem von beiden dient, fliegt raus. Dabei 3-5 Stimm-Merkmale der Vorlage notieren – Wortwahl, Rhythmus, Direktheit, Humor, Unsicherheit – und sie durch jede Änderung hindurch retten.
+4. Genre und Risikoniveau bestimmen.
+5. Absatzweise triagieren:
+   - Sauber oder fast sauber: in Ruhe lassen oder eine Kleinigkeit richten.
+   - Einzelne Muster: gezielt nachbessern. Mindestens D1-D7 in [references/patterns.md](references/patterns.md) prüfen, die übrigen Muster bei konkreten Symptomen nachschlagen.
+   - Dichter Slop (drei oder mehr Muster): nicht flicken, sondern neu sagen. Die erhaltenswerten Fakten notieren, vom Original wegschauen und den Absatz frisch schreiben – im selben Register und Genre wie die Vorlage, so wie ein guter menschlicher Autor dieses Genres ihn schreiben würde, nicht wie du ihn mündlich erzählen würdest. Danach alles gegen die Vorlage abgleichen – auch Situationen und Gefühle zählen als Fakten: Was die Vorlage nicht deckt, fliegt raus, nicht nur Namen und Zahlen. Wer dichten Slop Satz für Satz flickt, konserviert sein Skelett.
+   - Ausnahme: Pressemitteilungen, Ankündigungen, Behörden- und Geschäftstexte auch bei dichtem Slop nicht komplett neu sagen – das schriftliche Gerüst ist selbst das Register, Neusagen rutscht leicht in Plauderton. Stattdessen streichen und straffen: Floskelsätze ganz raus, den Rest verdichten, das Gerüst der Ankündigung behalten. Neusagen ist für Essays, Blogposts und andere stimmgetragene Texte.
 6. Schnell-Checkliste durchlaufen.
-7. Zum Schluss Rhythmus, Natürlichkeit und Faktentreue prüfen.
+7. Zweiter Durchgang: die Umschreibung mit frischen Augen prüfen lassen. Nach „Zweiter Durchgang: Prüfung mit frischen Augen“ unten vorgehen.
+8. Den mitgelieferten Checker auf dem fertigen Text laufen lassen – dieser Schritt ist Pflicht, nicht optional. Ergebnis in eine Datei speichern und ausführen:
+   `python3 scripts/naturalness-check.py DATEI --lang de`
+   Warnungen beheben und erneut laufen lassen, bis der Bericht sauber ist oder jede verbleibende Warnung eine genannte Begründung hat. Bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen – eine begründete Warnung ist besser als ein unbegründeter Eingriff.
+9. Innerlich laut vorlesen. Jeden Satz, den du so keinem Kollegen sagen würdest, schlicht neu schreiben.
+
+## Zweiter Durchgang: Prüfung mit frischen Augen
+
+Eine Umschreibung nie nach dem ersten Durchgang abliefern. Es braucht einen Blick, der das Original nicht kennt – du selbst bist der schlechteste Prüfer deines eigenen Outputs, weil du weißt, was da vorher stand.
+
+Starte für diese Blindprüfung einen Subagenten. Er bekommt nur den umgeschriebenen Text und die Schnell-Checkliste von oben – keine Vorlage, keine Nutzeranfrage, keine Entwurfsnotizen. Er berichtet, welche Checklisten-Punkte der Text auslöst; er schreibt nichts um.
+
+Die Funde arbeitest du selbst ein, mit offenem Katalog: echte Treffer richten, Pedanterie Richtung Muster 42 überspringen. Danach das fertige Ergebnis noch einmal gegen die Vorlage auf Erfundenes und Verschobenes abgleichen.
 
 ## Genre-Kalibrierung
 
@@ -94,7 +118,8 @@ Informelle Texte, Blogposts, Essays:
 
 Geschäftstexte:
 - Hype, Selbstbeweihräucherung und leere Bedeutungssätze entfernen.
-- Professionellen Ton beibehalten.
+- Professionellen Ton beibehalten. Das Ergebnis bleibt Schriftsprache: "drei wesentliche Neuerungen", nicht "drei Sachen sind neu".
+- Quellenlose Anpreisungen ("Branchenexperten sind überzeugt") nach dem Streichen durch eine ehrliche, zurückhaltende Selbstaussage ersetzen, statt ein Loch zu lassen.
 
 Technische Dokumentation:
 - Klarheit und Präzision vor Persönlichkeit.
@@ -143,7 +168,7 @@ Nachher (humanisiert):
 - "In der heutigen Zeit" gestrichen (formelhafte Eröffnung, D7)
 - "Darüber hinaus" gestrichen (KI-Konnektor, D6)
 - "nahtlose, intuitive und umfassende" gestrichen (Dreier-Adjektiv, Muster 23)
-- Geviertstrich korrigiert (D2)
+- Geviertstrich-Konstruktion aufgelöst (D2)
 - "Zusammenfassend lässt sich sagen" gestrichen (D6)
 - "effizient, präzise und innovativ" gestrichen (Dreier-Adjektiv, Muster 23)
 - Zukunftsfloskel benannt statt nur gelöscht
