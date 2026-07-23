@@ -55,6 +55,18 @@ Most humanizers run 20-something generic rules: remove "Additionally," vary sent
 
 **Anti-fabrication as a core rule.** Most tools "humanize" by inventing anecdotes, fake metrics, or first-person experiences. Rewild won't. Every detail in the output has to already exist in your source text. Voice comes from rhythm and opinion, not from making things up.
 
+## How it rewilds
+
+Rewild sorts each paragraph before touching it. Editing dense AI text line by line just polishes the skeleton and leaves it standing, so the workflow splits the job three ways:
+
+- **Already human?** Leave it. Over-editing is the most common way these tools fail — a clean paragraph gets nothing, or one small fix.
+- **A few tells?** Fix them in place against the pattern catalog.
+- **Dense slop?** Re-say it. Note the facts, look away from the original, write the paragraph fresh in the same register, then check every fact back against the source.
+
+Formal genres are the exception. Press releases, announcements, and policy text get stripped and tightened, never fully re-said — their written skeleton *is* the register, and re-saying slides into chat tone. Full re-saying is for essays and posts, where the voice carries the piece.
+
+Two checks run before delivery. A clean-context reviewer reads the rewrite blind and flags whatever still sounds like AI. Then the bundled checker measures the statistical tells the model can't spot in its own prose, and the draft gets fixed until it comes back clean. This workflow is blind-tested: an earlier version's outputs were graded against the current one by judges that didn't know which was which, and the current workflow won every test.
+
 ## Skills
 
 | Skill | Patterns | What's unique |
@@ -65,10 +77,9 @@ Most humanizers run 20-something generic rules: remove "Additionally," vary sent
 
 ## How to use
 
-1. Copy the `SKILL.md` for your language
-2. Add it as a skill in Claude Code / Cowork, or paste as a system prompt in any LLM
-3. Keep the matching `references/patterns.md` beside it so the model can load details on demand
-4. Say "rewild this" and paste your text
+1. Copy the skill folder for your language (`rewild-en/` or `rewild-zh/`) into your skills directory — for Claude Code that's `~/.claude/skills/`. Keep the folder intact: the `references/` catalog and `scripts/` checker travel with it.
+2. Or, in any other LLM, paste the `SKILL.md` as a system prompt and keep `references/patterns.md` on hand for the model to pull from.
+3. Say "rewild this" and paste your text.
 
 ## Automatic naturalness check
 
