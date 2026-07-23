@@ -47,6 +47,18 @@ Die meisten Humanizer arbeiten mit knapp zwanzig generischen Regeln: „Addition
 
 **Ein Schutz gegen Überkorrektur.** Wer jeden Text mit denselben drei Tricks humanisiert – Stakkato-Fragmente, inszenierte Selbstkorrekturen, rhetorische Fragen – baut nur eine neue, genauso erkennbare Schablone. Rewild begrenzt die Eingriffe pro Text und wechselt die Mittel, damit zehn Umschreibungen nicht in derselben Stimme enden.
 
+## So arbeitet Rewild
+
+Rewild sortiert jeden Absatz, bevor es ihn anfasst. Dichten KI-Text Satz für Satz zu redigieren poliert nur das Skelett und lässt es stehen, deshalb teilt der Ablauf die Arbeit dreifach auf:
+
+- **Schon menschlich?** Stehen lassen. Zu viel zu ändern ist die häufigste Art, wie solche Tools scheitern – ein sauberer Absatz bekommt nichts oder eine kleine Korrektur.
+- **Ein paar Marker?** An Ort und Stelle gegen den Musterkatalog beheben.
+- **Dichter Slop?** Neu sagen. Die Fakten notieren, vom Original wegschauen, den Absatz frisch im selben Register schreiben, dann jeden Fakt gegen die Vorlage abgleichen.
+
+Formelle Genres sind die Ausnahme. Pressemitteilungen, Ankündigungen und Behördentexte werden gestrichen und gestrafft, nie komplett neu gesagt – ihr schriftliches Skelett ist das Register, und Neusagen rutscht in Plauderton. Komplettes Neusagen ist für Essays und Posts, wo die Stimme den Text trägt.
+
+Vor der Auslieferung laufen zwei Prüfungen. Ein Prüfer mit leerem Kontext liest die Umschreibung blind und markiert, was noch nach KI klingt. Dann misst der mitgelieferte Checker die statistischen Marker, die das Modell im eigenen Text nicht sieht, und der Entwurf wird korrigiert, bis der Bericht sauber ist. Dieser Ablauf ist blind getestet: Die Ausgaben einer früheren Version wurden gegen die aktuelle bewertet, ohne dass die Prüfer wussten, welche welche war – die aktuelle gewann jeden Test.
+
 ## Deutsch-spezifische Muster
 
 Rewild-DE erkennt 13 Muster, die nur im Deutschen auftreten:
@@ -75,10 +87,9 @@ Rewild-DE erkennt 13 Muster, die nur im Deutschen auftreten:
 
 ## So funktioniert's
 
-1. Kopiere die `SKILL.md` für deine Sprache
-2. Füge es als Skill in Claude Code / Cowork ein, oder als System Prompt in einem beliebigen LLM-Tool
-3. Lass die passende `references/patterns.md` daneben liegen, damit das Modell Details bei Bedarf laden kann
-4. Sag „rewild das“ und füg deinen Text ein
+1. Kopiere den Skill-Ordner deiner Sprache (`rewild-en/`, `rewild-zh/` oder `rewild-de/`) in dein Skill-Verzeichnis – bei Claude Code ist das `~/.claude/skills/`. Lass den Ordner intakt: der `references/`-Katalog und der `scripts/`-Checker gehören dazu.
+2. Oder füge in einem anderen LLM die `SKILL.md` als System Prompt ein und halte `references/patterns.md` bereit, damit das Modell Details nachladen kann.
+3. Sag „rewild das“ und füg deinen Text ein.
 
 ## Automatische Natürlichkeitsprüfung
 
