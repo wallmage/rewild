@@ -378,6 +378,43 @@ Never improve "humanity" by adding:
 - unsupported first-person testimony
 - named companies, places, or people not present in the source
 
+### The four leaks
+
+That list guards nouns. On measured rewrites, fidelity breaks somewhere else — in attribution, modality, scale, and causation. A rewrite can invent nothing on the list above and still be false.
+
+43. Attribution theft.
+Problem: the source hedges a claim to someone else; the rewrite states it flat. Cutting vague attribution is correct (pattern 3) — but the claim goes with it.
+
+Before (source):
+> Observers have cited onboarding friction as a significant barrier to adoption.
+
+Wrong:
+> Onboarding friction is the main barrier to adoption.
+
+Right:
+> Setup used to take 45 minutes. It now takes under 10.
+
+Fix: cut the claim and the attribution together, or keep both. Never keep the claim alone.
+
+44. Invented commitments.
+Problem: the source describes; the rewrite promises. "We'll send another update", "we'll keep refining it", "you'll get this next month."
+
+Fix: you may not make a promise on the author's behalf. If the source has no future tense, neither does the rewrite.
+
+45. Severity inflation.
+Problem: "impacted" becomes "nothing worked". "Some users" becomes "everyone". "Delayed" becomes "never shipped".
+
+Words to watch: nothing, never, always, everyone, nobody, completely, entirely, totally, catastrophic, zero, worst, impossible
+
+Fix: absolutes are claims about scale, not intensity of feeling. Match the source's level exactly.
+
+46. Invented causation.
+Problem: the rewrite adds diagnostic detail the source never gave — including negative detail. "The bug was a config error" becomes "not the syntax, which was fine — and no race condition either."
+
+Fix: ruling a cause *out* is as invented as ruling one in. If the source named one cause, the rewrite names one cause.
+
+The bundled checker catches 43, 44 and 45 mechanically when you pass `--source`. It cannot catch 46; that one is on you.
+
 ## References
 
 Core: Wikipedia "Signs of AI writing" (https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)

@@ -101,6 +101,38 @@ assertion 7 used to penalise a rewrite for surfacing nothing when the source
 had buried nothing, and assertion 9 used to demand a "position" from formal
 genres where assertion 10 demands neutrality. Both scored restraint as failure.
 
+## Result: the fidelity pass
+
+Run on 2026-07-25, after adding `--source` and rewriting the anti-fabrication
+rule around attribution, commitments, severity and causation. Five inputs,
+both versions, three blind graders.
+
+| | previous version | with fidelity pass |
+|---|---|---|
+| Rubric score | 48.3 / 50 | 47.7 / 50 |
+| Fidelity failures (grader votes) | 4 | **0** |
+
+The rubric score is level again, and at 48/50 it is saturated — it cannot
+separate these. Fidelity did separate them. Every fidelity failure in the run
+came from the version without the check, and the clearest case is a matched
+pair on the same input:
+
+> Source: "Observers have cited onboarding friction as a significant barrier
+> to adoption."
+>
+> Without the check: "We also rebuilt onboarding, **since slow setup has been
+> a significant barrier to adoption**." — attribution dropped, claim kept, and
+> promoted to the company's own reason for acting. All three graders flagged it.
+>
+> With the check: the claim and its attribution were cut together, and the
+> paragraph states the measured before-and-after instead. All three graders
+> passed it.
+
+One honest caveat: five inputs and four flags is a small sample, and the
+rubric shows no advantage. The claim this supports is narrow — the fidelity
+pass catches a real defect class that the style checks are blind to — not that
+the rewrite is better overall.
+
 ## Regression tests
 
 `tests/test_checker.py` covers the checker itself. Run it from the repo root

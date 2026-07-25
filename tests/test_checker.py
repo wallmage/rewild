@@ -154,6 +154,55 @@ for skill, lang in zip(SKILLS, ["en", "zh", "de"]):
     check(f"catalog audit clean ({lang})", missing == 0,
           "run --audit to see the terms")
 
+# 11 — the fidelity pass. Each case is a failure observed in a real rewrite.
+def fid(source, output, lang="en"):
+    chk.sections.clear()
+    chk.flags.clear()
+    with redirect_stdout(io.StringIO()):
+        chk.check_fidelity(source, output, lang)
+    return " | ".join(f["message"] for f in chk.flags)
+
+SRC = ("Observers have cited onboarding friction as a barrier. Setup took 45 "
+       "minutes. The change was deployed by the platform team and impacted "
+       "the primary cluster.")
+
+_inv = "Observers cited it. The flow was rebuilt by Acme last month."
+check("fidelity: invented name flagged", "acme" in fid(SRC, _inv), fid(SRC, _inv))
+# Documented limitation: a sentence-initial invented name is not flagged,
+# because nothing separates it from an ordinary capitalized opener.
+_ini = "Observers cited it. Acme rebuilt the flow."
+check("fidelity: sentence-initial invented name is a known miss",
+      "acme" not in fid(SRC, _ini), fid(SRC, _ini))
+check("fidelity: invented figure flagged",
+      "figures not in the original" in fid(SRC, "Setup took 12 minutes."),
+      fid(SRC, "Setup took 12 minutes."))
+_theft = "Onboarding friction is the barrier. Setup took 45 minutes."
+check("fidelity: attribution theft flagged",
+      "without the attribution" in fid(SRC, _theft), fid(SRC, _theft))
+# Cutting the claim along with its attribution is correct, not theft.
+_cut = "Setup took 45 minutes, and now it is faster."
+check("fidelity: claim cut with its attribution passes",
+      "without the attribution" not in fid(SRC, _cut), fid(SRC, _cut))
+check("fidelity: invented commitment flagged",
+      "commitment" in fid(SRC, "Setup took 45 minutes. We'll fix it."),
+      fid(SRC, "Setup took 45 minutes. We'll fix it."))
+check("fidelity: severity inflation flagged",
+      "severity" in fid(SRC, "Nothing worked for the whole cluster."),
+      fid(SRC, "Nothing worked for the whole cluster."))
+_ok = ("Setup took 45 minutes. The platform team's deploy hit the primary "
+       "cluster, and observers called that friction a barrier.")
+check("fidelity: faithful rewrite passes", not fid(SRC, _ok), fid(SRC, _ok))
+check("fidelity: identical text passes", not fid(SRC, SRC), fid(SRC, SRC))
+check("fidelity: acronym of a source phrase is not invented",
+      not fid("We work on artificial intelligence tooling.",
+              "We build AI tooling."),
+      fid("We work on artificial intelligence tooling.", "We build AI tooling."))
+check("fidelity: sentence-initial common word is not a name",
+      not fid("The queries are slow and setup is long.",
+              "Queries are slow. Setup is long."),
+      fid("The queries are slow and setup is long.",
+          "Queries are slow. Setup is long."))
+
 failed = [name for name, ok, _ in results if not ok]
 print(f"\n{len(results) - len(failed)}/{len(results)} passed.")
 sys.exit(1 if failed else 0)

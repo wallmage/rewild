@@ -84,6 +84,13 @@ Aber wechsle die Mittel. Wer jeden Text mit denselben drei Tricks humanisiert �
 
 ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im Ausgangstext stehen oder daraus klar ableitbar sein. Keine erfundenen Treffen, Anekdoten, Statistiken, Firmennamen, Städtenamen oder Ich-Erlebnisse.
 
+Und achte auf die vier Dinge, die durch diese Regel rutschen – keins davon ist ein Name oder eine Zahl. An echten Umschreibungen gemessen bricht die Texttreue genau hier:
+
+- **Zuschreibung.** Die Vorlage sagt „Beobachter verweisen auf X", deine Umschreibung sagt „X". Damit hast du fremde Behauptungen zu deinen gemacht. Vage Zuschreibungen zu streichen ist richtig – aber die Behauptung geht mit. Nie die Behauptung behalten und die Quelle streichen.
+- **Zusagen.** Die Vorlage beschreibt, deine Umschreibung verspricht. „Wir melden uns", „wir arbeiten weiter daran", „nächsten Monat bekommt ihr das" – wo die Vorlage nichts zusagt, darfst du im Namen des Autors nichts zusagen.
+- **Schweregrad.** Die Vorlage sagt „beeinträchtigt", deine Umschreibung sagt „nichts ging mehr". Die Vorlage sagt „einige Nutzer", du sagst „alle". Nichts, nie, immer, jeder, niemand, völlig, komplett – das sind Aussagen über Ausmaß, nicht über Tonstärke. Nicht hochdrehen.
+- **Ursachen und Diagnose.** Die Vorlage nennt einen Konfigurationsfehler, deine Umschreibung ergänzt „nicht die Syntax, die war in Ordnung" oder „auch keine Race Condition". Eine Ursache *auszuschließen* ist genauso erfunden wie eine zu erfinden.
+
 ## Ablauf
 
 1. Erst prüfen, ob das Problem wirklich KI-Ton ist und nicht eher Struktur, Grammatik oder Sachlichkeit.
@@ -97,9 +104,10 @@ ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im 
    - Ausnahme: Pressemitteilungen, Ankündigungen, Behörden- und Geschäftstexte auch bei dichtem Slop nicht komplett neu sagen – das schriftliche Gerüst ist selbst das Register, Neusagen rutscht leicht in Plauderton. Stattdessen streichen und straffen: Floskelsätze ganz raus, den Rest verdichten, das Gerüst der Ankündigung behalten. Neusagen ist für Essays, Blogposts und andere stimmgetragene Texte.
 6. Schnell-Checkliste durchlaufen.
 7. Zweiter Durchgang: die Umschreibung mit frischen Augen prüfen lassen. Nach „Zweiter Durchgang: Prüfung mit frischen Augen“ unten vorgehen.
-8. Den mitgelieferten Checker auf dem fertigen Text laufen lassen – dieser Schritt ist Pflicht, nicht optional. Ergebnis in eine Datei speichern und das Skript aus dem Ordner dieses Skills ausführen:
-   `python3 <Skill-Verzeichnis>/scripts/naturalness-check.py DATEI --lang de`
-   Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht. Warnungen beheben und erneut laufen lassen, bis der Exit-Code 0 ist oder jede verbleibende Warnung eine genannte Begründung hat. Zwei Einschränkungen: Bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen – eine begründete Warnung ist besser als ein unbegründeter Eingriff. Und ein sauberer Bericht ist keine Bestnote; er heißt nur, dass die zählbaren Merkmale weg sind.
+8. Den mitgelieferten Checker auf dem fertigen Text laufen lassen – dieser Schritt ist Pflicht, nicht optional. Vorlage und Ergebnis in Dateien speichern und das Skript aus dem Ordner dieses Skills mit beiden aufrufen:
+   `python3 <Skill-Verzeichnis>/scripts/naturalness-check.py UMSCHREIBUNG --source VORLAGE --lang de`
+   Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht. Die beiden Hälften des Berichts sind unterschiedlich zu behandeln. **Stil-Warnungen sind Vorschläge** – bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen; eine begründete Warnung ist besser als ein unbegründeter Eingriff. **Treue-Warnungen sind Fehler**: Die Umschreibung sagt etwas, das die Vorlage nicht sagt. Dann wird die Umschreibung geändert, nicht begründet. Einzige Ausnahme sind Zahlen, die du aus Zahlen der Vorlage errechnet hast – kurz benennen und weiter.
+   So lange laufen lassen, bis der Exit-Code 0 ist oder jede verbleibende Stil-Warnung eine Begründung hat und keine Treue-Warnung mehr übrig ist. Ein sauberer Bericht ist keine Bestnote; er heißt nur, dass die zählbaren Probleme weg sind.
 9. Innerlich laut vorlesen. Jeden Satz, den du so keinem Kollegen sagen würdest, schlicht neu schreiben.
 
 ## Zweiter Durchgang: Prüfung mit frischen Augen

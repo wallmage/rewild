@@ -2,17 +2,30 @@
 """Naturalness check: statistical AI-tell screening for EN / ZH / DE text.
 
 Usage:
-    python3 naturalness-check.py FILE [--lang en|zh|de] [--json]
+    python3 naturalness-check.py FILE [--source ORIGINAL] [--lang en|zh|de]
     python3 naturalness-check.py --audit [--lang en|zh|de]
 
 Screens a text for the measurable signals described in the Rewild pattern
 catalogs: sentence-length uniformity, repeated sentence openers, uniform
 paragraph sizes, AI vocabulary, and punctuation problems. Zero dependencies.
 
+--source turns on the fidelity pass, which is the more important half. Style
+tells are what the model is already good at removing; fidelity is where
+rewrites actually break. It compares the rewrite against the original and
+flags four things, each an observed failure mode rather than a theoretical
+one:
+
+  * names, numbers and dates in the rewrite that are not in the original
+  * attributed claims ("observers have cited X") that became bare assertions
+  * commitments ("we'll send an update") the original never made
+  * severity raised beyond what the original said
+
+A style warning is a suggestion. A fidelity warning is a defect: the rewrite
+is now saying something the source did not.
+
 Exit status is 0 when the report is clean and 1 when anything is flagged, so
-the check can gate a workflow. A non-zero exit is not a verdict: it measures
-signals, not truth. A clean report does not prove the text reads well, and a
-single warning does not condemn it. Judgment stays with the writer.
+the check can gate a workflow. It measures signals, not truth — a clean report
+does not prove the text reads well. Judgment stays with the writer.
 
 --audit compares the word lists below against `references/patterns.md` and
 reports terms the catalog documents but the checker cannot see. Run it after
@@ -495,6 +508,176 @@ def check_language_flavor(original, folded, lang, sentences):
              "all-full-forms in casual prose reads machine or lawyer")
 
 
+# ---------------------------------------------------------------- fidelity --
+# Words that begin a sentence or are grammatically capitalized, so seeing them
+# capitalized proves nothing about them being a name.
+CAP_STOPWORDS = {
+    "a", "an", "and", "as", "at", "but", "by", "for", "from", "he", "her",
+    "his", "i", "if", "in", "is", "it", "its", "my", "no", "not", "of", "on",
+    "or", "our", "she", "so", "that", "the", "their", "then", "there", "they",
+    "this", "to", "we", "what", "when", "where", "which", "who", "why",
+    "with", "yes", "you", "your", "every", "most", "some", "one", "two",
+    "der", "die", "das", "und", "wir", "sie", "ich", "es", "ein", "eine",
+    "der", "den", "dem", "aber", "auch", "nicht", "wenn", "dann", "hier",
+}
+ATTRIBUTION_RE = {
+    "en": r"\b(according to|observers?|experts?|critics?|analysts?|"
+          r"researchers?|stud(?:y|ies)|survey|industry reports?|"
+          r"sources?|cited|reported|said|says|argues?|claims?|"
+          r"noted|per the)\b",
+    "de": r"\b(laut|zufolge|Beobachter|Branchenexperten|Expert(?:en|innen)|"
+          r"Kritiker|Studien? (?:zeigen|zeigt)|Forschung zeigt|berichtet|"
+          r"sagte|sagt)\b",
+    "zh": r"(据|根据|表示|认为|指出|业内人士|专家|观察人士|研究表明|"
+          r"报道称|调查显示|数据显示)",
+}
+COMMITMENT_RE = {
+    "en": r"\b(we(?:'ll| will| are going to| shall)|i(?:'ll| will)|"
+          r"you(?:'ll| will) (?:receive|get|see))\b",
+    "de": r"\b(wir werden|ich werde|wir kümmern uns|wir melden uns)\b",
+    "zh": r"(我们会|我们将|我会|我将|接下来会|后续会)",
+}
+# Absolutes and totalising words. Present in the rewrite but not the source
+# means the rewrite raised the stakes on its own.
+SEVERITY = {
+    "en": ["nothing", "never", "always", "everyone", "nobody", "completely",
+           "entirely", "totally", "catastrophic", "disaster", "all of",
+           "every single", "zero", "no one", "worst", "impossible"],
+    "de": ["nichts", "nie", "niemals", "immer", "jeder", "niemand", "völlig",
+           "komplett", "katastrophal", "unmöglich", "schlimmste"],
+    "zh": ["完全", "彻底", "从来没有", "永远", "所有人", "没有人", "灾难",
+           "最差", "不可能", "全部"],
+}
+
+
+CONTRACTION_RE = re.compile(r"['’](ve|d|ll|s|m|re|t)$", re.I)
+
+
+def fidelity_tokens(text, lang, generous=False):
+    """Names, numbers and dates, as comparable normalized tokens.
+
+    generous=True also accepts sentence-initial capitals. Use it on the
+    source so a name that happens to open a sentence there ("Stack Overflow
+    provided...") still counts as known; use it off on the rewrite so an
+    ordinary word opening a sentence is not mistaken for an invented name.
+
+    Known limitation: an invented name that opens a sentence in the rewrite
+    ("Acme rebuilt the flow.") is not flagged, because nothing distinguishes
+    it from an ordinary capitalized opener without a dictionary. False
+    positives are worse than misses in a gate, so this errs toward silence;
+    catalog pattern 43 covers the case in prose.
+    """
+    numbers = set()
+    for raw in re.findall(r"\d[\d,]*(?:[.:]\d+)?%?", text):
+        n = raw.rstrip(".,").replace(",", "")
+        if n:
+            numbers.add(n)
+            numbers.add(n.rstrip("%"))
+    names = set()
+    if lang != "zh":
+        for sentence in re.split(r"(?<=[.!?])\s+|\n", text):
+            words = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ][\w'’\-]*", sentence)
+            for i, w in enumerate(words):
+                if not w[0].isupper() or (i == 0 and not generous):
+                    continue
+                stem = CONTRACTION_RE.sub("", w).lower()
+                if not stem or stem in CAP_STOPWORDS:
+                    continue
+                names.add(stem)
+    return names, numbers
+
+
+def source_acronyms(source):
+    """"artificial intelligence" in the source licenses "AI" in the rewrite."""
+    words = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ]+", source)
+    out = set()
+    for size in (2, 3, 4):
+        for i in range(len(words) - size + 1):
+            run = words[i:i + size]
+            if all(w.lower() not in CAP_STOPWORDS for w in run):
+                out.add("".join(w[0] for w in run).lower())
+    return out
+
+
+def orphaned_claims(source, output, lang):
+    """Attributed claims in the source that survive in the rewrite unattributed.
+
+    Dropping an attribution is only theft if the claim comes with it. A
+    rewrite that cuts "observers have cited X as a barrier" outright is doing
+    exactly what the catalog asks, and must not be flagged for it.
+    """
+    attr = re.compile(ATTRIBUTION_RE[lang], re.I)
+    out_low = output.lower()
+    orphans = []
+    for sentence in split_sentences(source, lang):
+        if not attr.search(sentence):
+            continue
+        body = attr.sub(" ", sentence)
+        if lang == "zh":
+            terms = [t for t in re.findall(rf"[{CJK}]{{2,}}", body)
+                     if len(t) >= 2]
+        else:
+            terms = [w.lower() for w in WORD_RE.findall(body)
+                     if len(w) > 3 and w.lower() not in CAP_STOPWORDS]
+        if not terms:
+            continue
+        kept = sum(1 for t in terms if t in out_low)
+        # Half the claim's distinctive words still present, and nobody is
+        # credited anywhere in the rewrite: the rewrite adopted the claim.
+        if kept / len(terms) >= 0.5 and not attr.search(output):
+            orphans.append(sentence.strip()[:70])
+    return orphans
+
+
+def check_fidelity(source, output, lang):
+    section("Fidelity (rewrite vs original)")
+    src_names, src_nums = fidelity_tokens(source, lang, generous=True)
+    out_names, out_nums = fidelity_tokens(output, lang)
+
+    acronyms = source_acronyms(source)
+    new_names = sorted(n for n in out_names - src_names
+                       if n not in acronyms
+                       and not any(n in s or s in n for s in src_names))
+    report(not new_names,
+           "no names in the rewrite that are absent from the original"
+           if not new_names else
+           "names not in the original: " + ", ".join(new_names[:8])
+           + " — invented, or confirm each is a form of a source name")
+
+    new_nums = sorted(n for n in out_nums - src_nums)
+    report(not new_nums,
+           "no figures in the rewrite that are absent from the original"
+           if not new_nums else
+           "figures not in the original: " + ", ".join(new_nums[:8])
+           + " — invented, or confirm each is derived from source figures")
+
+    stolen = orphaned_claims(source, output, lang)
+    report(not stolen,
+           "no attributed claim was taken over as the rewrite's own"
+           if not stolen else
+           f"{len(stolen)} attributed claim(s) kept without the attribution: "
+           + "; ".join(f'"{s}"' for s in stolen[:2])
+           + " — cut the claim with the attribution, or keep the attribution")
+
+    src_com = set(m.lower() for m in
+                  re.findall(COMMITMENT_RE[lang], source, re.I))
+    out_com = set(m.lower() for m in
+                  re.findall(COMMITMENT_RE[lang], output, re.I))
+    new_com = sorted(out_com - src_com)
+    report(not new_com,
+           "no promises the original did not make" if not new_com else
+           "new commitment(s): " + ", ".join(new_com[:5])
+           + " — the original promised nothing here")
+
+    low = output.lower()
+    src_low = source.lower()
+    esc = [w for w in SEVERITY[lang] if w in low and w not in src_low]
+    report(not esc,
+           "severity matches the original" if not esc else
+           "raised severity: " + ", ".join(esc[:6])
+           + " — the original did not go this far")
+
+
 # Catalog entries that describe a syntactic shape rather than a string, so no
 # word list can ever cover them. The model reads these; the checker cannot.
 AUDIT_STRUCTURAL = [
@@ -551,7 +734,9 @@ def run_audit(lang, catalog):
         "de": (AI_WORDS_DE, AI_PHRASES_DE, AI_WATCH_DE),
         "zh": ([], AI_PHRASES_ZH, AI_WATCH_ZH),
     }[lang]
-    known = fold(" ".join(words + phrases + watch))
+    # SEVERITY is checked by the fidelity pass rather than the vocabulary
+    # pass, but it is still covered — the audit should not report it missing.
+    known = fold(" ".join(words + phrases + watch + SEVERITY[lang]))
     terms = [t for t in catalog_terms(catalog)
              if not any(t.startswith(s) for s in AUDIT_STRUCTURAL)]
     missing = []
@@ -583,6 +768,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Statistical AI-tell screening for EN/ZH/DE text.")
     parser.add_argument("file", nargs="?", help="text file to screen")
+    parser.add_argument("--source",
+                        help="the original text, to run the fidelity pass")
     parser.add_argument("--lang", choices=["en", "zh", "de"],
                         help="language (default: auto-detect)")
     parser.add_argument("--json", action="store_true",
@@ -632,6 +819,13 @@ def main():
     check_vocabulary(folded, lang)
     check_punctuation(text, folded, lang, sentences)
     check_language_flavor(text, folded, lang, sentences)
+    if args.source:
+        try:
+            src = strip_markdown(
+                Path(args.source).read_text(encoding="utf-8"))[0]
+        except OSError as e:
+            sys.exit(f"error: --source: {e}")
+        check_fidelity(src, text, lang)
 
     print(f"\n{len(flags)} warning(s)." if flags else
           "\nNo warnings. (Signals only — read it aloud anyway.)")

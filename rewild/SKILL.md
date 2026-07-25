@@ -87,6 +87,13 @@ Vary your moves. If every text you rewild ends up with the same punchy fragments
 
 CRITICAL CONSTRAINT: every detail you add must already exist in the source text or be obviously inferable from it. Do not invent meetings, anecdotes, statistics, company names, cities, or first-person experiences.
 
+And watch the four things that leak past that rule, because none of them is a name or a number. Measured on real rewrites, these are where fidelity actually breaks:
+
+- **Attribution.** The source says "observers have cited X"; your rewrite says "X". You have just taken someone else's claim as your own. Cutting vague attribution is right — but cut the claim with it, or keep the attribution. Never keep the claim and drop the source.
+- **Commitments.** The source describes; your rewrite promises. "We'll send another update," "we'll keep refining it," "you'll see this next month" — if the source made no promise, you cannot make one on its author's behalf.
+- **Severity.** The source says "impacted"; your rewrite says "nothing worked." The source says "some users"; your rewrite says "everyone." Absolutes — nothing, never, always, completely, nobody — are facts about scale. Do not raise them.
+- **Causal and diagnostic detail.** The source says a config error caused it; your rewrite adds "not the syntax, which was fine" or "no race condition." Ruling things *out* is as invented as ruling them in.
+
 ## Workflow
 
 1. Confirm the problem is actually AI tone rather than grammar, structure, or domain accuracy.
@@ -100,9 +107,11 @@ CRITICAL CONSTRAINT: every detail you add must already exist in the source text 
    - Exception: press releases, announcements, policy text, and other written-form genres never get fully re-said, however dense the slop. Their written skeleton *is* the register, and re-saying slides into chat tone. Strip and tighten instead: delete the boilerplate sentences outright, compress what remains, keep the announcement's frame. Full re-saying is for essays, posts, and other pieces the voice carries.
 6. Run the quick-reference checklist.
 7. Second pass: get the rewrite reviewed with fresh eyes. Follow "Second Pass: Review With Fresh Eyes" below.
-8. Run the bundled checker on your final text — this step is mandatory, not optional. Save the rewrite to a file and run the script from this skill's own folder:
-   `python3 <skill-dir>/scripts/naturalness-check.py FILE --lang en`
-   It exits 1 while anything is flagged and 0 when the report is clean. Fix what it flags and rerun until it exits 0, or until every remaining warning has a stated reason. Two cautions: on text you triaged as already natural, do not edit just to silence a statistic — a justified warning beats an unjustified edit. And a clean report is not a passing grade; it only means the countable tells are gone.
+8. Run the bundled checker on your final text — this step is mandatory, not optional. Save both the original and the rewrite to files and run the script from this skill's own folder, passing both:
+   `python3 <skill-dir>/scripts/naturalness-check.py REWRITE --source ORIGINAL --lang en`
+   It exits 1 while anything is flagged and 0 when the report is clean.
+   Treat the two halves of the report differently. **Style warnings are suggestions** — on text you triaged as already natural, do not edit just to silence a statistic; a justified warning beats an unjustified edit. **Fidelity warnings are defects.** A fidelity warning means the rewrite now says something the source did not, and the fix is always to change the rewrite, never to justify it. The only exception is a figure you derived arithmetically from figures in the source; say so and move on.
+   Rerun until it exits 0, or until every remaining style warning has a stated reason and zero fidelity warnings remain. A clean report is not a passing grade; it only means the countable problems are gone.
 9. Read it aloud in your head. Any sentence you would not say to a colleague in that register, rewrite plainly.
 
 ## Second Pass: Review With Fresh Eyes
