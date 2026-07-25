@@ -97,11 +97,12 @@ CRITICAL CONSTRAINT: every detail you add must already exist in the source text 
    - Clean or nearly clean: leave it alone, or make one small fix.
    - A few tells: edit in place. Scan at least patterns 1-6 in [references/patterns.md](references/patterns.md); for stubborn tells, go deeper into the relevant category.
    - Dense slop (three or more tells): re-say it instead of editing it. Note the facts worth keeping, look away from the original, and write the paragraph fresh in the same register and genre as the original — business stays business, formal stays formal — the way a skilled human author of that genre would write it, not the way you would say it out loud. Then reconcile everything against the source — situations and feelings count as facts too: anything the source does not support gets cut, not just names and numbers. Editing dense slop sentence by sentence preserves its skeleton; re-saying discards it.
+   - Exception: press releases, announcements, policy text, and other written-form genres never get fully re-said, however dense the slop. Their written skeleton *is* the register, and re-saying slides into chat tone. Strip and tighten instead: delete the boilerplate sentences outright, compress what remains, keep the announcement's frame. Full re-saying is for essays, posts, and other pieces the voice carries.
 6. Run the quick-reference checklist.
 7. Second pass: get the rewrite reviewed with fresh eyes. Follow "Second Pass: Review With Fresh Eyes" below.
-8. Run the bundled checker on your final text — this step is mandatory, not optional. Save the rewrite to a file and run:
-   `python3 scripts/naturalness-check.py FILE --lang en`
-   Fix what it flags and rerun until the report is clean or every remaining warning has a stated reason. On text you triaged as already natural, do not edit just to silence a statistic — a justified warning beats an unjustified edit.
+8. Run the bundled checker on your final text — this step is mandatory, not optional. Save the rewrite to a file and run the script from this skill's own folder:
+   `python3 <skill-dir>/scripts/naturalness-check.py FILE --lang en`
+   It exits 1 while anything is flagged and 0 when the report is clean. Fix what it flags and rerun until it exits 0, or until every remaining warning has a stated reason. Two cautions: on text you triaged as already natural, do not edit just to silence a statistic — a justified warning beats an unjustified edit. And a clean report is not a passing grade; it only means the countable tells are gone.
 9. Read it aloud in your head. Any sentence you would not say to a colleague in that register, rewrite plainly.
 
 ## Second Pass: Review With Fresh Eyes
@@ -114,13 +115,18 @@ Apply the findings yourself, with the catalog open: fix real flags, skip nitpick
 
 ## Genre Calibration
 
-Informal writing:
+Informal writing, essays, blog posts:
 - You can add warmth, sharper rhythm, and a clearer point of view.
-- Use first person only if the original stance supports it.
+- Use first person, rhetorical questions, and pauses only if the original stance supports them.
+- Voice is not performance. The target is "same author, better day" — not a slicker, cooler author.
+- A big idea rewritten in plain words is still a big idea. Delete the uplift; end on something concrete.
+- "The biggest thing I learned" and "this experience taught me" are kickers too, however casual the tone. End an essay on a specific thing, an image, or a question still open — not on a summary.
 
 Business writing:
 - Remove hype and vague significance claims.
-- Keep the register professional.
+- Keep the register professional. Do not go breezy in the name of sounding human: the result is still written English — "three main updates," not "three things are new."
+- End on the product or the plan ("we'll keep refining it"), not on a shrug.
+- When you cut unsourced praise ("industry experts believe"), replace it with an honest, modest first-party claim rather than leaving a hole.
 
 Technical documentation:
 - Prioritize clarity, concrete examples, and precise terms.
@@ -128,7 +134,7 @@ Technical documentation:
 
 Academic writing:
 - Remove promotion, vague attribution, and fake ranges.
-- Keep the register formal and evidence-aware.
+- Keep the register formal and evidence-aware. Do not force in contractions, exclamations, or conversational asides.
 
 Legal, medical, support, and policy text:
 - Be conservative.

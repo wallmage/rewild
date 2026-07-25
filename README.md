@@ -43,6 +43,8 @@ The first three rows are basically tied — any decent tool can strip AI slop. T
 
 The typical tool rewrites the hype into different hype. Rewild calls the hype what it is.
 
+The harness is in [`benchmarks/`](benchmarks/) — inputs, rubric, control prompt, and the blind-grading protocol — so you can rerun this rather than take the number on faith. The original run's raw outputs were not preserved; if your rerun disagrees, the number above is the one that should change.
+
 ## Why Rewild works
 
 Most humanizers run 20-something generic rules: remove "Additionally," vary sentence length, done. That gets you past the obvious stuff. Rewild does more, and the extra work falls into four buckets:
@@ -65,30 +67,46 @@ Rewild sorts each paragraph before touching it. Editing dense AI text line by li
 
 Formal genres are the exception. Press releases, announcements, and policy text get stripped and tightened, never fully re-said — their written skeleton *is* the register, and re-saying slides into chat tone. Full re-saying is for essays and posts, where the voice carries the piece.
 
-Two checks run before delivery. A clean-context reviewer reads the rewrite blind and flags whatever still sounds like AI. Then the bundled checker measures the statistical tells the model can't spot in its own prose, and the draft gets fixed until it comes back clean. This workflow is blind-tested: an earlier version's outputs were graded against the current one by judges that didn't know which was which, and the current workflow won every test.
+Two checks run before delivery. A clean-context reviewer reads the rewrite blind and flags whatever still sounds like AI. Then the bundled checker measures the statistical tells the model can't spot in its own prose, and the draft gets fixed until it comes back clean.
+
+How much do the workflow instructions themselves matter? Less than you'd think. Ten inputs across ten genres were rewritten by this version and by the previous one, then graded by three independent judges who didn't know which was which. The result was level: 94.7 against 93.3 out of 100. The catalogs and the checker do the work; the workflow prose mostly keeps it honest. That test is in [`benchmarks/`](benchmarks/) and you can rerun it.
 
 ## Skills
 
 | Skill | Patterns | What's unique |
 |-------|----------|---------------|
-| [English](rewild-en/SKILL.md) | 42 | Lean `SKILL.md` + detailed [pattern catalog](rewild-en/references/patterns.md) |
+| [English](rewild/SKILL.md) | 42 | Lean `SKILL.md` + detailed [pattern catalog](rewild/references/patterns.md) |
 | [中文](rewild-zh/SKILL.md) | 41 | Chinese-specific signals like 语气词缺失, 翻译腔, 四字套语, 公式化开头 |
-| [Deutsch](rewild-de/SKILL.md) | 42 | German-specific signals like Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
+| [Deutsch](rewild-de/SKILL.md) | 44 | German-specific signals like Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
 
 ## How to use
 
-1. Copy the skill folder for your language (`rewild-en/` or `rewild-zh/`) into your skills directory — for Claude Code that's `~/.claude/skills/`. Keep the folder intact: the `references/` catalog and `scripts/` checker travel with it.
+1. Copy the skill folder for your language (`rewild/`, `rewild-zh/`, or `rewild-de/`) into your skills directory — for Claude Code that's `~/.claude/skills/`. Keep the folder name and contents intact: each folder name matches the skill's own `name:` field, and the `references/` catalog and `scripts/` checker travel with it.
 2. Or, in any other LLM, paste the `SKILL.md` as a system prompt and keep `references/patterns.md` on hand for the model to pull from.
 3. Say "rewild this" and paste your text.
 
 ## Automatic naturalness check
 
-Every skill folder ships with [`scripts/naturalness-check.py`](rewild-en/scripts/naturalness-check.py) (Python 3, zero dependencies). It measures the statistical tells the catalogs describe: sentence-length uniformity, repeated sentence openers, uniform paragraph sizes, AI vocabulary, and punctuation problems (em-dash density, quote-style mixing, half-width marks in Chinese, missing `–` in German).
+Every skill folder ships with [`scripts/naturalness-check.py`](rewild/scripts/naturalness-check.py) (Python 3, zero dependencies). It measures the statistical tells the catalogs describe: sentence-length uniformity, repeated sentence openers, uniform paragraph sizes, AI vocabulary, and punctuation problems (em-dash density, quote-style mixing, half-width marks in Chinese, English quotes and hyphen-as-dash in German).
 
-Running it is a mandatory step in the workflow: the model checks every rewrite and fixes warnings until the report is clean before delivering. You can also run it by hand on any text:
+Running it is a mandatory step in the workflow: the model checks every rewrite and fixes warnings until the report is clean before delivering. It exits 1 while anything is flagged and 0 when clean, so it can gate a script. You can also run it by hand:
 
+```bash
+python3 rewild/scripts/naturalness-check.py draft.txt --lang en
 ```
-python3 rewild-en/scripts/naturalness-check.py draft.txt --lang en
+
+It reads markdown as prose, not as scaffolding — headings, code fences, and table rows are skipped, and list items count as their own sentences. Matching is typography-insensitive, so `it’s worth noting` is caught the same as `it's worth noting`, and vocabulary matches across inflections (`streamline` also finds `streamlined`, `streamlining`).
+
+`--audit` compares the checker's word lists against the pattern catalog next to it and reports any term the catalog documents but the checker cannot see. Run it after editing a catalog so the two never drift apart:
+
+```bash
+python3 rewild/scripts/naturalness-check.py --audit --lang en
+```
+
+The checker itself has regression tests covering every bug it has shipped with. Run them from the repo root:
+
+```bash
+python3 tests/test_checker.py
 ```
 
 ## Design

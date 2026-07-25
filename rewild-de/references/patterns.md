@@ -4,7 +4,7 @@ Erst `SKILL.md` lesen. Diese Datei ist die Nachschlagehilfe für Diagnosen und U
 
 Hinweis: Die Vorher/Nachher-Paare unten sind Lehrbeispiele, die jedes Muster illustrieren. Das "Nachher" zeigt gutes menschliches Deutsch für dieses Muster, nicht eine wortwörtliche Umschreibung des "Vorher"-Textes. Beim echten Umschreiben nur Details verwenden, die bereits im Ausgangstext stehen.
 
-Außerdem: Jedes "Nachher" zeigt ein Muster isoliert. Nicht alle Mittel in eine einzige Umschreibung stapeln – das erzeugt eine eigene Schablone (siehe Muster 42).
+Außerdem: Jedes "Nachher" zeigt ein Muster isoliert. Nicht alle Mittel in eine einzige Umschreibung stapeln – das erzeugt eine eigene Schablone (siehe Muster 44).
 
 ## Höchste Priorität: deutschspezifische Muster
 
@@ -144,7 +144,7 @@ D13. Orthographische Inkonsistenz.
 Problem: KI hält innerhalb eines Textes keine einheitliche Schreibweise ein. "Onlineshops" und "Online-Shop" in aufeinanderfolgenden Sätzen.
 Fix: eine Schreibweise wählen und durchhalten.
 
-## Allgemeine Inhaltsmuster (14-42 gelten sprachübergreifend)
+## Allgemeine Inhaltsmuster (14-44 gelten sprachübergreifend)
 
 14. Überhöhte Bedeutungssprache.
 Wörter: dient als, ist ein Beweis/Zeugnis für, eine entscheidende/zentrale Rolle, unterstreicht die Bedeutung, spiegelt breitere Trends wider
@@ -180,9 +180,20 @@ Fix: den konkreten Punkt stehen lassen und den Rest kappen.
 19. Standardabschnitte wie "Herausforderungen und Chancen".
 Fix: echte Probleme benennen.
 
+20. Falsche Bandbreite: "von ... bis hin zu ...".
+Problem: Die Konstruktion behauptet ein ganzes Spektrum und nennt dann zwei Beispiele. Im Deutschen besonders häufig als "von X bis hin zu Y", "angefangen bei ... über ... bis zu", "alles von ... bis ...".
+
+Vorher:
+> Das Festival bietet alles von traditionellen Tänzen bis hin zu modernen Installationen.
+
+Nachher:
+> Auf dem Festival gibt es traditionelle Tänze und moderne Installationen.
+
+Fix: die tatsächlichen Posten nennen und die Spektrum-Behauptung streichen.
+
 ## Sprachmuster
 
-20. KI-Vokabular.
+21. KI-Vokabular.
 Hochfrequente KI-Wörter: innovativ, umfassend, ganzheitlich, präzise, bahnbrechend, effizient, nahtlos, eintauchen, auf ein neues Level heben, ermöglichen, nicht nur... sondern auch..., eine Vielzahl an, eine breite Palette an, darüber hinaus, zentral, facettenreich, Landschaft, unterstreichen, spannend, essenziell, maßgeblich, entscheidend, vielfältig, Meilenstein, eine Schlüsselrolle spielen
 
 Vorher:
@@ -193,11 +204,11 @@ Nachher:
 
 Fix: gewöhnliche Wörter bevorzugen.
 
-21. Copula-Vermeidung.
+22. Copula-Vermeidung.
 Signal: steht für, dient als, markiert.
 Fix: oft reicht "ist".
 
-22. "Nicht nur ... sondern auch ..."
+23. "Nicht nur ... sondern auch ..."
 Vorher:
 > Das Produkt bietet nicht nur eine intuitive Oberfläche, sondern auch leistungsstarke Analysefunktionen.
 
@@ -206,7 +217,7 @@ Nachher:
 
 Fix: direkt sagen, was gemeint ist.
 
-23. Dreier-Listen und Adjektiv-Tripel.
+24. Dreier-Listen und Adjektiv-Tripel.
 Vorher:
 > Die Lösung ist — sauber, effizient und ganzheitlich — ein großer Schritt nach vorn.
 
@@ -215,18 +226,29 @@ Nachher:
 
 Fix: auf ein starkes Wort oder eine konkrete Eigenschaft reduzieren.
 
-24. Synonymhopping.
+25. Synonymhopping.
 Fix: lieber das normale Hauptwort wiederholen als krampfhaft variieren.
 
-25. Nominalisierung.
+26. Nominalisierung.
 Fix: Nomen zurück in Verben verwandeln.
 
-26. Hedge-Stapel.
+27. Hedge-Stapel.
 Fix: Unsicherheit nur behalten, wenn sie sachlich nötig ist.
+
+28. Fehlende Sinnesverben.
+Problem: KI greift kaum je zu Wahrnehmungsverben – sehen, lesen, hören, spüren, riechen, schmecken. Sie schreibt über Vorgänge statt über Wahrnehmungen und landet bei abstrakten Konstruktionen wie "es ergaben sich Bedenken".
+
+Vorher:
+> Bei der ersten Durchsicht ergaben sich Bedenken hinsichtlich der Machbarkeit.
+
+Nachher:
+> Ich hab das Angebot gelesen und sofort gedacht: das geht nicht auf. Vor allem die Zahlen sahen komisch aus.
+
+Fix: nur mit einem konkreten Detail arbeiten, das die Vorlage schon hergibt – kein erfundenes.
 
 ## Strukturmuster
 
-27. Gleichförmige Satzlängen.
+29. Gleichförmige Satzlängen.
 Vorher:
 > Das neue Framework bietet signifikante Verbesserungen. Es umfasst bessere Fehlerbehandlung und umfangreichere Dokumentation. Nutzer werden die vereinfachte API schätzen.
 
@@ -235,7 +257,7 @@ Nachher:
 
 Fix: Rhythmus öffnen.
 
-28. Immer gleicher Satzanfang (eintöniges Vorfeld).
+30. Immer gleicher Satzanfang (eintöniges Vorfeld).
 Problem: Deutsch ist eine V2-Sprache – vor dem finiten Verb kann fast jedes Satzglied stehen: Zeitangabe, Objekt, Adverbial. Menschen nutzen das ständig ("Den Bericht habe ich gestern gelesen"). KI besetzt das Vorfeld fast immer mit dem Subjekt.
 
 Vorher:
@@ -246,16 +268,16 @@ Nachher:
 
 Fix: Einstiege variieren, solange die Klarheit bleibt. Auch mal Objekt oder Zeitangabe nach vorn stellen.
 
-29. Zu viele und-Ketten.
+31. Zu viele und-Ketten.
 Fix: kürzen, teilen oder unterordnen.
 
-30. Jeder Absatz endet mit sauberer Minizusammenfassung.
+32. Jeder Absatz endet mit sauberer Minizusammenfassung.
 Fix: manche Absätze auf Fakt, Bild oder Frage enden lassen.
 
-31. Überall derselbe Registerton.
+33. Überall derselbe Registerton.
 Fix: den Absätzen unterschiedliche Aufgaben geben.
 
-32. Kommasetzung.
+34. Kommasetzung.
 Problem: Deutsche Kommaregeln sind komplexer als englische. KI setzt zu wenige Kommas, besonders bei "dass"-Sätzen und erweiterten Infinitiven.
 
 Vorher:
@@ -268,31 +290,31 @@ Fix: Kommas vor Nebensätzen und Infinitivgruppen prüfen.
 
 ## Format- und Assistenzmuster
 
-33. Fettdruck-Übernutzung und Doppelpunkt-Drama.
+35. Fettdruck-Übernutzung und Doppelpunkt-Drama.
 Problem: gestreuter Fettdruck als Betonungskrücke, und die Enthüllungs-Konstruktion "Nominalphrase: dramatische Pointe" ("Das Beste daran: es lernt von selbst.").
 Fix: weniger hervorheben. Doppelpunkt-Enthüllungen als schlichte Sätze schreiben – Doppelpunkte gehören zu Listen, Etiketten und Zitaten, nicht zur Inszenierung.
 
-34. Inline-Header-Listen.
+36. Inline-Header-Listen.
 Fix: in normale Sätze überführen, wenn das Format es nicht braucht.
 
-35. Emoji-Dekoration.
+37. Emoji-Dekoration.
 Fix: in formellen Kontexten meistens entfernen.
 
-36. Helfer-Sprache.
+38. Helfer-Sprache.
 Signal: "lassen Sie uns eintauchen", "hier ist eine Aufschlüsselung"
 Todesphrasen: Lassen Sie uns eintauchen, Es ist wichtig zu beachten, Es lässt sich nicht leugnen, Tauchen wir ein
 Auch Pseudo-Einsicht-Auftakte: Was die meisten übersehen, Das sagt dir niemand, Was die meisten falsch machen, Die eigentliche Frage ist
 Fix: näher am Inhalt starten. Pseudo-Einsicht-Auftakte streichen und die Behauptung allein stehen lassen.
 
-37. Modell- oder Cutoff-Selbstkommentar.
+39. Modell- oder Cutoff-Selbstkommentar.
 Fix: löschen, wenn er nicht gebraucht wird.
 
-38. Übertrieben zustimmender Ton.
+40. Übertrieben zustimmender Ton.
 Fix: nützlich und direkt formulieren.
 
 ## Kognitive Muster
 
-39. Kein Denkprozess, aber der Text tut allwissend.
+41. Kein Denkprozess, aber der Text tut allwissend.
 Vorher:
 > Das Framework bietet eine umfassende Lösung für Datenmanagement.
 
@@ -301,7 +323,7 @@ Nachher:
 
 Fix: bei informellen Texten etwas gedankliche Bewegung zulassen; sonst nüchtern bleiben.
 
-40. Flacher Emotionsbogen.
+42. Flacher Emotionsbogen.
 Vorher:
 > Die Entlassungen betrafen viele Mitarbeiter. Die Situation war für alle Beteiligten schwierig.
 
@@ -310,7 +332,7 @@ Nachher:
 
 Fix: nur dort Nuance hinzufügen, wo die Vorlage schon Haltung zeigt.
 
-41. Zu berechenbare Wortwahl.
+43. Zu berechenbare Wortwahl.
 Vorher:
 > Das Projekt wurde erfolgreich abgeschlossen und das Team feierte den Erfolg mit großer Begeisterung.
 
@@ -319,7 +341,7 @@ Nachher:
 
 Fix: das treffende Wort wählen, nicht das "schriftstellerischste".
 
-42. Überkorrigierte "Menschlichkeit".
+44. Überkorrigierte "Menschlichkeit".
 Problem: Wer jeden KI-Text mit denselben drei Tricks humanisiert, erzeugt eine neue, genauso erkennbare Schablone – Stakkato-Fragmente ("Kein Durchbruch. Nur ein Update."), inszenierte Selbstkorrekturen ("Moment – so stimmt das nicht"), pflichtschuldige rhetorische Fragen, "Seien wir ehrlich" in jedem zweiten Absatz, Modalpartikeln in jedem Satz.
 
 Anzeichen: ein Fragment in jedem Absatz; mehr als eine Selbstkorrektur pro Text; zehn verschiedene Umschreibungen, die alle im selben schnoddrigen Rhythmus enden.

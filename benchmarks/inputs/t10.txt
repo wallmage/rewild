@@ -1,0 +1,5 @@
+We shipped the new export flow on Tuesday. It went out to about 5% of accounts first, then everyone by Thursday.
+
+The old flow made you pick a format before you picked a date range, which was backwards — most people knew the dates and not the format. We swapped the order. Support tickets about export dropped from around 30 a week to 4.
+
+One thing we got wrong: the CSV still uses the old column order. Changing it would break anyone with a script pointed at the file, so we left it. There's a v2 flag if you want the new order.

@@ -1,0 +1,5 @@
+This study delves into the intricate relationship between remote work arrangements and employee productivity outcomes. In recent years, the landscape of workplace organization has undergone a profound transformation, underscoring the need for rigorous empirical investigation.
+
+Utilizing a comprehensive dataset comprising 4,200 knowledge workers across 12 organizations, we employed a difference-in-differences approach to examine productivity metrics before and after the implementation of hybrid policies. Our findings highlight a nuanced picture: while self-reported productivity increased by 8%, collaborative output metrics showed a modest decline of 3%.
+
+These results underscore the importance of a holistic approach to workplace policy. Future research should delve deeper into the mechanisms underlying these divergent trends.

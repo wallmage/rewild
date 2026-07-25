@@ -43,6 +43,8 @@ AI 写的东西有一种味道，你肯定闻到过：动不动就"随着……�
 
 典型工具把套话换了个说法，87% 这个没来源的数字照抄不误。Rewild 把虚的部分指出来，把话说实在。
 
+跑分用的东西都在 [`benchmarks/`](benchmarks/) 里：测试输入、评分标准、对照组提示词、盲评流程——不用光信这个数字，可以自己跑一遍。当初那次跑分的原始输出没留下来；如果你跑出来的结果和上面不一样，那该改的是上面这个数字。
+
 ## 为什么 Rewild 管用
 
 大多数去 AI 工具就二十来条通用规则：删掉"此外"，变变句子长度，完事。表面问题是处理了，往深了就不行了。Rewild 多走了四步：
@@ -65,7 +67,9 @@ Rewild 不是逐句改——逐句改只是把 AI 的骨架擦亮，架子还立
 
 书面文体是例外。公告、公文、营销稿只删和压，不整段重说——书面骨架本身就是语域，重说容易滑进聊天腔。整段重说只留给随笔、博客这种靠个人声音撑起来的文字。
 
-交付前跑两道检查。一个干净上下文的审稿人盲看改写稿，把还像 AI 的地方标出来；然后自带的脚本量一遍模型自己看不见的统计痕迹，改到报告干净为止。这套流程做过盲测：让评审在不知道谁是谁的情况下，拿旧版的输出和现在这版对比打分，现在这版每一项都赢了。
+交付前跑两道检查。一个干净上下文的审稿人盲看改写稿，把还像 AI 的地方标出来；然后自带的脚本量一遍模型自己看不见的统计痕迹，改到报告干净为止。
+
+流程本身有多大用？没想象中大。十种文体、十篇输入，用这一版和上一版各改一遍，交给三个互不通气的评审盲打分，结果基本打平：94.7 比 93.3（满分 100）。真正干活的是模式库和检测脚本，流程文字主要是兜底。这个测试在 [`benchmarks/`](benchmarks/) 里，可以自己跑。
 
 ## 中文专属模式
 
@@ -86,13 +90,13 @@ Rewild-ZH 检测 10 种中文特有的 AI 痕迹，每种都不难认：
 
 | 技能 | 模式数 | 特色 |
 |------|--------|------|
-| [English](rewild-en/SKILL.md) | 42 | 精简 `SKILL.md` + 详细 [pattern catalog](rewild-en/references/patterns.md) |
+| [English](rewild/SKILL.md) | 42 | 精简 `SKILL.md` + 详细 [pattern catalog](rewild/references/patterns.md) |
 | [中文](rewild-zh/SKILL.md) | 41 | 中文特有模式：语气词缺失、翻译腔、四字套语、公式化开头 |
-| [Deutsch](rewild-de/SKILL.md) | 42 | 德语特有模式：Modalpartikeln、Komposita、Gedankenstrich、Konnektoren-Flut |
+| [Deutsch](rewild-de/SKILL.md) | 44 | 德语特有模式：Modalpartikeln、Komposita、Gedankenstrich、Konnektoren-Flut |
 
 ## 如何使用
 
-1. 把你需要的语言的技能文件夹（`rewild-en/` 或 `rewild-zh/`）整个复制到技能目录——Claude Code 是 `~/.claude/skills/`。文件夹别拆散：`references/` 模式库和 `scripts/` 检测脚本要跟着一起走。
+1. 把你需要的语言的技能文件夹（`rewild/`、`rewild-zh/` 或 `rewild-de/`）整个复制到技能目录——Claude Code 是 `~/.claude/skills/`。文件夹名和内容都别改：文件夹名和技能自己的 `name:` 字段是对应的，`references/` 模式库和 `scripts/` 检测脚本也要跟着一起走。
 2. 或者，在别的 LLM 里把 `SKILL.md` 当系统提示词粘进去，`references/patterns.md` 放在旁边供模型按需读取。
 3. 说"rewild 一下"，然后粘贴你的文本。
 
@@ -100,10 +104,24 @@ Rewild-ZH 检测 10 种中文特有的 AI 痕迹，每种都不难认：
 
 每个技能文件夹都自带 [`scripts/naturalness-check.py`](rewild-zh/scripts/naturalness-check.py)（Python 3，零依赖）。它对文本做统计筛查：句长是否均匀、句子开头是否重复、段落长短是否雷同、AI 高频词、标点问题（中文里的半角标点、分号滥用、引号风格混用等）。
 
-跑这个脚本是工作流里的必做步骤：模型每次改写都会自动检测，修到零警告才交付。你也可以随时手动跑：
+跑这个脚本是工作流里的必做步骤：模型每次改写都会自动检测，修到零警告才交付。有警告时退出码是 1，干净时是 0，所以它也能直接当门禁用。你也可以随时手动跑：
 
-```
+```bash
 python3 rewild-zh/scripts/naturalness-check.py draft.txt --lang zh
+```
+
+脚本把 markdown 当正文读，不当骨架：标题、代码块、表格行会跳过，列表项各算一句。中文句长同时计入汉字和中间夹的英文词，所以"我们用 Kubernetes 做容器编排"这类中英混排的技术文不会被少算。匹配也不受排版影响，弯引号和直引号一视同仁。
+
+`--audit` 会拿脚本里的词表和旁边的模式库对一遍，把模式库写了、脚本却看不见的词列出来。改完模式库跑一次，两边就不会脱节：
+
+```bash
+python3 rewild-zh/scripts/naturalness-check.py --audit --lang zh
+```
+
+脚本本身也有回归测试，覆盖它历史上出过的每一个 bug。在仓库根目录跑：
+
+```bash
+python3 tests/test_checker.py
 ```
 
 ## 结构设计

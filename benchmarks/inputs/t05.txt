@@ -1,0 +1,5 @@
+We want to take this opportunity to acknowledge the service disruption that occurred yesterday. We deeply apologize for any inconvenience this may have caused our valued customers.
+
+At approximately 14:20 UTC, a configuration change was deployed that inadvertently impacted our primary database cluster. Our team responded swiftly, and full service was restored by 16:45 UTC. Throughout this incident, our engineers worked tirelessly to ensure a resolution.
+
+Moving forward, we are implementing a comprehensive review of our deployment processes. We remain steadfastly committed to delivering the reliable experience our customers deserve, and we thank you for your continued patience and understanding.

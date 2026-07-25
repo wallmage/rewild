@@ -97,9 +97,9 @@ ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im 
    - Ausnahme: Pressemitteilungen, Ankündigungen, Behörden- und Geschäftstexte auch bei dichtem Slop nicht komplett neu sagen – das schriftliche Gerüst ist selbst das Register, Neusagen rutscht leicht in Plauderton. Stattdessen streichen und straffen: Floskelsätze ganz raus, den Rest verdichten, das Gerüst der Ankündigung behalten. Neusagen ist für Essays, Blogposts und andere stimmgetragene Texte.
 6. Schnell-Checkliste durchlaufen.
 7. Zweiter Durchgang: die Umschreibung mit frischen Augen prüfen lassen. Nach „Zweiter Durchgang: Prüfung mit frischen Augen“ unten vorgehen.
-8. Den mitgelieferten Checker auf dem fertigen Text laufen lassen – dieser Schritt ist Pflicht, nicht optional. Ergebnis in eine Datei speichern und ausführen:
-   `python3 scripts/naturalness-check.py DATEI --lang de`
-   Warnungen beheben und erneut laufen lassen, bis der Bericht sauber ist oder jede verbleibende Warnung eine genannte Begründung hat. Bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen – eine begründete Warnung ist besser als ein unbegründeter Eingriff.
+8. Den mitgelieferten Checker auf dem fertigen Text laufen lassen – dieser Schritt ist Pflicht, nicht optional. Ergebnis in eine Datei speichern und das Skript aus dem Ordner dieses Skills ausführen:
+   `python3 <Skill-Verzeichnis>/scripts/naturalness-check.py DATEI --lang de`
+   Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht. Warnungen beheben und erneut laufen lassen, bis der Exit-Code 0 ist oder jede verbleibende Warnung eine genannte Begründung hat. Zwei Einschränkungen: Bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen – eine begründete Warnung ist besser als ein unbegründeter Eingriff. Und ein sauberer Bericht ist keine Bestnote; er heißt nur, dass die zählbaren Merkmale weg sind.
 9. Innerlich laut vorlesen. Jeden Satz, den du so keinem Kollegen sagen würdest, schlicht neu schreiben.
 
 ## Zweiter Durchgang: Prüfung mit frischen Augen
@@ -108,7 +108,7 @@ Eine Umschreibung nie nach dem ersten Durchgang abliefern. Es braucht einen Blic
 
 Starte für diese Blindprüfung einen Subagenten. Er bekommt nur den umgeschriebenen Text und die Schnell-Checkliste von oben – keine Vorlage, keine Nutzeranfrage, keine Entwurfsnotizen. Er berichtet, welche Checklisten-Punkte der Text auslöst; er schreibt nichts um.
 
-Die Funde arbeitest du selbst ein, mit offenem Katalog: echte Treffer richten, Pedanterie Richtung Muster 42 überspringen. Danach das fertige Ergebnis noch einmal gegen die Vorlage auf Erfundenes und Verschobenes abgleichen.
+Die Funde arbeitest du selbst ein, mit offenem Katalog: echte Treffer richten, Pedanterie Richtung Muster 44 überspringen. Danach das fertige Ergebnis noch einmal gegen die Vorlage auf Erfundenes und Verschobenes abgleichen.
 
 ## Genre-Kalibrierung
 
@@ -167,10 +167,10 @@ Nachher (humanisiert):
 Änderungen:
 - "In der heutigen Zeit" gestrichen (formelhafte Eröffnung, D7)
 - "Darüber hinaus" gestrichen (KI-Konnektor, D6)
-- "nahtlose, intuitive und umfassende" gestrichen (Dreier-Adjektiv, Muster 23)
+- "nahtlose, intuitive und umfassende" gestrichen (Dreier-Adjektiv, Muster 24)
 - Geviertstrich-Konstruktion aufgelöst (D2)
 - "Zusammenfassend lässt sich sagen" gestrichen (D6)
-- "effizient, präzise und innovativ" gestrichen (Dreier-Adjektiv, Muster 23)
+- "effizient, präzise und innovativ" gestrichen (Dreier-Adjektiv, Muster 24)
 - Zukunftsfloskel benannt statt nur gelöscht
 
 ## Referenzdateien

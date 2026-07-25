@@ -1,0 +1,12 @@
+Hi team,
+
+I wanted to provide a quick update on where things stand with the Q3 roadmap.
+
+First, the payments integration is progressing well. Second, we have identified some challenges with the vendor API, but the team is actively working to navigate these obstacles. Third, the design review is scheduled for next week.
+
+Additionally, I want to highlight the tremendous effort everyone has put in. Your dedication is a testament to the strength of this team.
+
+Looking ahead, exciting times lie ahead as we approach the launch. Please don't hesitate to reach out with any questions.
+
+Best,
+Sarah

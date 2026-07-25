@@ -1,0 +1,7 @@
+We are pleased to announce that version 4.2 of our data platform is now generally available. This release marks a pivotal moment in our commitment to delivering a seamless and comprehensive user experience.
+
+Key highlights include: enhanced query performance, delivering up to 40% faster response times; a redesigned permissions model, ensuring granular access control across teams; and native support for Parquet, enabling more efficient storage.
+
+Additionally, we have streamlined the onboarding flow, reducing setup time from approximately 45 minutes to under 10. Observers have cited onboarding friction as a significant barrier to adoption, and we are proud to have addressed it.
+
+We look forward to seeing what our customers build. Exciting times lie ahead.

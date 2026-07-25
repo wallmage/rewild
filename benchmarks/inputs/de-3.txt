@@ -1,0 +1,7 @@
+Wir freuen uns, die allgemeine Verfügbarkeit von Version 4.2 unserer Datenplattform bekannt zu geben. Dieses Release markiert einen entscheidenden Meilenstein in unserem Bestreben, eine nahtlose und umfassende Nutzererfahrung zu bieten.
+
+Zu den zentralen Neuerungen zählen: eine verbesserte Abfrage-Performance, die bis zu 40% schnellere Antwortzeiten ermöglicht; ein überarbeitetes Berechtigungs-Modell, das eine granulare Zugriffssteuerung sicherstellt; sowie native Unterstützung für Parquet.
+
+Darüber hinaus wurde der Onboarding Prozess gestrafft — die Einrichtungszeit konnte von etwa 45 Minuten auf unter 10 Minuten reduziert werden. Beobachter haben wiederholt darauf hingewiesen, dass Einstiegshürden die Verbreitung hemmen.
+
+Wir sind gespannt, was unsere Kunden damit bauen werden. Es bleibt spannend.

@@ -1,0 +1,11 @@
+Let me break this down. After 15 years in product management, I've learned that most people get roadmaps completely wrong.
+
+Here's what nobody tells you: a roadmap is not a plan. It's a communication artifact.
+
+The real question is not "what are we building?" It's "what are we choosing not to build?" That distinction is a game-changer.
+
+I've seen teams spend months delivering a comprehensive feature set that nobody asked for. Meanwhile, the one thing customers actually wanted sat in the backlog.
+
+The part everyone misses: saying no is the job. Not saying yes faster.
+
+What if I told you the best roadmaps fit on one page? Would you like to know how?
