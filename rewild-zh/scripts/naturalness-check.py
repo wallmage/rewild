@@ -484,8 +484,10 @@ def check_language_flavor(original, folded, lang, sentences):
         section("Chinese flavor (informational)")
         particles = sum(1 for s in sentences if s and s[-1] in ZH_PARTICLES)
         note(f"sentence-final particles (呢/啊/吧/嘛…): {particles} — "
-             "zero in informal text is a strong AI tell; "
-             "in formal text zero is correct")
+             "not a quota. A particle bolted onto a sentence that was never "
+             "spoken (\"辛苦了啊\") reads more artificial than none at all, "
+             "and email, announcements and reports are not informal text. "
+             "Zero is the right answer more often than not")
     elif lang == "de":
         section("German flavor (informational)")
         n = len(re.findall(
@@ -744,7 +746,8 @@ def run_audit(lang, catalog):
         probe = fold(term)
         if lang == "zh":
             covered = any(p in probe or probe in p
-                          for p in [fold(x) for x in phrases + watch])
+                          for p in [fold(x)
+                                    for x in phrases + watch + SEVERITY[lang]])
         else:
             head = probe.split()[0] if probe.split() else probe
             covered = probe in known or re.search(

@@ -348,6 +348,43 @@ Anzeichen: ein Fragment in jedem Absatz; mehr als eine Selbstkorrektur pro Text;
 
 Fix: pro Text zwei bis drei Eingriffe wählen und die Mittel von Text zu Text wechseln. Das Ergebnis gegenlesen: Hat es jetzt eine gleichförmig "lockere" Stimme, die die Vorlage nie hatte, zurück Richtung Originalregister drehen.
 
+### Die vier Lecks
+
+Diese Liste bewacht Substantive. An echten Umschreibungen gemessen bricht die Texttreue woanders – bei Zuschreibung, Modalität, Ausmaß und Kausalität. Eine Umschreibung kann nichts von der Liste oben erfinden und trotzdem falsch sein.
+
+45. Zuschreibungsdiebstahl.
+Problem: Die Vorlage hängt eine Behauptung jemand anderem an, die Umschreibung stellt sie nackt hin. Vage Zuschreibungen zu streichen ist richtig (Muster 16) – aber die Behauptung geht mit.
+
+Vorher (Vorlage):
+> Beobachter haben wiederholt darauf hingewiesen, dass Einstiegshürden die Verbreitung hemmen.
+
+Falsch:
+> Einstiegshürden hemmen die Verbreitung.
+
+Richtig:
+> Die Einrichtungszeit sank von etwa 45 auf unter 10 Minuten.
+
+Fix: Behauptung und Zuschreibung zusammen streichen, oder beide behalten. Nie die Behauptung allein.
+
+46. Erfundene Zusagen.
+Problem: Die Vorlage beschreibt, die Umschreibung verspricht. „Wir melden uns", „wir arbeiten weiter daran", „nächsten Monat bekommt ihr das".
+
+Fix: Im Namen des Autors darfst du nichts zusagen. Wo die Vorlage kein Futur hat, hat die Umschreibung auch keins.
+
+47. Aufgeblasener Schweregrad.
+Problem: „beeinträchtigt" wird „nichts ging mehr", „einige Nutzer" wird „alle", „verzögert" wird „nie ausgeliefert".
+
+Wörter: nichts, nie, niemals, immer, jeder, niemand, völlig, komplett, katastrophal, unmöglich, schlimmste
+
+Fix: Das sind Aussagen über Ausmaß, nicht über Tonstärke. Genau auf dem Niveau der Vorlage bleiben.
+
+48. Erfundene Kausalität.
+Problem: Die Umschreibung ergänzt Diagnose-Details, die die Vorlage nie gab – auch verneinte. Die Vorlage nennt einen Konfigurationsfehler, die Umschreibung schiebt „nicht die Syntax, die war in Ordnung" nach.
+
+Fix: Eine Ursache auszuschließen ist genauso erfunden wie eine zu erfinden. So viele Ursachen wie die Vorlage, nicht mehr.
+
+Mit `--source` findet das mitgelieferte Skript 45, 46 und 47 mechanisch. 48 findet es nicht; das liegt bei dir.
+
 ## Kalibrierung: Wie viel ist genug
 
 Zu viel umzuschreiben ist der häufigste Fehler. Die meisten echten Texte brauchen eine Handvoll Eingriffe, keine Generalüberholung.

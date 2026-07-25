@@ -133,6 +133,44 @@ rubric shows no advantage. The claim this supports is narrow — the fidelity
 pass catches a real defect class that the style checks are blind to — not that
 the rewrite is better overall.
 
+## Result: forced-choice, the measurement that actually discriminates
+
+The rubric above saturates at ~96%, so it cannot separate two decent versions.
+Replaced with two measures that have no ceiling: judges see both rewrites of
+the same source and **must** pick one (no ties), and separately score each text
+0-100 for how machine-written it reads. Three judges, five inputs, left/right
+randomised per pair.
+
+| | English | Chinese |
+|---|---|---|
+| Forced choice, this version | **10 / 12 (83%)** | 7 / 12 (58%) |
+| Machine-written, previous | 25.9 | 22.7 |
+| Machine-written, this version | **24.9** | 26.7 |
+
+English is a clear win. Chinese is not — 7/12 is inside the noise for twelve
+judgements, and the previous version still reads marginally less machine-made.
+
+Two defects this measurement caught that the rubric never would:
+
+**Placement beat wording (English).** The four fidelity rules were first placed
+at the end of the "Personality and Soul" section, so the last thing the model
+read before writing was five prohibitions. It wrote timidly: forced choice
+5/12, machine-written 28.8 against the old version's 22.7. Moving the identical
+text into a post-draft verification section took it to 10/12 and 24.9. Same
+rules, same words, different position.
+
+**A quota the model filled mechanically (Chinese).** Four places treated
+sentence-final particles (语气词) as something to add, including a checklist
+line reading "add one" and a scoring row rewarding their presence. The model
+bolted 啊 onto an internal email — "辛苦了啊" — and all three judges rejected
+it, one calling it "硬贴上去的". Particles are now framed as a diagnosis with
+a counter-example, and email, announcements and reports are explicitly not
+"informal". That moved Chinese from 6/12 to 7/12 and machine-written from 29.9
+to 26.7 — real but not decisive.
+
+Both failures were the same shape: an instruction the model satisfied
+literally, producing worse writing. Neither is visible to a pass/fail rubric.
+
 ## Regression tests
 
 `tests/test_checker.py` covers the checker itself. Run it from the repo root

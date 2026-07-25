@@ -84,12 +84,6 @@ Aber wechsle die Mittel. Wer jeden Text mit denselben drei Tricks humanisiert �
 
 ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im Ausgangstext stehen oder daraus klar ableitbar sein. Keine erfundenen Treffen, Anekdoten, Statistiken, Firmennamen, Städtenamen oder Ich-Erlebnisse.
 
-Und achte auf die vier Dinge, die durch diese Regel rutschen – keins davon ist ein Name oder eine Zahl. An echten Umschreibungen gemessen bricht die Texttreue genau hier:
-
-- **Zuschreibung.** Die Vorlage sagt „Beobachter verweisen auf X", deine Umschreibung sagt „X". Damit hast du fremde Behauptungen zu deinen gemacht. Vage Zuschreibungen zu streichen ist richtig – aber die Behauptung geht mit. Nie die Behauptung behalten und die Quelle streichen.
-- **Zusagen.** Die Vorlage beschreibt, deine Umschreibung verspricht. „Wir melden uns", „wir arbeiten weiter daran", „nächsten Monat bekommt ihr das" – wo die Vorlage nichts zusagt, darfst du im Namen des Autors nichts zusagen.
-- **Schweregrad.** Die Vorlage sagt „beeinträchtigt", deine Umschreibung sagt „nichts ging mehr". Die Vorlage sagt „einige Nutzer", du sagst „alle". Nichts, nie, immer, jeder, niemand, völlig, komplett – das sind Aussagen über Ausmaß, nicht über Tonstärke. Nicht hochdrehen.
-- **Ursachen und Diagnose.** Die Vorlage nennt einen Konfigurationsfehler, deine Umschreibung ergänzt „nicht die Syntax, die war in Ordnung" oder „auch keine Race Condition". Eine Ursache *auszuschließen* ist genauso erfunden wie eine zu erfinden.
 
 ## Ablauf
 
@@ -109,6 +103,15 @@ Und achte auf die vier Dinge, die durch diese Regel rutschen – keins davon ist
    Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht. Die beiden Hälften des Berichts sind unterschiedlich zu behandeln. **Stil-Warnungen sind Vorschläge** – bei Text, den du als bereits natürlich triagiert hast, nicht editieren, nur um eine Statistik zu beruhigen; eine begründete Warnung ist besser als ein unbegründeter Eingriff. **Treue-Warnungen sind Fehler**: Die Umschreibung sagt etwas, das die Vorlage nicht sagt. Dann wird die Umschreibung geändert, nicht begründet. Einzige Ausnahme sind Zahlen, die du aus Zahlen der Vorlage errechnet hast – kurz benennen und weiter.
    So lange laufen lassen, bis der Exit-Code 0 ist oder jede verbleibende Stil-Warnung eine Begründung hat und keine Treue-Warnung mehr übrig ist. Ein sauberer Bericht ist keine Bestnote; er heißt nur, dass die zählbaren Probleme weg sind.
 9. Innerlich laut vorlesen. Jeden Satz, den du so keinem Kollegen sagen würdest, schlicht neu schreiben.
+
+## Texttreue: Die vier Lecks
+
+Diese vier werden **nach** dem Schreiben geprüft, nicht währenddessen. Erst mit der Stimme schreiben, die der Abschnitt oben beschreibt, dann zurückkommen und abgleichen. Keins davon ist ein Name oder eine Zahl – deshalb greift die Anti-Fabrikations-Regel hier nicht.
+
+- **Zuschreibung.** Die Vorlage sagt „Beobachter verweisen auf X", du sagst „X". Damit sind fremde Behauptungen deine geworden. Vage Zuschreibungen zu streichen ist richtig – aber die Behauptung geht mit.
+- **Zusagen.** Die Vorlage beschreibt, deine Umschreibung verspricht. Wo die Vorlage nichts zusagt, darfst du im Namen des Autors nichts zusagen.
+- **Schweregrad.** Die Vorlage sagt „beeinträchtigt", du sagst „nichts ging mehr". Nichts, nie, immer, jeder, niemand, völlig – Aussagen über Ausmaß, nicht über Tonstärke.
+- **Ursachen und Diagnose.** Die Vorlage nennt einen Konfigurationsfehler, du ergänzt „nicht die Syntax". Eine Ursache auszuschließen ist genauso erfunden wie eine zu erfinden.
 
 ## Zweiter Durchgang: Prüfung mit frischen Augen
 

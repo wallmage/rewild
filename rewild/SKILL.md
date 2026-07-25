@@ -87,12 +87,6 @@ Vary your moves. If every text you rewild ends up with the same punchy fragments
 
 CRITICAL CONSTRAINT: every detail you add must already exist in the source text or be obviously inferable from it. Do not invent meetings, anecdotes, statistics, company names, cities, or first-person experiences.
 
-And watch the four things that leak past that rule, because none of them is a name or a number. Measured on real rewrites, these are where fidelity actually breaks:
-
-- **Attribution.** The source says "observers have cited X"; your rewrite says "X". You have just taken someone else's claim as your own. Cutting vague attribution is right — but cut the claim with it, or keep the attribution. Never keep the claim and drop the source.
-- **Commitments.** The source describes; your rewrite promises. "We'll send another update," "we'll keep refining it," "you'll see this next month" — if the source made no promise, you cannot make one on its author's behalf.
-- **Severity.** The source says "impacted"; your rewrite says "nothing worked." The source says "some users"; your rewrite says "everyone." Absolutes — nothing, never, always, completely, nobody — are facts about scale. Do not raise them.
-- **Causal and diagnostic detail.** The source says a config error caused it; your rewrite adds "not the syntax, which was fine" or "no race condition." Ruling things *out* is as invented as ruling them in.
 
 ## Workflow
 
@@ -113,6 +107,15 @@ And watch the four things that leak past that rule, because none of them is a na
    Treat the two halves of the report differently. **Style warnings are suggestions** — on text you triaged as already natural, do not edit just to silence a statistic; a justified warning beats an unjustified edit. **Fidelity warnings are defects.** A fidelity warning means the rewrite now says something the source did not, and the fix is always to change the rewrite, never to justify it. The only exception is a figure you derived arithmetically from figures in the source; say so and move on.
    Rerun until it exits 0, or until every remaining style warning has a stated reason and zero fidelity warnings remain. A clean report is not a passing grade; it only means the countable problems are gone.
 9. Read it aloud in your head. Any sentence you would not say to a colleague in that register, rewrite plainly.
+
+## Fidelity: The Four Leaks
+
+Check these *after* drafting, not while writing. They are a verification pass, not a brake — write with the voice the section above describes, then come back and confirm you did not drift on any of the four. None of them is a name or a number, which is why the anti-fabrication rule misses them.
+
+- **Attribution.** The source says "observers have cited X"; your rewrite says "X". You have taken someone else's claim as your own. Cutting vague attribution is right — but cut the claim with it, or keep the attribution.
+- **Commitments.** The source describes; your rewrite promises. "We'll send another update," "we'll keep refining it" — if the source made no promise, you cannot make one on its author's behalf.
+- **Severity.** The source says "impacted"; your rewrite says "nothing worked." Absolutes — nothing, never, always, completely, nobody — are facts about scale. Do not raise them.
+- **Causal and diagnostic detail.** The source says a config error caused it; your rewrite adds "not the syntax, which was fine." Ruling things *out* is as invented as ruling them in.
 
 ## Second Pass: Review With Fresh Eyes
 
