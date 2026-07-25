@@ -94,7 +94,7 @@ ENTSCHEIDENDE EINSCHRÄNKUNG: Jedes Detail, das du hinzufügst, muss bereits im 
 5. Absatzweise triagieren:
    - Sauber oder fast sauber: in Ruhe lassen oder eine Kleinigkeit richten.
    - Einzelne Muster: gezielt nachbessern. Mindestens D1-D7 in [references/patterns.md](references/patterns.md) prüfen, die übrigen Muster bei konkreten Symptomen nachschlagen.
-   - Dichter Slop (drei oder mehr Muster): nicht flicken, sondern neu sagen. Die erhaltenswerten Fakten notieren, vom Original wegschauen und den Absatz frisch schreiben – im selben Register und Genre wie die Vorlage, so wie ein guter menschlicher Autor dieses Genres ihn schreiben würde, nicht wie du ihn mündlich erzählen würdest. Danach alles gegen die Vorlage abgleichen – auch Situationen und Gefühle zählen als Fakten: Was die Vorlage nicht deckt, fliegt raus, nicht nur Namen und Zahlen. Wer dichten Slop Satz für Satz flickt, konserviert sein Skelett.
+   - Dichter Slop (drei oder mehr Muster): nicht flicken, sondern neu sagen. Die erhaltenswerten Fakten notieren, vom Original wegschauen und den Absatz frisch schreiben – im selben Register und Genre wie die Vorlage, so wie ein guter menschlicher Autor dieses Genres ihn schreiben würde, nicht wie du ihn mündlich erzählen würdest. Neusagen ändert die Formulierung, nicht die Reihenfolge: Die Abfolge der Punkte und die Absatzgrenzen der Vorlage bleiben stehen. Umstellen zerreißt die Vorbereitungen der Vorlage. Danach alles gegen die Vorlage abgleichen – auch Situationen und Gefühle zählen als Fakten: Was die Vorlage nicht deckt, fliegt raus, nicht nur Namen und Zahlen. Wer dichten Slop Satz für Satz flickt, konserviert sein Skelett.
    - Ausnahme: Pressemitteilungen, Ankündigungen, Behörden- und Geschäftstexte auch bei dichtem Slop nicht komplett neu sagen – das schriftliche Gerüst ist selbst das Register, Neusagen rutscht leicht in Plauderton. Stattdessen streichen und straffen: Floskelsätze ganz raus, den Rest verdichten, das Gerüst der Ankündigung behalten. Neusagen ist für Essays, Blogposts und andere stimmgetragene Texte.
 6. Schnell-Checkliste durchlaufen.
 7. Zweiter Durchgang: die Umschreibung mit frischen Augen prüfen lassen. Nach „Zweiter Durchgang: Prüfung mit frischen Augen“ unten vorgehen.
@@ -130,7 +130,7 @@ Informelle Texte, Blogposts, Essays:
 Geschäftstexte:
 - Hype, Selbstbeweihräucherung und leere Bedeutungssätze entfernen.
 - Professionellen Ton beibehalten. Das Ergebnis bleibt Schriftsprache: "drei wesentliche Neuerungen", nicht "drei Sachen sind neu".
-- Quellenlose Anpreisungen ("Branchenexperten sind überzeugt") nach dem Streichen durch eine ehrliche, zurückhaltende Selbstaussage ersetzen, statt ein Loch zu lassen.
+- Quellenlose Anpreisungen ("Branchenexperten sind überzeugt") samt der Behauptung streichen und die Lücke stehen lassen. Nicht mit einer bescheiden klingenden Ersatzaussage füllen – auch eine zurückhaltende Erfindung ist erfunden.
 
 Technische Dokumentation:
 - Klarheit und Präzision vor Persönlichkeit.

@@ -143,12 +143,13 @@ randomised per pair.
 
 | | English | Chinese |
 |---|---|---|
-| Forced choice, this version | **10 / 12 (83%)** | 7 / 12 (58%) |
-| Machine-written, previous | 25.9 | 22.7 |
-| Machine-written, this version | **24.9** | 26.7 |
+| Forced choice, this version | **10 / 12 (83%)** | **9 / 12 (75%)** |
+| Machine-written, previous | 25.9 | 22.0 |
+| Machine-written, this version | **24.9** | **21.7** |
 
-English is a clear win. Chinese is not — 7/12 is inside the noise for twelve
-judgements, and the previous version still reads marginally less machine-made.
+Both are wins. Chinese took three rounds to get there: 6/12, then 7/12, then
+9/12, each round fixing a defect the forced choice exposed and the pass/fail
+rubric could not see.
 
 Two defects this measurement caught that the rubric never would:
 
@@ -168,8 +169,22 @@ a counter-example, and email, announcements and reports are explicitly not
 "informal". That moved Chinese from 6/12 to 7/12 and machine-written from 29.9
 to 26.7 — real but not decisive.
 
-Both failures were the same shape: an instruction the model satisfied
-literally, producing worse writing. Neither is visible to a pass/fail rubric.
+**An instruction that licensed invention (both languages).** "When you cut
+unsourced praise, replace it with an honest, modest first-party claim" told the
+model to write a self-assessment the source never made. It produced "各家流程
+不一样，能省下多少时间也就不一样" in marketing copy and "上手这一关一直是我们
+的短板" in a release announcement — a company confessing a weakness its own
+source never confessed. All three judges flagged both. The rule now says: cut
+the praise together with its claim and leave the gap. A humble invention is
+still an invention.
+
+**Re-saying reordered the argument.** "Look away from the original and write
+it fresh" moved an essay's stated most-important lesson to the end, stranding
+the reference. Re-saying now changes wording, not sequence.
+
+Every one of these was the same shape: an instruction the model satisfied
+literally, producing worse writing. None is visible to a pass/fail rubric, and
+all four surfaced on the first forced-choice run that tested them.
 
 ## Regression tests
 

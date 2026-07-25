@@ -39,7 +39,7 @@ Before:
 After:
 > The Haolai River supports several endemic fish species, according to a 2019 survey by the Chinese Academy of Sciences.
 
-Fix: name the source or cut the attribution. If cutting leaves a hole, replace the puffery with an honest, modest first-party claim the source supports ("We won't claim it's perfect, but it's noticeably smoother than the last version") rather than deleting and leaving nothing.
+Fix: name the source, or cut the attribution and the claim together and leave the gap. Do not patch the hole with a modest-sounding substitute ("We won't claim it's perfect, but...") — a humble invention is still an invention. Only state something in the first party's own voice if the source already supports it elsewhere.
 
 4. Empty future framing and formulaic closers.
 Words to watch: sets the stage, marks a shift, future looks bright, exciting times lie ahead, journey toward excellence, In conclusion, In summary, To sum up, Ultimately, Looking ahead, only time will tell, it remains to be seen, the biggest lesson I learned, this experience taught me

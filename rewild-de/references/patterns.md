@@ -169,7 +169,7 @@ Nachher:
 Fix: überprüfbare Aussage statt Superlativ.
 
 16. Vage Zuschreibungen.
-Fix: Quelle benennen oder streichen. Hinterlässt das Streichen ein Loch, die Anpreisung durch eine ehrliche, zurückhaltende Selbstaussage ersetzen ("Perfekt ist es nicht, aber spürbar flüssiger als die letzte Version"), statt nichts dastehen zu lassen.
+Fix: Quelle benennen, oder Zuschreibung und Behauptung zusammen streichen und die Lücke stehen lassen. Nicht mit einer bescheiden klingenden Ersatzaussage stopfen – auch eine zurückhaltende Erfindung ist erfunden.
 
 17. Notabilitäts-Politur.
 Fix: Follower-Zahlen und Medienlisten nur behalten, wenn sie wirklich relevant sind.

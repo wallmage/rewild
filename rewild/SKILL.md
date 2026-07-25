@@ -97,7 +97,7 @@ CRITICAL CONSTRAINT: every detail you add must already exist in the source text 
 5. Triage each paragraph:
    - Clean or nearly clean: leave it alone, or make one small fix.
    - A few tells: edit in place. Scan at least patterns 1-6 in [references/patterns.md](references/patterns.md); for stubborn tells, go deeper into the relevant category.
-   - Dense slop (three or more tells): re-say it instead of editing it. Note the facts worth keeping, look away from the original, and write the paragraph fresh in the same register and genre as the original — business stays business, formal stays formal — the way a skilled human author of that genre would write it, not the way you would say it out loud. Then reconcile everything against the source — situations and feelings count as facts too: anything the source does not support gets cut, not just names and numbers. Editing dense slop sentence by sentence preserves its skeleton; re-saying discards it.
+   - Dense slop (three or more tells): re-say it instead of editing it. Note the facts worth keeping, look away from the original, and write the paragraph fresh in the same register and genre as the original — business stays business, formal stays formal — the way a skilled human author of that genre would write it, not the way you would say it out loud. Re-saying changes the wording, not the order: keep the source's sequence of points and its paragraph boundaries. Reordering breaks the setups the source built — a lesson billed as "the most important" lands wrong once it has been moved to the end. Then reconcile everything against the source — situations and feelings count as facts too: anything the source does not support gets cut, not just names and numbers. Editing dense slop sentence by sentence preserves its skeleton; re-saying discards it.
    - Exception: press releases, announcements, policy text, and other written-form genres never get fully re-said, however dense the slop. Their written skeleton *is* the register, and re-saying slides into chat tone. Strip and tighten instead: delete the boilerplate sentences outright, compress what remains, keep the announcement's frame. Full re-saying is for essays, posts, and other pieces the voice carries.
 6. Run the quick-reference checklist.
 7. Second pass: get the rewrite reviewed with fresh eyes. Follow "Second Pass: Review With Fresh Eyes" below.
@@ -138,7 +138,7 @@ Business writing:
 - Remove hype and vague significance claims.
 - Keep the register professional. Do not go breezy in the name of sounding human: the result is still written English — "three main updates," not "three things are new."
 - End on the product or the plan ("we'll keep refining it"), not on a shrug.
-- When you cut unsourced praise ("industry experts believe"), replace it with an honest, modest first-party claim rather than leaving a hole.
+- Cut unsourced praise ("industry experts believe") together with the claim it carried, and leave the gap. Do not fill it with a modest-sounding substitute ("we won't claim it's perfect") — a humble invention is still an invention.
 
 Technical documentation:
 - Prioritize clarity, concrete examples, and precise terms.
