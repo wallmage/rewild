@@ -10,110 +10,105 @@
 [![Removes](https://img.shields.io/badge/removes-AI%20writing%20patterns-0f766e?style=flat-square)](https://github.com/wallmage/rewild)
 [![Keeps](https://img.shields.io/badge/keeps-your%20voice-4f46e5?style=flat-square)](https://github.com/wallmage/rewild)
 [![Languages](https://img.shields.io/badge/languages-English%20%7C%20%E4%B8%AD%E6%96%87%20%7C%20Deutsch-b45309?style=flat-square)](https://github.com/wallmage/rewild)
-[![Benchmark](https://img.shields.io/badge/benchmark-30%2F30-2563eb?style=flat-square)](https://github.com/wallmage/rewild)
+[![Blind A/B](https://img.shields.io/badge/blind%20A%2FB-83%25%20EN%20%C2%B7%2075%25%20ZH-2563eb?style=flat-square)](benchmarks/)
 
 [English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
 
-KI-Text hat einen bestimmten Klang. Du kennst ihn: aufgeblasene Bedeutsamkeit, Adjektiv-Drillinge, Zusammenfassungen, die eigentlich nichts sagen. Die meisten „Humanizer“-Tools schrubben diesen Klang halt weg und lassen sauberen, aber seelenlosen Text stehen. Rewild macht was anderes. Es entfernt die KI-Muster und bringt *deine* Stimme zurück – Meinungen, Rhythmus, Ecken und Kanten. Keine erfundenen Fakten, keine aufgesetzte Persönlichkeit. Einfach der Text, den du eigentlich schreiben wolltest.
+KI-Text hat einen bestimmten Klang, und du kennst ihn. Aufgeblasene Bedeutsamkeit, Adjektiv-Drillinge, Zusammenfassungen, die eigentlich nichts sagen. Die meisten „Humanizer“-Tools schrubben genau diesen Klang weg und geben dir sauberen, seelenlosen Text zurück. Rewild macht etwas anderes: Es entfernt die KI-Muster und bringt deine Stimme zurück – Meinungen, Rhythmus, Ecken und Kanten. Es erfindet keine Fakten und verpasst dir keine Persönlichkeit, die vorher nicht da war.
 
-**30/30 im Benchmark. 40+ sprachspezifische Muster. Drei Sprachen.**
+**139 sprachspezifische Muster. Drei Sprachen. Ein Checker, der deine Vorlage liest, nicht nur deinen Entwurf.**
 
-## Benchmark: Rewild vs. ein typisches Humanizer-Tool
+## Funktioniert das wirklich
 
-Gleicher KI-Text, gleiches Modell, Blindvergleich. 10 Kriterien pro Ausgabe, 3 Testprompts.
+Zwei Dinge werden gemessen, und sie beantworten verschiedene Fragen.
 
-| | Rewild | Typisches 24-Muster-Tool |
+**Ist diese Version besser als die vorherige?** Prüfer sehen beide Umschreibungen derselben Vorlage und müssen sich für eine entscheiden. Unentschieden ist nicht erlaubt, deshalb kann der Test nicht sättigen wie eine Checkliste. Fünf Vorlagen, drei unabhängige Prüfer, niemand weiß, welches System welchen Text geschrieben hat.
+
+| | Englisch | Chinesisch |
 |---|---|---|
-| **Ergebnis** | **30 / 30 (100%)** | 24 / 30 (80%) |
-| Kein KI-Vokabular | 6/6 | 6/6 |
-| Kein Meta-Kommentar | 6/6 | 5/6 |
-| Satzlängen-Variation | 6/6 | 4/6 |
-| Konkrete Details ergänzt | 6/6 | 4/6 |
-| Zeigt Meinung/Emotion | 6/6 | 5/6 |
+| Der Vorgängerversion vorgezogen | **10 / 12 (83 %)** | **9 / 12 (75 %)** |
+| Liest sich weniger maschinell | ja | ja |
 
-Die ersten drei Zeilen sind praktisch Gleichstand – KI-Vokabular entfernen kann doch jedes halbwegs brauchbare Tool. Der Unterschied liegt in den letzten beiden Zeilen: echte Details einbauen und eine Haltung zeigen. Ein typisches Tool hört beim Entfernen auf. Sauberer Text, keine Seele. Rewild erreicht 30/30, weil „klingt nicht nach KI“ erst der Anfang ist, nicht das Ziel. Es stellt den Rhythmus wieder her, schiebt echte Details aus dem Quelltext nach vorne und lässt den Text eben mal eine Meinung haben.
+Für Chinesisch brauchte es drei Runden: 6/12, dann 7/12, dann 9/12. Jede Runde hat einen echten Fehler behoben. Ein Beispiel: An vier Stellen behandelte der chinesische Skill satzfinale Modalpartikeln als Soll, das erfüllt werden muss, und das Modell klebte prompt ein 啊 an eine interne E-Mail. Alle drei Prüfer haben genau diesen Satz abgelehnt. Partikeln sind jetzt eine Diagnose, kein Ziel.
 
-**Chinesisch-Benchmark:** Der Abstand ist da noch größer – **30/30 (100%)** vs. **20/30 (67%)**. Generische Tools haben null chinesisch-spezifische Muster und erkennen daher keine fehlenden Modalpartikeln (语气词), keine Idiom-Häufungen (四字套语) oder Übersetzungs-Stil (翻译腔).
+**Ist es besser als ein generischer Humanizer?** Ein älterer Lauf ergab 30/30 gegen 24/30 bei einem typischen 24-Regeln-Tool, im Chinesischen 30/30 gegen 20/30. Behandle die Zahl als unbestätigt: Die Rohausgaben sind nicht erhalten, und der Lauf liegt vor den unten beschriebenen Checker-Korrekturen. Der Prüfstand liegt in [`benchmarks/`](benchmarks/), mit Vorlagen, Bewertungsraster, Kontroll-Prompt und Blindbewertungsverfahren, damit du es nachrechnen und mir widersprechen kannst.
 
-Der Prüfstand liegt in [`benchmarks/`](benchmarks/) – Eingaben, Bewertungsraster, Kontroll-Prompt und Blindbewertungsverfahren –, damit man das nachrechnen kann, statt der Zahl zu glauben. Die Rohausgaben des ursprünglichen Laufs sind nicht erhalten; wenn dein Durchlauf etwas anderes ergibt, gehört die Zahl oben geändert.
+> **Vorlage:** In der heutigen Zeit ist es wichtiger denn je, sich mit künstlicher Intelligenz auseinanderzusetzen. Darüber hinaus bietet unsere bahnbrechende Plattform eine nahtlose, intuitive und umfassende Nutzererfahrung.
+>
+> **Typisches Tool:** Wir haben eine Plattform gebaut, die Teams Zeit spart. Das Feedback ist bisher gut – erste Rückmeldungen deuten auf echte Zeitersparnis hin.
+>
+> **Rewild:** Die Plattform spart Zeit. Das ist eine faire Aussage. „Bahnbrechend“ ist der Teil, der aufgeblasen wirkt.
 
-## Warum Rewild funktioniert
+Das typische Tool schreibt Werbesprache in leisere Werbesprache um. Rewild benennt sie.
 
-Die meisten Humanizer arbeiten mit knapp zwanzig generischen Regeln: „Additionally“ löschen, Satzlänge variieren, fertig. Damit kriegt man die Oberfläche hin. Rewild geht in vier Punkten tiefer:
+## Warum es funktioniert
 
-**40+ sprachspezifische Muster statt 20 generischer Regeln.** Jede Sprache hat halt ihre eigenen KI-Marker. Englische KI überstrapaziert „testament“, „landscape“ und Geviertstriche. Deutsche KI vermeidet Modalpartikeln, zerlegt Komposita und schreibt „In der heutigen Zeit“ als Einstieg. Rewild hat für jede Sprache einen eigenen Musterkatalog, der auf Forschungsergebnissen und echten Erkennungsdaten basiert.
+Die meisten Humanizer arbeiten mit gut zwanzig generischen Regeln. „Darüber hinaus“ streichen, Satzlängen variieren, fertig. Das reicht für die Oberfläche und für sonst nichts. Die zusätzliche Arbeit steckt an vier Stellen.
 
-**Zwei-Schichten-Architektur.** Eine schlanke `SKILL.md` (die Betriebsanleitung) lädt schnell und legt die Regeln fest. Ein ausführlicher `references/patterns.md` (der Diagnosekatalog) wird bei Bedarf nachgeladen – Wortlisten, Vorher/Nachher-Beispiele, akademische Quellen. So bekommt man Präzision, ohne das gesamte Kontextfenster beim Start zu verbrauchen.
+**Muster pro Sprache, nicht eine Liste für alle.** Englische KI überstrapaziert „testament“ und „landscape“ und stützt sich auf Geviertstriche. Chinesische KI lässt Modalpartikeln weg und stapelt Vier-Zeichen-Idiome. Deutsche KI vermeidet Modalpartikeln und zerlegt Komposita. Jede Sprache hat ihren eigenen Katalog, aufgebaut aus Forschungsergebnissen und echten Erkennungsdaten.
 
-**Anti-Fabrikation als Kernregel.** Viele Tools „humanisieren“, indem sie Anekdoten erfinden, Fake-Statistiken einstreuen oder Ich-Erlebnisse dazudichten. Das macht Rewild nicht. Jedes Detail im Output muss schon im Quelltext stehen. Stimme entsteht durch Rhythmus, Haltung und das Hervorbringen echter Details – nicht durch Erfinden.
+**Ein Schutz gegen Überkorrektur.** Wer jeden Text mit denselben drei Tricks bearbeitet, Stakkato-Fragmenten und inszenierten Selbstkorrekturen und einer rhetorischen Frage pro Abschnitt, hat nur eine neue Schablone gebaut, die genauso maschinell klingt wie die alte. Rewild begrenzt seine Eingriffe und wechselt sie ab.
 
-**Ein Schutz gegen Überkorrektur.** Wer jeden Text mit denselben drei Tricks humanisiert – Stakkato-Fragmente, inszenierte Selbstkorrekturen, rhetorische Fragen – baut nur eine neue, genauso erkennbare Schablone. Rewild begrenzt die Eingriffe pro Text und wechselt die Mittel, damit zehn Umschreibungen nicht in derselben Stimme enden.
+**Texttreue, nicht nur Stil.** Diesen Teil lassen die meisten Tools komplett aus. Eine Umschreibung kann nichts von der üblichen Liste erfinden, keine falschen Namen und keine falschen Zahlen, und trotzdem etwas behaupten, das die Vorlage nie gesagt hat. Vier Wege dorthin:
 
-## So arbeitet Rewild
+- Die Vorlage schreibt eine Behauptung jemandem zu; die Umschreibung streicht die Quelle und behält die Behauptung
+- Die Vorlage beschreibt; die Umschreibung verspricht
+- Die Vorlage sagt „beeinträchtigt“; die Umschreibung sagt „nichts ging mehr“
+- Die Vorlage nennt eine Ursache; die Umschreibung schließt nebenbei andere aus
 
-Rewild sortiert jeden Absatz, bevor es ihn anfasst. Dichten KI-Text Satz für Satz zu redigieren poliert nur das Skelett und lässt es stehen, deshalb teilt der Ablauf die Arbeit dreifach auf:
+Die ersten drei findet der mitgelieferte Checker, indem er deine Umschreibung gegen deine Vorlage hält. Die vierte liegt beim Autor, und der Katalog sagt das auch so.
 
-- **Schon menschlich?** Stehen lassen. Zu viel zu ändern ist die häufigste Art, wie solche Tools scheitern – ein sauberer Absatz bekommt nichts oder eine kleine Korrektur.
-- **Ein paar Marker?** An Ort und Stelle gegen den Musterkatalog beheben.
-- **Dichter Slop?** Neu sagen. Die Fakten notieren, vom Original wegschauen, den Absatz frisch im selben Register schreiben, dann jeden Fakt gegen die Vorlage abgleichen.
+**Nichts erfinden, auch nichts Bescheidenes.** Jedes Detail im Ergebnis muss schon in der Vorlage stehen. Diese Regel hatte ein Loch: Eine ältere Version wies das Modell an, gestrichene Anpreisungen durch eine ehrliche, zurückhaltende Selbstaussage zu ersetzen – und es tat es. Ein Werbetext bekam einen Haftungsausschluss, den niemand geschrieben hatte. Eine Release-Notiz ließ eine Firma eine Schwäche einräumen, von der ihre eigene Vorlage nie sprach. Auch eine bescheidene Erfindung ist erfunden.
 
-Formelle Genres sind die Ausnahme. Pressemitteilungen, Ankündigungen und Behördentexte werden gestrichen und gestrafft, nie komplett neu gesagt – ihr schriftliches Skelett ist das Register, und Neusagen rutscht in Plauderton. Komplettes Neusagen ist für Essays und Posts, wo die Stimme den Text trägt.
+## Wie Rewild arbeitet
 
-Vor der Auslieferung laufen zwei Prüfungen. Ein Prüfer mit leerem Kontext liest die Umschreibung blind und markiert, was noch nach KI klingt. Dann misst der mitgelieferte Checker die statistischen Marker, die das Modell im eigenen Text nicht sieht, und der Entwurf wird korrigiert, bis der Bericht sauber ist.
+Jeder Absatz wird sortiert, bevor irgendetwas angefasst wird. Dichten KI-Text Satz für Satz zu redigieren poliert nur das Skelett und lässt es stehen, deshalb teilt sich die Arbeit dreifach auf:
 
-Wie viel bringt der Ablauf selbst? Weniger als man denkt. Zehn Vorlagen aus zehn Genres wurden von dieser und von der vorherigen Version umgeschrieben und dann von drei unabhängigen Prüfern blind bewertet. Das Ergebnis war gleichauf: 94,7 zu 93,3 von 100. Die Arbeit machen die Musterkataloge und der Checker; der Ablauftext hält das Ganze vor allem ehrlich. Der Test liegt in [`benchmarks/`](benchmarks/) und lässt sich nachfahren.
+- **Schon menschlich?** Stehen lassen. Zu viel zu ändern ist die häufigste Art, wie solche Tools scheitern, also bekommt ein sauberer Absatz nichts oder eine Kleinigkeit.
+- **Ein paar Marker?** An Ort und Stelle gegen den Katalog beheben.
+- **Dichter Slop?** Neu sagen. Die Fakten notieren, vom Original wegschauen, im selben Register frisch schreiben, dann jeden Fakt gegen die Vorlage abgleichen.
 
-## Deutsch-spezifische Muster
+Neusagen ändert die Formulierung, nie die Reihenfolge. Wer die als „wichtigste“ angekündigte Lehre eines Essays ans Ende schiebt, lässt den Aufbau davor ins Leere laufen.
 
-Rewild-DE erkennt 13 Muster, die nur im Deutschen auftreten:
+Formelle Genres sind vom Neusagen ganz ausgenommen. Pressemitteilungen, Ankündigungen und Behördentexte werden stattdessen gestrichen und gestrafft, weil ihr schriftliches Gerüst selbst das Register ist und Neusagen in Plauderton rutscht.
 
-- **Modalpartikeln fehlen** – doch, halt, mal, eben, ja sind die Seele der deutschen Sprache; KI nutzt sie kaum. Ein Text ohne „halt“ oder „eben“ klingt sofort künstlich
-- **Geviertstrich statt Halbgeviertstrich** – Englischer em dash (—) statt korrektem deutschen Halbgeviertstrich (–). Fällt vielleicht nicht jedem auf, ist aber ein klarer Marker
-- **Falsche Anführungszeichen** – Englische "..." statt deutschen „...“ – das ist doch eigentlich ein Anfängerfehler
-- **Hauptsatz-Ketten** – Kurze Hauptsätze aneinandergereiht, wo natürliches Deutsch Nebensätze bauen würde; im Nebensatz steht das Verb manchmal nicht am Ende
-- **Komposita zerlegt** – „Taschen-Rechner“ statt Taschenrechner. KI hat da eben ein Problem mit der Zusammenschreibung
-- **Konnektoren-Flut** – „Darüber hinaus“, „Zusammenfassend lässt sich sagen“ – das braucht man mal, aber nicht in jedem Absatz
-- **Formelhafte Eröffnungen** – „In der heutigen Zeit...“ als Einstieg ist ein sofortiger KI-Marker
-- **Kasusfehler** – „des Kunde“ statt „des Kunden“; schwache Maskulina sind eine klassische KI-Stolperfalle
-- **Passiv-Ketten** – Drei Passivsätze hintereinander plus Nominalstil. Liest sich wie eine Behördenakte
-- **Hedging-Konjunktiv** – „könnte möglicherweise potenziell“ als Dauerabsicherung, wo ein klares „dürfte“ oder „ist“ reicht
-- **Wörtliche Übersetzungen** – „Sie nahm einen tiefen Atemzug“ statt „Sie atmete tief durch“
-- **Fehlende regionale Färbung** – Kein Österreichisch, Schweizerdeutsch oder dialektale Einsprengsel
-- **Orthographische Inkonsistenz** – Verschiedene Schreibweisen im selben Text
+Vor der Auslieferung laufen zwei Prüfungen. Ein Prüfer ohne Erinnerung an das Original liest die Umschreibung blind und markiert, was noch nach KI klingt. Dann misst der Checker, was das Modell im eigenen Text nicht sieht, und hält den Entwurf gegen die Vorlage. Stil-Warnungen sind Vorschläge. Treue-Warnungen sind Fehler.
 
 ## Skills
 
 | Skill | Muster | Besonderheit |
 |-------|--------|--------------|
-| [English](rewild/SKILL.md) | 42 | Schlankes `SKILL.md` + ausführlicher [pattern catalog](rewild/references/patterns.md) |
-| [中文](rewild-zh/SKILL.md) | 41 | Chinesisch-spezifische Muster wie 语气词缺失, 翻译腔, 四字套语 |
-| [Deutsch](rewild-de/SKILL.md) | 44 | Deutsch-spezifische Muster wie Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
+| [English](rewild/SKILL.md) | 46 | Schlankes `SKILL.md` + ausführlicher [pattern catalog](rewild/references/patterns.md) |
+| [中文](rewild-zh/SKILL.md) | 45 | Chinesisch-spezifische Muster wie 语气词缺失, 翻译腔, 四字套语 |
+| [Deutsch](rewild-de/SKILL.md) | 48 | Deutsch-spezifische Muster wie Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
 
 ## So funktioniert's
 
-1. Kopiere den Skill-Ordner deiner Sprache (`rewild/`, `rewild-zh/` oder `rewild-de/`) in dein Skill-Verzeichnis – bei Claude Code ist das `~/.claude/skills/`. Ordnernamen und Inhalt so lassen: Der Ordnername entspricht dem `name:`-Feld des Skills, und der `references/`-Katalog und der `scripts/`-Checker gehören dazu.
-2. Oder füge in einem anderen LLM die `SKILL.md` als System Prompt ein und halte `references/patterns.md` bereit, damit das Modell Details nachladen kann.
+1. Kopiere den Skill-Ordner deiner Sprache (`rewild/`, `rewild-zh/` oder `rewild-de/`) in dein Skill-Verzeichnis, bei Claude Code ist das `~/.claude/skills/`. Ordnernamen und Inhalt so lassen: Der Ordnername entspricht dem `name:`-Feld des Skills, und der `references/`-Katalog und der `scripts/`-Checker gehören dazu.
+2. In einem anderen LLM fügst du `SKILL.md` als System Prompt ein und hältst `references/patterns.md` bereit, damit das Modell nachladen kann.
 3. Sag „rewild das“ und füg deinen Text ein.
 
-## Automatische Natürlichkeitsprüfung
+## Der mitgelieferte Checker
 
-Jeder Skill-Ordner bringt [`scripts/naturalness-check.py`](rewild-de/scripts/naturalness-check.py) mit (Python 3, keine Abhängigkeiten). Es misst die statistischen Marker aus den Katalogen: gleichförmige Satzlängen, wiederholte Satzanfänge, gleich lange Absätze, KI-Vokabular und Zeichensetzung – Geviertstriche, als Gedankenstrich missbrauchte Bindestriche und englische Anführungszeichen („Das stimmt.“ vs. “Das stimmt.”).
+Jeder Skill-Ordner bringt [`scripts/naturalness-check.py`](rewild-de/scripts/naturalness-check.py) mit, Python 3 ohne Abhängigkeiten. Der Lauf ist Pflichtschritt im Ablauf, kein Extra.
 
-Der Lauf ist ein Pflichtschritt im Ablauf: Das Modell prüft jede Umschreibung und behebt Warnungen, bis der Bericht sauber ist – erst dann wird geliefert. Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht, das Skript taugt also auch als Gate. Manuell geht es jederzeit auch:
+Gib die Vorlage zusammen mit der Umschreibung mit, dann erledigt er beide Hälften:
 
 ```bash
-python3 rewild-de/scripts/naturalness-check.py entwurf.txt --lang de
+python3 rewild-de/scripts/naturalness-check.py umschreibung.txt --source vorlage.txt --lang de
 ```
 
-Markdown liest das Skript als Fließtext, nicht als Gerüst: Überschriften, Codeblöcke und Tabellenzeilen werden übersprungen, Listenpunkte zählen als eigene Sätze. Die Suche ist typografieunabhängig, und das Vokabular wird flektiert erkannt – „nahtlos“ findet auch „nahtlose“ und „nahtlosen“.
+Die Stil-Hälfte misst, was die Kataloge beschreiben: gleichförmige Satzlängen, wiederholte Satzanfänge, gleich lange Absätze, KI-Vokabular, Zeichensetzung. Die Treue-Hälfte vergleicht beide Texte und meldet Namen, Zahlen, Zusagen, übernommene Zuschreibungen und aufgeblasenen Schweregrad. Der Exit-Code ist 1, solange etwas markiert ist, und 0 bei sauberem Bericht, damit das Skript auch als Gate taugt.
 
-`--audit` vergleicht die Wortlisten des Skripts mit dem Musterkatalog daneben und meldet jeden Begriff, den der Katalog dokumentiert, das Skript aber nicht sieht. Nach jeder Katalogänderung einmal laufen lassen, dann driften die beiden nicht auseinander:
+Ein paar Dinge macht er richtig, die eine naive Umsetzung falsch macht. Markdown liest er als Fließtext statt als Gerüst: Überschriften, Codeblöcke und Tabellenzeilen werden übersprungen, Listenpunkte zählen als eigene Sätze. Die Suche ist typografieunabhängig. Vokabular wird flektiert erkannt, „nahtlos“ findet auch „nahtlose“ und „nahtlosen“. Für Deutsch prüft er zusätzlich Geviertstriche, als Gedankenstrich missbrauchte Bindestriche und englische Anführungszeichen.
+
+Nach jeder Katalogänderung einmal `--audit` laufen lassen. Es vergleicht die Wortlisten des Skripts mit dem Katalog daneben und meldet jeden Begriff, den der Katalog dokumentiert, das Skript aber nicht sieht:
 
 ```bash
 python3 rewild-de/scripts/naturalness-check.py --audit --lang de
 ```
 
-Für den Checker selbst gibt es Regressionstests, die jeden Fehler abdecken, mit dem er ausgeliefert wurde. Aus dem Repo-Wurzelverzeichnis:
+Dreißig Regressionstests decken jeden Fehler ab, mit dem der Checker je ausgeliefert wurde:
 
 ```bash
 python3 tests/test_checker.py
@@ -121,39 +116,38 @@ python3 tests/test_checker.py
 
 ## Aufbau
 
-Jede Sprache besteht aus zwei Dateien, und diese Aufteilung ist Absicht.
+Jede Sprache besteht aus zwei Dateien, und die Trennung hat einen Grund.
 
-`SKILL.md` ist die Betriebsanleitung. Sie definiert, wann das Tool anspringen soll, was nicht verändert werden darf, wie man für verschiedene Textsorten kalibriert und wie guter Stil klingt. Drin stecken eine Schnellreferenz-Checkliste, ein vollständiges Beispiel und ein Bewertungsraster. Das wird jedes Mal in den Kontext geladen.
+`SKILL.md` ist die Betriebsanleitung: wann der Skill greift, was unangetastet bleibt, wie nach Genre kalibriert wird, wie Stimme klingt. Sie lädt jedes Mal in den Kontext, also bleibt sie schlank.
 
-`references/patterns.md` ist der Diagnosekatalog. Hier liegt das komplette Inventar sprachspezifischer KI-Muster – Wortlisten, Vorher/Nachher-Beispiele für jedes Muster, Schweregrad-Einstufungen und akademische Quellen. Das Modell liest daraus bei Bedarf, und zwar nur die Abschnitte, die für den vorliegenden Text relevant sind.
+`references/patterns.md` ist der Diagnosekatalog: das vollständige Inventar der Marker, mit Wortlisten, Vorher/Nachher-Paaren und Quellen. Das Modell holt sich Abschnitte bei Bedarf, statt alles vorab zu laden.
 
-Das Ergebnis: schneller Start, gründliche Diagnose bei Bedarf, kein verschwendeter Kontext. Die Betriebsanleitung kennt die Regeln. Der Katalog kennt die Muster. Zusammen funktionieren sie.
+Ein Ergebnis aus den Tests hat mich überrascht: Wo eine Regel steht, zählt so viel wie ihre Formulierung. Die Treue-Regeln standen zuerst am Ende des Abschnitts über Stimme, also war das Letzte, was das Modell vor dem Schreiben las, eine Liste von Verboten. Es schrieb zaghaft und verlor den Blindvergleich mit 5/12. Derselbe Text, nur in einen Prüfabschnitt nach dem Entwurf verschoben: 10/12.
 
 ## Vorher / Nachher
 
-**KI-generiert:**
-> In der heutigen Zeit ist es wichtiger denn je, sich mit künstlicher Intelligenz auseinanderzusetzen. Darüber hinaus bieten KI-Schreibwerkzeuge eine nahtlose, intuitive und umfassende Nutzererfahrung. Zusammenfassend lässt sich sagen, dass die Zukunft vielversprechend aussieht.
+**KI-Deutsch:**
+> In der heutigen Zeit ist es wichtiger denn je, sich mit dem Thema künstliche Intelligenz auseinanderzusetzen. Darüber hinaus bieten KI-Schreibwerkzeuge eine nahtlose, intuitive und umfassende Nutzererfahrung. Zusammenfassend lässt sich sagen, dass die Zukunft vielversprechend aussieht.
 
-**Nach Rewild:**
-> KI-Schreibwerkzeuge können das Schreiben erleichtern und Texte zugänglicher machen. Mehr muss man daraus aber nicht machen. „Nahtlos“ und „innovativ“ blähen den Absatz nur auf – die Zukunftsfloskel am Schluss erst recht.
+**Rewild:**
+> KI-Schreibwerkzeuge können das Schreiben erleichtern und Texte zugänglicher machen. Mehr muss man daraus aber nicht machen. Die Zukunftsfloskel am Schluss bläht den Absatz nur auf.
 
 ## Quellen
 
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
 - Tercon & Dobrovoljc (2025) – 44-Studien-Synthese
-- KONVENS 2024 (Irrgang et al.) – Deutsche KI-Texterkennung
-- De Gruyter 2025 – Linguistische Komplexitätsanalyse
-- ADVERTEXT Lektoratstest
-- Kathrin Landsdorfer – 21 ChatGPT-Phrasen
-- ContentConsultants, WORTLIGA, fyrfeed
+- KONVENS 2024 – Erkennung deutscher KI-Texte
+- De Gruyter 2025 – Analyse sprachlicher Komplexität im Deutschen
+- Huxiu – quantitative Analyse chinesischer Stilmittel
+- AIGCleaner – chinesische Erkennungsgewichte
 
-## Eigenschaften
+## Hinweise zur Auslieferung
 
-- Enger Trigger: nur bei explizitem KI-Ton-Problem
-- Anti-Fabrikation: keine erfundenen Zahlen, Anekdoten oder Ich-Erlebnisse
-- Genre-bewusst: formelle Texte bleiben formell
-- Quellengebundene Stimme: entsteht durch vorhandene Details, nicht durch Erfindung
-- Zwei Durchgänge als Standard: Ein Subagent mit leerem Kontext prüft jede Umschreibung blind vor der Abgabe
+- Greift nur, wenn du das Problem ausdrücklich als KI-Sound beschreibst
+- Fügt keine Kennzahl, Anekdote oder Erfahrung hinzu, die deine Vorlage nicht hatte
+- Formelle Texte bleiben formell
+- Stimme entsteht aus Details, die schon im Text stehen
+- Jede Umschreibung wird vor der Abgabe blind geprüft und gegen die Vorlage abgeglichen
 
 ---
 
