@@ -12,8 +12,9 @@
 [![Languages](https://img.shields.io/badge/languages-EN%20%7C%20%E7%B0%A1%20%7C%20%E6%B8%AF%20%7C%20%E5%8F%B0%20%7C%20DE-b45309?style=flat-square)](https://github.com/wallmage/rewild)
 [![Blind A/B](https://img.shields.io/badge/blind%20A%2FB-83%25%20EN%20%C2%B7%2075%25%20ZH-2563eb?style=flat-square)](benchmarks/)
 [![Region test](https://img.shields.io/badge/region%20attribution-50%2F50%20HK%20%C2%B7%20TW-16a34a?style=flat-square)](benchmarks/)
+[![Editor review](https://img.shields.io/badge/native%20editor%20review-10%2F10%20HK%20%C2%B7%20TW-be123c?style=flat-square)](benchmarks/)
 
-[English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體 · 香港](README.zh-HK.md) | [繁體 · 台灣](README.zh-TW.md) | [Deutsch](README.de.md)
 
 AI text has a voice, and you've heard it. Inflated significance, adjective triplets, tidy summaries that say nothing. Most "humanizer" tools scrub all that off and hand back clean, flat prose. Rewild strips the patterns and puts your voice back: opinions, rhythm, rough edges. It won't invent facts or bolt on a personality that wasn't there.
 
@@ -21,7 +22,7 @@ AI text has a voice, and you've heard it. Inflated significance, adjective tripl
 
 ## Does it actually work?
 
-Two things get measured, and they answer different questions.
+Three things get measured, and they answer different questions.
 
 **Is this version better than the last one?** Judges see both rewrites of the same text and have to pick one. No ties allowed, so the test can't saturate the way a checklist does. Five inputs, three independent judges, neither told which system wrote what.
 
@@ -43,6 +44,17 @@ Every judge placed every text on the correct side — 50/50 across four rounds, 
 
 The run also found three defects, including one no tool can catch: 「處理到」 in a Hong Kong press release is Cantonese grammar wearing standard characters, invisible to a character-matching checker. All three are written up in [`benchmarks/`](benchmarks/).
 
+**How good can one piece get?** The tests above are comparisons — this arm/that arm, which side does it land on. They stop telling you anything once both arms are correct, so there is a third measurement with no ceiling: hand one essay to a judge prompted entirely in Traditional Chinese as a thirty-year newspaper 副刊總編輯, have it score 1–10 and quote every line that reads machine-written, apply the fixes, resubmit.
+
+| | Hong Kong | Taiwan |
+|---|---|---|
+| First draft | 5 | 5 |
+| Seven rounds, fresh judge each round | 5 → 8 | 5 → 8 |
+| Structural rewrite, one editor held across revisions | 7 → 8 → 9 | 8 → 9 |
+| Final verdict | **10 — 落版，唔使再改** | **10 — 簽字發稿** |
+
+**Vocabulary saturates; structure does not.** From round two on, neither editor could fault a single word — 「字係香港人嘅字，骨係機器嘅骨」 / 「字是台灣人的字，結構是機器的結構」. Everything between 8 and 10 was distribution, and it is now a pattern in all five catalogs (see *Why it works*). Same caveat as the region test: these judges are language models, not native readers. The protocol and the full trajectory are in [`benchmarks/`](benchmarks/).
+
 **Is it better than a generic humanizer?** An older run scored 30/30 against a typical 24-rule tool's 24/30, and 30/30 against 20/30 in Chinese. Treat that number as unconfirmed: the raw outputs weren't kept, and the run predates the checker fixes below. The harness is in [`benchmarks/`](benchmarks/), with inputs, rubric, control prompt and blind-grading protocol, so you can rerun it and tell me I'm wrong.
 
 > **Input:** In the rapidly evolving landscape of artificial intelligence, our company stands as a testament to innovation. Additionally, our groundbreaking platform provides a seamless, intuitive, and powerful experience.
@@ -55,9 +67,13 @@ The typical tool rewrites hype into quieter hype. Rewild names it.
 
 ## Why it works
 
-Most humanizers run twenty-something generic rules. Remove "Additionally," vary sentence length, done. Enough to clear the obvious stuff and nothing more. The extra work here is in four places.
+Most humanizers run twenty-something generic rules. Remove "Additionally," vary sentence length, done. Enough to clear the obvious stuff and nothing more. The extra work here is in six places.
 
 **Patterns per language, not one list for all of them.** English AI overuses "testament" and "landscape" and leans on em-dashes. Chinese AI drops modal particles and stacks four-character idioms. German AI avoids Modalpartikeln and splits compound words apart. Each language gets its own catalog, built from academic research and detection data — and for Traditional Chinese, per *region*, for the reason set out below.
+
+**The tell that survives correct vocabulary.** Get every word right and a first-person piece still reads machine-made, because the craft is distributed too evenly: every paragraph lands a short dry close, every detail introduced gets paid off later, specifics are rationed one per paragraph, filler is sprinkled instead of clustered, and the closing image maps one-to-one onto the theme. Nothing is written badly, and that is the evidence. Swapping one perfect ending for a better one does not fix it — 「換衫，唔係換人」. The fix is to be willing to end flat, leave a detail unrecycled, and be vague everywhere except once. Every catalog carries it, and every `SKILL.md` carries the check: write out the last sentence of each paragraph and look at the column.
+
+**Everyday register, not just press register.** The regional catalogs were strong on government, news and business Chinese and had nothing about a person describing their own phone — which is most of what anyone actually rewrites. They now carry it: 計數機/計算機/計算器, 碌/滑/刷手機, 讚好/按讚/點讚, 尿袋/行動電源/充電寶, and the platform-as-verb rows (WhatsApp 我 versus 賴我) that give away where a writer lives. Two native reviewers audited those rows and cut several. Each catalog now declares its own un-gateable list — Hong Kong: 平板, 封鎖, 應用程式, 截圖, 充電器, 計算器; Taiwan: 結帳, 追蹤, 動態, 平板, 截圖, 限時動態, 計算機 — words that read as ordinary on both sides, and a regression test enforces that none of them ever reaches a gate. Reverse-replacing a word that was already correct turns a region judgement into a register error, which reads worse than the problem it was fixing.
 
 **A guard against overcorrecting.** Fix every text with the same three moves, punchy fragments and staged self-corrections and a rhetorical question per section, and you've built a new formula that reads just as machine-made as the old one. Rewild caps its interventions and rotates them.
 
@@ -94,8 +110,8 @@ Two checks run before anything ships. A reviewer with no memory of the original 
 |-------|----------|---------------|
 | [English](rewild/SKILL.md) | 46 | Lean `SKILL.md` + detailed [pattern catalog](rewild/references/patterns.md) |
 | [简体中文](rewild-zh/SKILL.md) | 45 | Mainland signals like 语气词缺失, 翻译腔, 四字套语, 公式化开头 |
-| [繁體 · 香港](rewild-hk/SKILL.md) | 65 | 書面語/粵文 register branch, 「您」, 港式文言虛詞, 中英夾雜, 港式套語 |
-| [繁體 · 台灣](rewild-tw/SKILL.md) | 65 | Japanese-derived structures protected as native, 台灣套語, 公文 skeleton, 港式書信骨架 |
+| [繁體 · 香港](rewild-hk/SKILL.md) | 65 | 書面語/粵文 register branch, 「您」, 港式文言虛詞, 中英夾雜, 港式套語, 手機日常口語 |
+| [繁體 · 台灣](rewild-tw/SKILL.md) | 65 | Japanese-derived structures protected as native, 台灣套語, 公文 skeleton, 港式書信骨架, 社群日常口語 |
 | [Deutsch](rewild-de/SKILL.md) | 48 | German-specific signals like Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
 
 Hong Kong and Taiwan are separate skills, not one Traditional Chinese skill with a region switch, and the reason is in the next section.
