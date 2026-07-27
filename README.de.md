@@ -9,14 +9,15 @@
 [![Focus](https://img.shields.io/badge/focus-human%20writing-111827?style=flat-square)](https://github.com/wallmage/rewild)
 [![Removes](https://img.shields.io/badge/removes-AI%20writing%20patterns-0f766e?style=flat-square)](https://github.com/wallmage/rewild)
 [![Keeps](https://img.shields.io/badge/keeps-your%20voice-4f46e5?style=flat-square)](https://github.com/wallmage/rewild)
-[![Languages](https://img.shields.io/badge/languages-English%20%7C%20%E4%B8%AD%E6%96%87%20%7C%20Deutsch-b45309?style=flat-square)](https://github.com/wallmage/rewild)
+[![Languages](https://img.shields.io/badge/languages-EN%20%7C%20%E7%B0%A1%20%7C%20%E6%B8%AF%20%7C%20%E5%8F%B0%20%7C%20DE-b45309?style=flat-square)](https://github.com/wallmage/rewild)
 [![Blind A/B](https://img.shields.io/badge/blind%20A%2FB-83%25%20EN%20%C2%B7%2075%25%20ZH-2563eb?style=flat-square)](benchmarks/)
+[![Region test](https://img.shields.io/badge/region%20attribution-50%2F50%20HK%20%C2%B7%20TW-16a34a?style=flat-square)](benchmarks/)
 
 [English](README.md) | [中文](README.zh-CN.md) | [Deutsch](README.de.md)
 
 KI-Text hat einen bestimmten Klang, und du kennst ihn. Aufgeblasene Bedeutsamkeit, Adjektiv-Drillinge, Zusammenfassungen, die eigentlich nichts sagen. Die meisten „Humanizer“-Tools schrubben genau diesen Klang weg und geben dir sauberen, seelenlosen Text zurück. Rewild macht etwas anderes: Es entfernt die KI-Muster und bringt deine Stimme zurück – Meinungen, Rhythmus, Ecken und Kanten. Es erfindet keine Fakten und verpasst dir keine Persönlichkeit, die vorher nicht da war.
 
-**139 sprachspezifische Muster. Drei Sprachen. Ein Checker, der deine Vorlage liest, nicht nur deinen Entwurf.**
+**269 sprachspezifische Muster. Fünf Skills. Ein Checker, der deine Vorlage liest, nicht nur deinen Entwurf.**
 
 ## Funktioniert das wirklich
 
@@ -79,12 +80,18 @@ Vor der Auslieferung laufen zwei Prüfungen. Ein Prüfer ohne Erinnerung an das 
 | Skill | Muster | Besonderheit |
 |-------|--------|--------------|
 | [English](rewild/SKILL.md) | 46 | Schlankes `SKILL.md` + ausführlicher [pattern catalog](rewild/references/patterns.md) |
-| [中文](rewild-zh/SKILL.md) | 45 | Chinesisch-spezifische Muster wie 语气词缺失, 翻译腔, 四字套语 |
+| [中文 vereinfacht](rewild-zh/SKILL.md) | 45 | Festlandchinesische Muster wie 语气词缺失, 翻译腔, 四字套语 |
+| [中文 traditionell · Hongkong](rewild-hk/SKILL.md) | 65 | Registerverzweigung 書面語/粵文, 「您」, 中英夾雜 |
+| [中文 traditionell · Taiwan](rewild-tw/SKILL.md) | 65 | Japanisch geprägte Strukturen als heimisch geschützt, 台灣套語, 公文 |
 | [Deutsch](rewild-de/SKILL.md) | 48 | Deutsch-spezifische Muster wie Modalpartikeln, Komposita, Gedankenstrich, Konnektoren-Flut |
+
+Hongkong und Taiwan sind zwei getrennte Skills, kein traditionell-chinesischer Skill mit Regionsschalter. Der Grund: **der heimische Wortschatz jeder Region überschneidet sich mit dem verbotenen Wortschatz der anderen.** 網絡, 智能 und 項目 sind Festlandwörter, die ein Taiwan-Skill entfernen muss — und zugleich Hongkonger Wörter, die ein Hongkong-Skill schützen muss. Eine einzige Sperrliste kann beide Regeln nicht enthalten, und ein nicht gesetzter Regionsschalter lässt das Modell mitteln: grammatisch korrektes Traditionell-Chinesisch, das zu niemandem gehört.
+
+Keiner der beiden Kataloge ist eine Übersetzung des festlandchinesischen. Alle 45 Muster wurden einzeln geprüft: Hongkong behält 29, passt 15 an, streicht 1; Taiwan behält 25, passt 19 an, streicht 1. Dazu kommen je 16 Regionsmuster. Einige Anpassungen sind Widerrufe — Regeln, die normales lokales Schreiben als KI-Text markiert hätten.
 
 ## So funktioniert's
 
-1. Kopiere den Skill-Ordner deiner Sprache (`rewild/`, `rewild-zh/` oder `rewild-de/`) in dein Skill-Verzeichnis, bei Claude Code ist das `~/.claude/skills/`. Ordnernamen und Inhalt so lassen: Der Ordnername entspricht dem `name:`-Feld des Skills, und der `references/`-Katalog und der `scripts/`-Checker gehören dazu.
+1. Kopiere den Skill-Ordner deiner Sprache (`rewild/`, `rewild-zh/`, `rewild-hk/`, `rewild-tw/` oder `rewild-de/`) in dein Skill-Verzeichnis, bei Claude Code ist das `~/.claude/skills/`. Ordnernamen und Inhalt so lassen: Der Ordnername entspricht dem `name:`-Feld des Skills, und der `references/`-Katalog und der `scripts/`-Checker gehören dazu.
 2. In einem anderen LLM fügst du `SKILL.md` als System Prompt ein und hältst `references/patterns.md` bereit, damit das Modell nachladen kann.
 3. Sag „rewild das“ und füg deinen Text ein.
 
@@ -108,7 +115,15 @@ Nach jeder Katalogänderung einmal `--audit` laufen lassen. Es vergleicht die Wo
 python3 rewild-de/scripts/naturalness-check.py --audit --lang de
 ```
 
-Dreißig Regressionstests decken jeden Fehler ab, mit dem der Checker je ausgeliefert wurde:
+Für `--lang hk` und `--lang tw` kommt eine dritte Hälfte dazu, die den Stilprüfungen vollständig entgeht: Vokabular der jeweils anderen Region, festlandtypisches Vokabular, die Umschriften der anderen Seite, nach der Konvertierung übrig gebliebene Kurzzeichen, die regionalen Zeichenstandards (裏/裡, 着/著) — und die **Floskeln**, die eine Regionalkonvertierung fast immer stehen lässt.
+
+Ein weiterer Modus prüft, was jede Einzeldokumentprüfung strukturell nicht sehen kann: Schreibt man fünf verwandte Texte in einem Zug um, konvergieren sie — gleiche Absatzzahl, gleicher Schluss — während jeder einzeln sauber durchläuft:
+
+```bash
+python3 rewild-de/scripts/naturalness-check.py --siblings a.txt b.txt c.txt --lang de
+```
+
+Über hundertdreißig Regressionstests decken jeden Fehler ab, mit dem der Checker je ausgeliefert wurde:
 
 ```bash
 python3 tests/test_checker.py
