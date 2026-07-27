@@ -274,6 +274,12 @@ Fix: kürzen, teilen oder unterordnen.
 32. Jeder Absatz endet mit sauberer Minizusammenfassung.
 Fix: manche Absätze auf Fakt, Bild oder Frage enden lassen.
 
+32b. Gleichmäßig verteiltes Handwerk (nur Ich-Erzählung).
+Problem: Nichts im Text ist schlecht geschrieben – und genau das verrät ihn. Schreib die letzten Sätze aller Absätze untereinander: sind sie alle kurz, trocken und sitzen sie alle, ist das ein Metronom, keine Stimme. Dazu kommen vier Geschwister: nichts ist verschwendet (jedes eingeführte Detail wird später eingelöst), Konkretes ist rationiert (ein Preis, eine Uhrzeit, eine Zahl pro Absatz), Füllwörter sind gleichmäßig gestreut statt in einem Schwall, und das Schlussbild deckt sich eins zu eins mit dem Thema.
+Fix: ein perfektes Ende gegen ein anderes perfektes Ende zu tauschen ist ein Kleiderwechsel, kein Personenwechsel. Man muss an bestimmten Stellen schlecht schreiben wollen: zwei Absätze flach, fad oder mitten im Gedanken enden lassen; ein Detail nicht einlösen – der Freund wird einmal erwähnt und kommt nie wieder; eine Sache genau erinnern und den Rest vage lassen ("irgendwann in der Woche", "ich weiß nicht mehr, wie lange"); die Füllwörter zusammenballen; der letzte Satz darf nichts sein, das jemand zitieren würde.
+Überkorrektur-Warnung: auch die Schäden nicht gleichmäßig verteilen. Ein eingeplantes flaches Absatzende pro Text ist dieselbe Krankheit in neuer Formel.
+Geltungsbereich: Ich-Erzählung – Essays, Kolumnen, Blogposts, lange Social-Posts. Pressemitteilungen, Geschäftsberichte und Release Notes sollen ordentlich sein. Quelle: zehn Runden muttersprachlicher Chefredakteurs-Blindprüfung der chinesischen Skills; der Wortschatz war durchgehend fehlerfrei, dies war die gesamte Lücke zwischen 8/10 und 10/10. Der Befund ist sprachunabhängig.
+
 33. Überall derselbe Registerton.
 Fix: den Absätzen unterschiedliche Aufgaben geben.
 

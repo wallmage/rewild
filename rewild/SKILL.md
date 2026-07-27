@@ -133,6 +133,7 @@ Informal writing, essays, blog posts:
 - Voice is not performance. The target is "same author, better day" — not a slicker, cooler author.
 - A big idea rewritten in plain words is still a big idea. Delete the uplift; end on something concrete.
 - "The biggest thing I learned" and "this experience taught me" are kickers too, however casual the tone. End an essay on a specific thing, an image, or a question still open — not on a summary.
+- **Run an endings check when you're done.** Write out the last sentence of every paragraph, one per line. If each is short, dry, and lands a beat, that's a metronome, not a voice — at least two should end flat, dull, or mid-thought. Check the same way for: one detail that is mentioned and never picked up again (you want one), numbers rationed one per paragraph (you don't), and filler words spread evenly instead of clustered. This is the last tell to go in first-person writing; see [references/patterns.md](references/patterns.md) 26b.
 
 Business writing:
 - Remove hype and vague significance claims.

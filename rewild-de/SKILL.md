@@ -126,6 +126,7 @@ Die Funde arbeitest du selbst ein, mit offenem Katalog: echte Treffer richten, P
 Informelle Texte, Blogposts, Essays:
 - Mehr Rhythmus und eine klarere Stimme sind oft passend.
 - "Ich", Nebenbemerkungen oder Lockerheit nur verwenden, wenn die Ausgangsstimme das trägt.
+- **Zum Schluss die Absatzenden prüfen.** Den letzten Satz jedes Absatzes untereinander schreiben. Sind alle kurz, trocken und sitzen sie alle, ist das ein Metronom und keine Stimme – mindestens zwei sollten flach, fad oder mitten im Gedanken enden. Genauso prüfen: ein Detail, das einmal vorkommt und nie wieder aufgegriffen wird (das will man), Zahlen rationiert eine pro Absatz (das will man nicht), Füllwörter gleichmäßig gestreut statt geballt. Das ist der letzte Verräter in Ich-Texten, siehe [references/patterns.md](references/patterns.md) 32b.
 
 Geschäftstexte:
 - Hype, Selbstbeweihräucherung und leere Bedeutungssätze entfernen.

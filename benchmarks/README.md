@@ -511,6 +511,59 @@ The mechanical half needs no judges. Run each output under both `--lang hk` and
 `--lang tw`: an output that belongs to a region should raise region warnings
 under the other one and none under its own.
 
+## The editor loop: one artifact, ten rounds, 8 → 10
+
+A different shape of test from everything above. The A/B rounds measure *which
+side* a text lands on. This one measures how far a single text can be pushed
+after the vocabulary is already correct.
+
+Protocol: the skill writes one 400–500 word first-person essay. It goes to a
+judge prompted entirely in Traditional Chinese as a thirty-year 副刊總編輯,
+told to score 1–10, to quote every line that reads machine-written, and to say
+what would earn a 10. Every named fix is applied and the piece is rescored.
+Same caveat as the region benchmark: these are language models, not native
+readers.
+
+| | Hong Kong | Taiwan |
+|---|---|---|
+| First draft | 5 | 5 |
+| Seven rounds, a fresh judge each round | 5 → 8 | 5 → 8 |
+| Structural rewrite, one editor held across revisions | 7 → 8 → 9 | 8 → 9 |
+| Final | **10** | **10** |
+
+The Hong Kong dip is not noise, it is the point: a fresh editor scored the
+structural rewrite *lower* (7) than the previous editor had scored the text it
+replaced (8). Scores from rotating judges wander by a point or two in both
+directions; only a held editor produces a monotone climb.
+
+**Vocabulary saturates early; structure does not.** From round two onward
+neither editor could fault the word choice — Hong Kong: 「字係香港人嘅字，骨係
+機器嘅骨」; Taiwan: 「字是台灣人的字，結構是機器的結構」. Everything between
+8 and 10 was distribution: every paragraph landing a short dry close, every
+detail eventually recycled, one number per paragraph, filler sprinkled evenly,
+a closing image that maps one-to-one onto the theme. The sharpest form of it,
+from the Hong Kong editor: 「呢篇嘅問題唔係寫得差，係寫得冇失手過。」 That is
+now pattern 26b (en) / 29b (zh, hk, tw) / 32b (de).
+
+Two things about method are worth recording:
+
+**Rotating a fresh judge every round stalls.** Seven rounds of new judges held
+both texts at 8 and produced contradictions — one round asked for an opinion
+line, the next cut the same line as op-ed voice. Progress came from keeping
+*one* editor across rounds: it holds its own fix list, and it can be held to
+it. Both 10s came from an editor scoring a revision of a draft it had already
+marked up.
+
+**Replacing a perfect ending with another perfect ending does not work.** The
+Hong Kong editor caught exactly that mid-loop — an umbrella symbol swapped for
+a noodles symbol — and named it 「換衫，唔係換人」. The fix is not a better
+ending; it is being willing to end badly.
+
+Reproducing it needs no fixture files: generate an essay with the skill, and
+prompt a judge with the paragraph above. The essays themselves are not
+committed, for the same reason the original benchmark outputs are not — this
+folder is the harness, not an archive.
+
 ## Regression tests
 
 `tests/test_checker.py` covers the checker itself. Run it from the repo root

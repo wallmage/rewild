@@ -233,6 +233,15 @@ Fix: give different paragraphs different jobs, and different sizes.
 26. Paragraphs that end with a neat summary line every time.
 Fix: let some paragraphs end on an image, fact, or unresolved edge.
 
+26b. Evenly distributed craft (first-person narrative only).
+Problem: nothing in the piece is written badly, and that is the tell. Line up the last sentence of every paragraph — if each one is short, dry, and lands a beat, that's a metronome, not a voice. It arrives with four siblings: nothing is wasted (every detail introduced gets paid off later), specifics are rationed one per paragraph (one price, one timestamp, one number), filler words are sprinkled evenly instead of bursting out in one place, and the closing image maps one-to-one onto the theme.
+
+Fix: swapping one perfect ending for another perfect ending is a change of clothes, not a change of person — the diagnosis survives it. Be willing to write badly in specific places. Let two paragraphs end flat, dull, or mid-thought. Leave one detail unrecycled: mention the friend once and never bring him back. Be exact about one thing and vague about everything else ("some night that week", "I lost track"). Cluster the filler. Make the last line something nobody would quote.
+
+Overcorrection warning: don't distribute the damage evenly either. One scheduled flat ending per essay is the same disease wearing a new formula.
+
+Scope: first-person narrative — essays, columns, blog posts, long social posts. Press releases, filings, and release notes are supposed to be tidy; applying this there makes them worse. Source: ten rounds of native chief-editor review of the Chinese skills, where vocabulary scored full marks and this was the entire remaining gap between 8/10 and 10/10. The diagnosis is language-independent.
+
 ## Format Patterns
 
 27. Em-dash overuse and colon reveals.
